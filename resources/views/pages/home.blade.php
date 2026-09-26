@@ -203,7 +203,7 @@
     </div>
 </section>
 
-<x-photo-band image="images/cats/portee-2.webp"
+<x-photo-band image="images/cats/bande-chatons.webp"
               legende="Quatre paires d'yeux sur le même point"
               hauteur="52vh" />
 

@@ -25,27 +25,35 @@
 
 :root{
   /* la page — quatre blancs, du pur au nacré */
-  --blanc:#FFFFFF; --nacre:#FBF9F4; --nacre-2:#F5F1E7; --nacre-3:#ECE6D8;
+  --blanc:#FFFFFF; --nacre:#FCFAF6; --nacre-2:#F7F3EB; --nacre-3:#EFEADF;
 
   /* le ciel — jamais en texte, seulement en lumière */
-  --ciel:#F3F7FB; --ciel-2:#E7EEF6; --ciel-3:#D8E4F0;
-  --aile:rgba(168,196,232,.42);
+  --ciel:#F6F9FC; --ciel-2:#EDF2F8; --ciel-3:#E1E9F3;
+  --aile:rgba(176,199,228,.30);
 
-  /* la dorure, densifiée pour le blanc */
-  --or-pale:#F4E8C8; --or-clair:#E3C98A; --or:#C9A45C; --or-mat:#A8813F;
-  --or-tendre:#8A6A2E; --or-ombre:#6E5220;
-  --dorure:linear-gradient(180deg,#D8B36C 0%,#A8813F 48%,#6E5220 100%);
-  --dorure-filet:linear-gradient(180deg,rgba(168,129,63,.55),rgba(168,129,63,.14));
-  --dorure-bouton:linear-gradient(180deg,#EDD9A6 0%,#D4AE68 55%,#C09A50 100%);
+  /* La dorure, en champagne et non en laiton.
+
+     C'est le réglage le plus important de la feuille. Un or saturé, posé en
+     aplat sur du blanc, vire au jaune et fait cheap ; le même or éclairci,
+     désaturé et réservé aux filets tient de la feuille d'or. Les tons qui
+     portent du TEXTE descendent jusqu'à tenir 4,5:1 sur le blanc ; ceux qui ne
+     font que tracer un trait peuvent rester clairs, un filet n'a besoin que
+     de 3:1. */
+  --or-pale:#F8F1E1; --or-clair:#E9D6AB; --or:#CBAE76; --or-mat:#A98F5E;
+  --or-tendre:#836E40; --or-ombre:#685733;
+  --dorure:linear-gradient(180deg,#D6BA84 0%,#A88B52 48%,#6E5A2E 100%);
+  --dorure-filet:linear-gradient(180deg,rgba(169,143,94,.5),rgba(169,143,94,.12));
+  /* Mat, deux tons seulement : un dégradé à trois arrêts fait bouton biseauté. */
+  --dorure-bouton:linear-gradient(180deg,#F4E9CF 0%,#E7D4A8 100%);
 
   /* l'encre */
-  --encre:#1E1A13; --encre-2:#3D3629; --encre-3:#5E5647; --encre-dim:#7C7362;
+  --encre:#211D16; --encre-2:#423B2E; --encre-3:#615948; --encre-dim:#807766;
 
   /* les verdicts */
-  --sain:#4F7D42; --attente:#A8813F; --alerte:#B04E37;
+  --sain:#527D48; --attente:#A98F5E; --alerte:#AC5440;
 
   /* les filets — la dorure la plus visible du site */
-  --filet:rgba(168,129,63,.4); --filet-2:rgba(168,129,63,.2); --filet-3:rgba(30,26,19,.09);
+  --filet:rgba(169,143,94,.34); --filet-2:rgba(169,143,94,.17); --filet-3:rgba(33,29,22,.08);
 
   --maxw:clamp(1040px,84vw,1500px); --large:clamp(1180px,92vw,1760px);
   --gout:clamp(20px,4vw,60px);
@@ -101,7 +109,7 @@ em,em.it{font-style:italic;font-family:var(--titre)}
 /* Un blanc pur à l'écran est une vitre ; un blanc grainé est du papier.
    La tuile de bruit est posée en « multiply » : elle assombrit à peine, et
    seulement les zones claires, comme le grain d'un vélin. */
-#grain{position:fixed;inset:-50%;z-index:1;pointer-events:none;opacity:.16;mix-blend-mode:multiply;
+#grain{position:fixed;inset:-50%;z-index:1;pointer-events:none;opacity:.075;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E")}
 
 /* ── mise en page ────────────────────────────────────────────────── */
@@ -115,34 +123,34 @@ em,em.it{font-style:italic;font-family:var(--titre)}
    sommet de chaque bande, un souffle de ciel au pied. */
 .band::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
   background:
-    radial-gradient(90% 50% at 50% 0%,rgba(201,164,92,.07),transparent 64%),
+    radial-gradient(90% 50% at 50% 0%,rgba(203,174,118,.055),transparent 64%),
     radial-gradient(100% 45% at 50% 100%,var(--aile),transparent 70%);
-  opacity:.55}
+  opacity:.5}
 
 /* La bande nacrée : une page de vélin au milieu du livre. Elle porte le
    peigne — une file de petits traits d'or le long de son filet supérieur,
    éteinte à ses deux bouts. */
 .band.ink2{background:
-    linear-gradient(180deg,rgba(201,164,92,.09),transparent 46%),
+    linear-gradient(180deg,rgba(203,174,118,.07),transparent 46%),
     linear-gradient(180deg,var(--nacre),var(--nacre-2));
   border-block:1px solid var(--filet)}
 .band.ink2::before{background:
     radial-gradient(110% 60% at 50% 0%,rgba(255,255,255,.7),transparent 64%),
     radial-gradient(120% 60% at 50% 110%,rgba(168,129,63,.08),transparent 70%);
   opacity:1}
-.band.ink2::after{content:"";position:absolute;inset:0 0 auto 0;height:7px;
+.band.ink2::after{content:"";position:absolute;inset:0 0 auto 0;height:6px;
   pointer-events:none;z-index:1;
-  background:repeating-linear-gradient(90deg,rgba(168,129,63,.6) 0 2px,transparent 2px 16px);
+  background:repeating-linear-gradient(90deg,rgba(169,143,94,.42) 0 1px,transparent 1px 18px);
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent);
           mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent)}
 
 /* La bande de ciel : la lumière elle-même. Blanc au sommet, bleu très pâle
    au pied — le seul endroit du site où le ciel devient une surface. */
-.band.paper{background:radial-gradient(120% 90% at 50% 0%,#FFFFFF 0%,var(--ciel) 52%,var(--ciel-2) 100%);
-  border-block:1px solid rgba(140,170,210,.32)}
+.band.paper{background:radial-gradient(120% 95% at 50% 0%,#FFFFFF 0%,#FBFDFE 42%,var(--ciel-2) 100%);
+  border-block:1px solid rgba(150,178,212,.24)}
 .band.paper::before{background:
-    radial-gradient(70% 40% at 50% 0%,rgba(255,255,255,.9),transparent 70%),
-    radial-gradient(60% 50% at 50% 100%,rgba(168,196,232,.35),transparent 70%);
+    radial-gradient(75% 45% at 50% 0%,rgba(255,255,255,.95),transparent 72%),
+    radial-gradient(60% 50% at 50% 100%,rgba(176,199,228,.26),transparent 72%);
   opacity:1}
 
 .rule{height:1px;background:var(--filet);border:0;margin:0}
@@ -173,8 +181,8 @@ body{counter-reset:chapitre}
 .chapitre.compte .numero::before{counter-increment:chapitre;content:counter(chapitre,upper-roman) "\00a0\00a0·\00a0\00a0"}
 .chapitre .lede{margin-top:6px}
 .chapitre h1::after,.chapitre h2::after{content:"";display:block;
-  width:clamp(52px,7vw,84px);height:1px;margin:clamp(16px,2vw,22px) auto 0;
-  background:linear-gradient(90deg,transparent,var(--or-mat),transparent)}
+  width:clamp(64px,9vw,112px);height:1px;margin:clamp(18px,2.2vw,26px) auto 0;
+  background:linear-gradient(90deg,transparent,rgba(169,143,94,.75),transparent)}
 .chapitre.gauche{align-items:flex-start;text-align:left}
 .chapitre.gauche .frise{justify-content:flex-start}
 .chapitre.gauche .frise::before{display:none}
@@ -189,13 +197,17 @@ body{counter-reset:chapitre}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;
   font-family:var(--pierre);font-size:12px;font-weight:600;letter-spacing:.15em;
   text-transform:uppercase;text-decoration:none;cursor:pointer;
-  border:1px solid var(--or);background:var(--dorure-bouton);color:#2A2010;
-  box-shadow:0 10px 34px rgba(201,164,92,.28);
-  transition:transform .35s var(--ease),box-shadow .35s,filter .35s,background .35s,color .35s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 46px rgba(201,164,92,.4);filter:brightness(1.04)}
-.btn.ghost{background:rgba(255,255,255,.5);border-color:rgba(168,129,63,.5);
-  color:var(--or-ombre);box-shadow:none}
-.btn.ghost:hover{background:rgba(201,164,92,.12);border-color:var(--or-mat);filter:none}
+  border:1px solid var(--or);background:var(--dorure-bouton);color:#4A3C1C;
+  /* Une ombre portée très basse et très large : de la lumière posée dessous,
+     pas un relief. Aucune lueur colorée — c'est elle qui faisait clinquant. */
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 14px 30px -18px rgba(120,100,60,.45);
+  transition:transform .35s var(--ease),box-shadow .35s,background .35s,color .35s,border-color .35s}
+.btn:hover{transform:translateY(-2px);background:linear-gradient(180deg,#FBF4E4 0%,#EFDFBA 100%);
+  border-color:var(--or-mat);
+  box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 0 0 4px rgba(203,174,118,.1),0 18px 36px -20px rgba(120,100,60,.5)}
+.btn.ghost{background:transparent;border-color:rgba(33,29,22,.16);
+  color:var(--encre-3);box-shadow:none}
+.btn.ghost:hover{background:rgba(203,174,118,.07);border-color:var(--or-mat);color:var(--or-ombre);box-shadow:none}
 .btnrow{display:flex;flex-wrap:wrap;gap:14px}
 
 .tlink,.lien{display:inline-flex;align-items:center;gap:8px;font-family:var(--pierre);
@@ -207,13 +219,12 @@ body{counter-reset:chapitre}
 /* ── pastilles de statut ─────────────────────────────────────────── */
 .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;
   font-family:var(--pierre);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
-  border:1px solid currentColor;white-space:nowrap;background:rgba(255,255,255,.78);
+  border:1px solid currentColor;white-space:nowrap;background:rgba(255,255,255,.88);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.chip .dot{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor}
+.chip .dot{width:5px;height:5px;border-radius:50%;background:currentColor}
 .chip.dispo{color:var(--sain)}
 .chip.reserve{color:var(--or-tendre)}
 .chip.adopte{color:#8C8577}
-.chip.adopte .dot{box-shadow:none}
 
 /* ── bandeau ─────────────────────────────────────────────────────── */
 header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;
@@ -339,25 +350,27 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
    là où un clip-path figerait la courbe. Sur la page blanche, l'ombre
    portée est bleutée : c'est le ciel qui passe derrière. */
 .arche{--format:7/10;aspect-ratio:var(--format);position:relative;display:block;padding:9px;
-  border:1px solid rgba(168,129,63,.7);
-  border-radius:50% 50% 4px 4px / 35% 35% 4px 4px;
-  background:linear-gradient(180deg,rgba(201,164,92,.16),rgba(201,164,92,.03) 60%)}
-.arche > i{display:block;width:100%;height:100%;padding:5px;
-  border:1px solid rgba(201,164,92,.5);
-  border-radius:50% 50% 3px 3px / 35% 35% 3px 3px}
+  border:1px solid rgba(169,143,94,.5);
+  border-radius:50% 50% 3px 3px / 35% 35% 3px 3px;
+  background:linear-gradient(180deg,rgba(203,174,118,.09),rgba(203,174,118,.015) 60%)}
+.arche > i{display:block;width:100%;height:100%;padding:4px;
+  border:1px solid rgba(233,214,171,.7);
+  border-radius:50% 50% 2px 2px / 35% 35% 2px 2px}
 .arche > i > u{display:block;width:100%;height:100%;overflow:hidden;background:var(--nacre-2);
   border-radius:50% 50% 2px 2px / 35% 35% 2px 2px;
-  box-shadow:0 30px 70px rgba(90,120,160,.22),0 8px 22px rgba(120,90,40,.1)}
+  /* L'ombre est bleutée : la lumière vient d'en haut, et ce qu'elle laisse
+     tomber sur une page blanche n'est pas gris, c'est du ciel. */
+  box-shadow:0 34px 64px -34px rgba(96,124,162,.55)}
 .arche img{width:100%;height:100%;object-fit:cover}
-.arche.petite{padding:7px}
+.arche.petite{padding:6px}
 .arche.petite > i{padding:0;border-radius:50% 50% 2px 2px / 36% 36% 2px 2px}
-.arche.petite > i > u{border-radius:50% 50% 2px 2px / 36% 36% 2px 2px;box-shadow:0 18px 40px rgba(90,120,160,.16)}
+.arche.petite > i > u{border-radius:50% 50% 2px 2px / 36% 36% 2px 2px;box-shadow:0 22px 44px -26px rgba(96,124,162,.5)}
 
 /* L'or qui balaye le cadre au survol : un reflet passe sur le filet. Le
    masque découpe le dégradé en anneau — seul le filet s'allume. */
 .arche::after{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
   padding:1px;opacity:0;transition:opacity .45s var(--ease);
-  background:linear-gradient(118deg,transparent 40%,rgba(255,255,255,.95) 50%,transparent 60%);
+  background:linear-gradient(118deg,transparent 40%,rgba(255,255,255,.98) 50%,transparent 60%);
   -webkit-mask:linear-gradient(#000,#000) content-box,linear-gradient(#000,#000);
           mask:linear-gradient(#000,#000) content-box,linear-gradient(#000,#000);
   -webkit-mask-composite:xor;mask-composite:exclude}
@@ -370,7 +383,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .figure,.photo,.coat,.mapwrap{position:relative}
 .figure::before,.figure::after,
 .photo::before,.photo::after,
-.coat::before,.coat::after{content:"";position:absolute;width:22px;height:22px;z-index:3;pointer-events:none;opacity:.9}
+.coat::before,.coat::after{content:"";position:absolute;width:18px;height:18px;z-index:3;pointer-events:none;opacity:.75}
 .figure::before,.photo::before,.coat::before{left:9px;top:9px;border-left:1px solid var(--or-clair);border-top:1px solid var(--or-clair)}
 .figure::after,.photo::after,.coat::after{right:9px;bottom:9px;border-right:1px solid var(--or-clair);border-bottom:1px solid var(--or-clair)}
 
@@ -383,11 +396,11 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
   background:radial-gradient(120% 78% at 50% 22%,var(--ciel) 0%,#FFFFFF 46%,#FFFFFF 100%)}
 .hero .halo{position:absolute;width:min(980px,150vw);aspect-ratio:1;top:-18%;left:50%;
   transform:translateX(-50%);border-radius:50%;pointer-events:none;
-  background:radial-gradient(circle,rgba(201,164,92,.22) 0%,rgba(168,196,232,.22) 36%,rgba(255,255,255,0) 68%)}
+  background:radial-gradient(circle,rgba(255,255,255,.9) 0%,rgba(203,174,118,.16) 26%,rgba(176,199,228,.2) 46%,rgba(255,255,255,0) 70%)}
 .hero .rayons{position:absolute;inset:-30% -10% auto -10%;height:120%;pointer-events:none;
-  background:repeating-conic-gradient(from -14deg at 50% 0%,rgba(201,164,92,.075) 0 2.4deg,transparent 2.4deg 9deg);
-  -webkit-mask-image:radial-gradient(70% 70% at 50% 0%,#000 20%,transparent 72%);
-          mask-image:radial-gradient(70% 70% at 50% 0%,#000 20%,transparent 72%)}
+  background:repeating-conic-gradient(from -13deg at 50% 0%,rgba(203,174,118,.05) 0 1.6deg,transparent 1.6deg 10deg);
+  -webkit-mask-image:radial-gradient(64% 62% at 50% 0%,#000 8%,transparent 70%);
+          mask-image:radial-gradient(64% 62% at 50% 0%,#000 8%,transparent 70%)}
 .hero .frise{position:relative;z-index:2;margin-bottom:clamp(30px,4vw,52px)}
 .hero .duo{position:relative;z-index:2;display:grid;
   grid-template-columns:auto minmax(0,1fr);gap:clamp(30px,5vw,76px);align-items:center;
@@ -487,8 +500,8 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .fiche.gone img{filter:saturate(.35) brightness(.92)}
 .fiche .bd{display:flex;flex-direction:column;gap:9px;align-items:center;flex:1}
 .fiche .nm{display:flex;flex-direction:column;align-items:center;gap:5px}
-.fiche .nm h3{font-family:var(--pierre);font-size:17px;font-weight:500;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--or-tendre)}
+.fiche .nm h3{font-family:var(--pierre);font-size:17px;font-weight:500;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--or-ombre)}
 .fiche .ref{font-family:var(--corps);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--encre-dim)}
 .fiche dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14px;text-align:left}
 .fiche dt{font-family:var(--corps);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--encre-dim);padding-top:3px}
@@ -507,8 +520,8 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .repro:hover img{transform:scale(1.05)}
 .repro .cap{display:flex;flex-direction:column;gap:6px;align-items:center}
 .repro .cap .mono{color:var(--or-tendre);font-size:10px}
-.repro .cap h3{font-family:var(--pierre);font-size:18px;font-weight:500;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--or-tendre)}
+.repro .cap h3{font-family:var(--pierre);font-size:19px;font-weight:500;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--or-ombre)}
 .repro .cap p{font-family:var(--titre);font-style:italic;font-size:17px;color:var(--encre-3)}
 
 /* ── le registre (fiches, tableaux) ──────────────────────────────── */
@@ -519,11 +532,11 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .photo{overflow:hidden;border:1px solid var(--filet);background:var(--nacre-2)}
 .photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
 
-.record{position:relative;border:1px solid rgba(168,129,63,.46);
-  background:linear-gradient(180deg,rgba(201,164,92,.05),transparent 40%),rgba(255,255,255,.7)}
-.record::before,.record::after{content:"";position:absolute;width:24px;height:24px;pointer-events:none;z-index:2}
-.record::before{left:-1px;top:-1px;border-left:2px solid var(--or-mat);border-top:2px solid var(--or-mat)}
-.record::after{right:-1px;bottom:-1px;border-right:2px solid var(--or-mat);border-bottom:2px solid var(--or-mat)}
+.record{position:relative;border:1px solid rgba(169,143,94,.38);
+  background:linear-gradient(180deg,rgba(203,174,118,.04),transparent 40%),rgba(255,255,255,.7)}
+.record::before,.record::after{content:"";position:absolute;width:22px;height:22px;pointer-events:none;z-index:2}
+.record::before{left:-1px;top:-1px;border-left:1px solid var(--or-mat);border-top:1px solid var(--or-mat)}
+.record::after{right:-1px;bottom:-1px;border-right:1px solid var(--or-mat);border-bottom:1px solid var(--or-mat)}
 .record .hd{padding:16px 24px;border-bottom:1px solid var(--filet-2);display:flex;justify-content:space-between;
   align-items:baseline;gap:12px;flex-wrap:wrap}
 .record .hd .mono{font-family:var(--pierre);font-size:12px;font-weight:500;letter-spacing:.12em;color:var(--or-tendre)}
@@ -595,10 +608,10 @@ a.cell:hover{border-color:var(--or-mat);background:var(--nacre)}
 .fact span{font-family:var(--corps);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--encre-dim)}
 
 /* ── le relevé de ce que couvre l'adoption ───────────────────────── */
-.ledger{border:1px solid rgba(168,129,63,.46);background:rgba(255,255,255,.7);position:relative}
-.ledger::before,.ledger::after{content:"";position:absolute;width:24px;height:24px;pointer-events:none;z-index:2}
-.ledger::before{left:-1px;top:-1px;border-left:2px solid var(--or-mat);border-top:2px solid var(--or-mat)}
-.ledger::after{right:-1px;bottom:-1px;border-right:2px solid var(--or-mat);border-bottom:2px solid var(--or-mat)}
+.ledger{border:1px solid rgba(169,143,94,.38);background:rgba(255,255,255,.7);position:relative}
+.ledger::before,.ledger::after{content:"";position:absolute;width:22px;height:22px;pointer-events:none;z-index:2}
+.ledger::before{left:-1px;top:-1px;border-left:1px solid var(--or-mat);border-top:1px solid var(--or-mat)}
+.ledger::after{right:-1px;bottom:-1px;border-right:1px solid var(--or-mat);border-bottom:1px solid var(--or-mat)}
 .ledger .row{display:grid;grid-template-columns:auto 1fr auto;gap:14px 18px;align-items:baseline;
   padding:15px 24px;border-bottom:1px solid var(--filet-3)}
 .ledger .row:last-of-type{border-bottom:0}
@@ -632,12 +645,12 @@ a.cell:hover{border-color:var(--or-mat);background:var(--nacre)}
 @media(max-width:900px){.masonry{columns:2}}
 @media(max-width:520px){.masonry{columns:1}}
 .masonry figure{margin:0 0 16px;break-inside:avoid;overflow:hidden;position:relative;
-  cursor:zoom-in;background:var(--blanc);border:1px solid var(--filet);padding:7px;
+  cursor:zoom-in;background:var(--blanc);border:1px solid var(--filet-2);padding:6px;
   transition:border-color .35s,box-shadow .45s var(--ease)}
-.masonry figure:hover{border-color:var(--or-mat);box-shadow:0 18px 44px rgba(90,120,160,.16)}
+.masonry figure:hover{border-color:var(--or-mat);box-shadow:0 24px 48px -26px rgba(96,124,162,.5)}
 .masonry img{width:100%;transition:transform .9s var(--ease)}
 .masonry figure[data-format="panorama"]{column-span:all;margin-block:6px 22px}
-.masonry figcaption{position:absolute;inset:auto 7px 7px 7px;padding:26px 14px 12px;
+.masonry figcaption{position:absolute;inset:auto 6px 6px 6px;padding:26px 14px 12px;
   background:linear-gradient(to top,rgba(30,26,19,.78),transparent);opacity:0;transition:opacity .35s;
   font-family:var(--corps);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.92)}
 .masonry figure:hover figcaption{opacity:1}
@@ -876,13 +889,12 @@ footer .social-mark{--mark-fond:var(--nacre)}
   .strip{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
   .strip-rail{animation:none}
 }
-.strip-item{position:relative;flex:none;width:clamp(170px,19vw,240px);aspect-ratio:7/10;
-  overflow:hidden;border:1px solid var(--filet);background:var(--nacre-2);padding:5px;
-  border-radius:50% 50% 3px 3px / 32% 32% 3px 3px;
+.strip-item{position:relative;flex:none;width:clamp(170px,19vw,230px);aspect-ratio:4/5;
+  overflow:hidden;border:1px solid var(--filet-2);background:var(--blanc);padding:5px;
   text-decoration:none;transition:border-color .35s,transform .45s var(--ease),box-shadow .45s}
-.strip-item:hover{border-color:var(--or-mat);transform:translateY(-3px);box-shadow:0 18px 40px rgba(90,120,160,.18)}
-.strip-item img{width:100%;height:100%;object-fit:cover;border-radius:50% 50% 2px 2px / 32% 32% 2px 2px;
-  transition:transform .8s var(--ease)}
+.strip-item:hover{border-color:var(--or-mat);transform:translateY(-3px);
+  box-shadow:0 22px 44px -26px rgba(96,124,162,.5)}
+.strip-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
 .strip-item:hover img{transform:scale(1.05)}
 .strip-cap{position:absolute;inset:auto 5px 5px 5px;padding:24px 12px 10px;
   background:linear-gradient(to top,rgba(30,26,19,.78),transparent);
@@ -898,7 +910,7 @@ footer .social-mark{--mark-fond:var(--nacre)}
 @keyframes bandzoom{from{transform:scale(1.02)}to{transform:scale(1.12)}}
 @media (prefers-reduced-motion:reduce){.photoband img{animation:none}}
 .photoband-scrim{position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(255,255,255,.55),rgba(255,255,255,0) 38%,rgba(255,255,255,.1) 70%,rgba(255,255,255,.75))}
+  background:linear-gradient(to bottom,rgba(255,255,255,.72),rgba(255,255,255,.04) 34%,rgba(255,255,255,.1) 66%,rgba(255,255,255,.88))}
 .photoband-cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;
   font-family:var(--pierre);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
   color:var(--or-ombre);padding-inline:22px}

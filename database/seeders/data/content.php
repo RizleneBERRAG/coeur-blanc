@@ -245,7 +245,7 @@ return [
                 'nb' => 2,
                 'description' => "Un mâle et une femelle, nés le 20 mars 2025. Atlas, A'Zazou, A'Nala et A'Pumba ont trouvé de super familles ; Armonie, la femelle mink, reste avec nous comme future reproductrice.",
                 'robe' => 'Snow mink charcoal',
-                'photo' => 'portee-2025-5',
+                'photo' => 'portee-4',
             ],
         ],
 
@@ -265,40 +265,57 @@ return [
          * Les legendes detaillees et les textes alternatifs vivent dans
          * SyncPhotos::LEGENDES — une seule liste pour toute l'application.
          */
+        /*
+         * La galerie. Categories : adultes, chatons, maison, recompenses.
+         *
+         * N'y figurent que des photos et des documents officiels. Les montages
+         * du site Wix — prenoms ecrits en script rose, coeurs, ciel etoile — en
+         * ont ete ecartes : ils ne sont pas de la meme famille que le reste du
+         * site, et c'est ce qui le faisait basculer du cote enfantin. Ils sont
+         * toujours sur le site Wix si l'eleveuse veut les recuperer.
+         *
+         * Les legendes detaillees et les textes alternatifs vivent dans
+         * SyncPhotos::LEGENDES — une seule liste pour toute l'application.
+         */
         'GALERIE' => [
-            ['f' => 'banniere',        'c' => "L'élevage",                 'cat' => 'maison'],
             ['f' => 'unyk-1',          'c' => 'Unyk',                      'cat' => 'adultes'],
             ['f' => 'portee-1',        'c' => 'Une portée au complet',     'cat' => 'chatons'],
             ['f' => 'saphyr-2',        'c' => 'Saphyr',                    'cat' => 'adultes'],
-            ['f' => 'portee-2025-4',   'c' => 'Chatons de mars 2025',      'cat' => 'chatons'],
+            ['f' => 'portee-2025-1',   'c' => 'Les premiers jours',        'cat' => 'chatons'],
             ['f' => 'shiva-2',         'c' => 'Shiva',                     'cat' => 'adultes'],
-            ['f' => 'ancien-tiago',    'c' => 'Tiago, devenu grand',       'cat' => 'chatons'],
-            ['f' => 'ukaina-4',        'c' => 'Ukaïna',                    'cat' => 'adultes'],
+            ['f' => 'chaton-2',        'c' => 'Premiers pas en hauteur',   'cat' => 'chatons'],
+            ['f' => 'ukaina-1',        'c' => 'Ukaïna',                    'cat' => 'adultes'],
             ['f' => 'portee-2',        'c' => 'La fratrie sur le plaid',   'cat' => 'chatons'],
-            ['f' => 'ultime-1',        'c' => 'Ultime',                    'cat' => 'adultes'],
-            ['f' => 'ancien-usimba',   'c' => "U'Simba",                   'cat' => 'chatons'],
+            ['f' => 'hero-ultime',     'c' => 'Ultime, sur la passerelle', 'cat' => 'adultes'],
+            ['f' => 'chaton-1',        'c' => 'Le jeu du soir',            'cat' => 'chatons'],
             ['f' => 'jag-1',           'c' => 'Jag',                       'cat' => 'adultes'],
             ['f' => 'portee-3',        'c' => 'Deux chatons au jeu',       'cat' => 'chatons'],
             ['f' => 'salambo-1',       'c' => 'Salambo',                   'cat' => 'adultes'],
-            ['f' => 'ancien-ulka',     'c' => 'Ulka',                      'cat' => 'chatons'],
-            ['f' => 'olympe-1',        'c' => 'Olympe',                    'cat' => 'maison'],
-            ['f' => 'portee-2025-1',   'c' => 'Les premiers jours',        'cat' => 'chatons'],
-            ['f' => 'unyk-3',          'c' => "Unyk dans l'enclos",        'cat' => 'adultes'],
-            ['f' => 'ancien-ulia',     'c' => 'Ulia',                      'cat' => 'chatons'],
-            ['f' => 'ultime-3',        'c' => 'Ultime en surveillance',    'cat' => 'maison'],
             ['f' => 'portee-2025-2',   'c' => 'Deux jours',                'cat' => 'chatons'],
-            ['f' => 'saphyr-4',        'c' => "Saphyr à l'automne",        'cat' => 'adultes'],
-            ['f' => 'ancien-tennessee', 'c' => 'Tennessee',                'cat' => 'chatons'],
+            ['f' => 'olympe-1',        'c' => 'Olympe',                    'cat' => 'maison'],
+            ['f' => 'unyk-3',          'c' => "Unyk dans l'enclos",        'cat' => 'adultes'],
+            ['f' => 'chaton-3',        'c' => 'Le plumeau',                'cat' => 'chatons'],
+            ['f' => 'ultime-3',        'c' => 'Ultime en surveillance',    'cat' => 'maison'],
             ['f' => 'shiva-5',         'c' => 'Shiva au studio',           'cat' => 'adultes'],
             ['f' => 'portee-4',        'c' => 'Le jour de la naissance',   'cat' => 'chatons'],
-            ['f' => 'ukaina-1',        'c' => 'Ukaïna, portrait',          'cat' => 'adultes'],
-            ['f' => 'portee-2025-6',   'c' => 'Les quatre de mars',        'cat' => 'chatons'],
-            ['f' => 'salambo-2',       'c' => "Salambo à l'arbre à chat",  'cat' => 'maison'],
-            ['f' => 'montage-unyk',    'c' => 'Unyk, trois regards',       'cat' => 'adultes'],
-            ['f' => 'jag-2',           'c' => 'Jag au jardin',             'cat' => 'maison'],
-            ['f' => 'montage-saphyr',  'c' => 'Saphyr, trois regards',     'cat' => 'adultes'],
+            ['f' => 'saphyr-4',        'c' => "Saphyr à l'automne",        'cat' => 'adultes'],
             ['f' => 'portee-2025-3',   'c' => 'Le mâle brown',             'cat' => 'chatons'],
-            ['f' => 'montage-ultime',  'c' => 'Ultime, trois regards',     'cat' => 'adultes'],
+            ['f' => 'ukaina-3',        'c' => 'Ukaïna de profil',          'cat' => 'adultes'],
+            ['f' => 'salambo-2',       'c' => "Salambo à l'arbre à chat",  'cat' => 'maison'],
+            ['f' => 'unyk-2',          'c' => 'Unyk sur la poutre',        'cat' => 'adultes'],
+            ['f' => 'jag-2',           'c' => 'Jag au jardin',             'cat' => 'maison'],
+            ['f' => 'shiva-3',         'c' => 'Shiva au repos',            'cat' => 'adultes'],
+            ['f' => 'ultime-2',        'c' => 'Ultime en promenade',       'cat' => 'adultes'],
+            ['f' => 'saphyr-1',        'c' => 'Saphyr, portrait de studio', 'cat' => 'adultes'],
+            ['f' => 'ukaina-5',        'c' => 'Ukaïna au studio',          'cat' => 'adultes'],
+            ['f' => 'unyk-4',          'c' => 'Unyk au repos',             'cat' => 'maison'],
+            ['f' => 'shiva-1',         'c' => 'Shiva assise',              'cat' => 'adultes'],
+            ['f' => 'saphyr-5',        'c' => 'Saphyr à la maison',        'cat' => 'maison'],
+            ['f' => 'ukaina-4',        'c' => 'Ukaïna allongée',           'cat' => 'adultes'],
+            ['f' => 'ultime-1',        'c' => 'Ultime sur la passerelle',  'cat' => 'adultes'],
+            ['f' => 'shiva-4',         'c' => 'Shiva allongée',            'cat' => 'adultes'],
+            ['f' => 'saphyr-3',        'c' => 'Saphyr au jeu',             'cat' => 'adultes'],
+            ['f' => 'ukaina-2',        'c' => 'Ukaïna, la patte levée',    'cat' => 'adultes'],
 
             // Les documents : la preuve, pas la photo.
             ['f' => 'cert-saphyr',            'c' => 'Saphyr — certificat de conformité LOOF',  'cat' => 'récompenses'],

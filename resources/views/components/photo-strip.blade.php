@@ -1,8 +1,18 @@
 @props(['photos' => null, 'titre' => null])
 
 @php
-    // Sans liste fournie, on pioche au hasard : le ruban change à chaque visite.
-    $photos ??= \App\Models\Photo::publiees()->inRandomOrder()->limit(14)->get();
+    /*
+     * Le ruban ne montre que des CHATS. Les certificats et les diplômes vivent
+     * dans la galerie, sous leur propre rubrique : en vignette, un document
+     * scanné n'est pas une photo, et il cassait la bande.
+     *
+     * Sans liste fournie, on pioche au hasard : le ruban change à chaque visite.
+     */
+    $photos ??= \App\Models\Photo::publiees()
+        ->whereIn('categorie', ['adultes', 'chatons', 'maison'])
+        ->inRandomOrder()
+        ->limit(14)
+        ->get();
 @endphp
 
 @if($photos->isNotEmpty())

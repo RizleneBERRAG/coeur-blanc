@@ -49,7 +49,7 @@
     </div>
 </section>
 
-<x-photo-band image="images/cats/portee-1.webp"
+<x-photo-band image="images/cats/portee-2.webp"
               legende="Douze semaines ensemble avant le grand départ"
               hauteur="42vh" />
 

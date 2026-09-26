@@ -69,9 +69,20 @@ Deux choses à savoir :
 - les photos de studio portent le filigrane **« la Clic — Christine Chaviel »**,
   la photographe. Elles sont reprises telles quelles, crédit compris ; vérifier
   avec l'éleveuse que la cession de droits couvre le nouveau site ;
-- certains montages de l'éleveuse portent des noms écrits en surimpression
-  (Ulia, Ulka, U'Simba, Tennessee, Tiago…). Ils sont gardés dans la galerie, pas
-  sur les fiches.
+- **les montages du site Wix ne sont pas repris.** Les prénoms écrits en script
+  rose (Ulia, Ulka, U'Simba, Tennessee, Tiago, Unyk…), les cœurs, le bandeau au
+  ciel étoilé : posés au milieu d'une page en Cormorant et en filets d'or, ils
+  faisaient basculer le site du côté enfantin. Ils sont toujours sur le site Wix
+  si l'éleveuse veut les récupérer. Deux photos ont par ailleurs été recadrées
+  pour écarter la mention « Ô Coeur Blanc » incrustée dans un coin.
+
+Deux règles tiennent ce tri :
+
+1. **le ruban défilant ne montre que des chats** — `photo-strip` écarte la
+   catégorie « récompenses », parce qu'un document scanné n'est pas une photo ;
+2. **l'arche est réservée aux portraits.** Le ruban, la mosaïque et les bandes
+   pleine largeur utilisent des cadres droits : la courbe mange le sujet dès que
+   la vignette est petite ou que l'image n'est pas un portrait.
 
 ### Ce qui reste inventé, à remplacer depuis le back-office
 
@@ -103,6 +114,7 @@ Deux choses à savoir :
 | Réglages et mentions légales | `Setting.php` |
 | Pages publiques | `routes/web.php`, `app/Http/Controllers/`, `resources/views/pages/` |
 | Charte graphique | `resources/css/app.css` (charte « Lumière ») |
+| Emblème (auréole et ailes) | `resources/views/components/fleuron.blade.php` |
 | Contenu éditorial fixe | `config/bengal.php` |
 | Contenu de démarrage | `database/seeders/data/content.php` |
 

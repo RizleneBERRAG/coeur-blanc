@@ -49,7 +49,7 @@
     </div>
 </section>
 
-<x-photo-band image="images/cats/banniere.webp"
+<x-photo-band image="images/cats/bande-enclos.webp"
               legende="Une à deux portées par an, pas davantage"
               hauteur="44vh" />
 
