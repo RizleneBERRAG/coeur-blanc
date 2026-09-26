@@ -17,7 +17,7 @@
                     Élevage familial de chats Bengal LOOF à {{ $ville }} ({{ $cp }}), en Isère,
                     entre Lyon et Grenoble. Parents dépistés, chatons élevés à la maison depuis 2019.
                 </p>
-                <div class="frise"><x-fleuron taille="petit" /></div>
+                <x-sceau class="sceau-pied" :taille="72" />
             </div>
             <div>
                 <h4>L'élevage</h4>

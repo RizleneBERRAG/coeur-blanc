@@ -7,8 +7,11 @@
 <header class="nav" id="nav">
     <div class="wrap navin">
         <a class="brand" href="{{ route('home') }}">
-            <b>Ô Coeur Blanc</b>
-            <small>Chatterie de Bengal · Isère</small>
+            <x-sceau :taille="34" :cercle="false" />
+            <span>
+                <b>Ô Coeur Blanc</b>
+                <small>Chatterie de Bengal · Isère</small>
+            </span>
         </a>
 
         <nav class="menu" id="menu" aria-label="Navigation principale">

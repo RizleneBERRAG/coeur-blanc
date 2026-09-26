@@ -144,7 +144,7 @@
 </section>
 @endif
 
-{{-- ═══ notre façon de faire ═══ --}}
+{{-- ═══ d'où vient le nom ═══ --}}
 <section class="band ink2">
     <div class="wrap">
         <div class="two off">
@@ -153,16 +153,20 @@
                 <figure class="b figure"><img src="{{ asset('images/cats/portee-1.webp') }}" alt="Quatre chatons Bengal alignés sur un arbre à chat" loading="lazy"></figure>
             </div>
             <div class="stack">
-                <span class="eyebrow">Notre façon de faire</span>
-                <p class="quote">« Un chaton se prépare pendant douze semaines, pas en trois clics. »</p>
+                <span class="eyebrow">D'où vient le nom</span>
+                <p class="quote">« Ô Coeur Blanc, pour Maina&nbsp;— ma petite étoile. »</p>
                 <p class="lede">
-                    Nous élevons des Bengals depuis 2019, dans notre maison d'Isère, entre Lyon et
-                    Grenoble. Les chatons sont manipulés dès leur plus jeune âge et vivent en contact
-                    permanent avec nous — adultes, enfants et bruits du quotidien — pour que le passage
-                    de notre foyer au vôtre se fasse en douceur. Nous privilégions la qualité au
-                    nombre : une à deux portées par an, jamais davantage.
+                    Tout a commencé par une minette snow au regard plein d'amour. Maina nous a fait
+                    tomber amoureux de la race, et c'est en hommage à elle que la chatterie porte ce
+                    nom. Quand elle est partie rejoindre les étoiles, nous avons accueilli sa sœur,
+                    née des mêmes parents à la portée suivante : Olympe. Elle n'a jamais eu de
+                    chatons, la nature en a décidé autrement, et elle vit toujours avec nous.
                 </p>
-                <a class="tlink" href="{{ route('cats.index') }}">Découvrir l'élevage</a>
+                <p class="lede">
+                    C'est en cherchant une saillie pour elle que nous avons rencontré Jag. Il est
+                    devenu le premier mâle de la maison, et le grand-père de presque tous nos chats.
+                </p>
+                <a class="tlink" href="{{ route('cats.index') }}">L'histoire de l'élevage</a>
             </div>
         </div>
     </div>

@@ -108,6 +108,35 @@ Deux règles tiennent ce tri :
   Shiva/Unyk et Ukaïna/Unyk en septembre-octobre 2025) ne sont pas repris : ces
   dates sont passées.
 
+## Ce qui n'appartient qu'à cette maison
+
+Une charte peut être soignée et ressembler à trente autres sites d'élevage.
+Quatre choses tiennent celui-ci à part, et aucune n'est décorative.
+
+**Le sceau.** Le Ô du nom, réduit à sa géométrie : un anneau et son accent. Il
+est dans le bandeau, au pied de page et dans l'onglet du navigateur
+(`public/images/sceau.svg`, et le PNG que réclame Safari). La plupart des
+élevages posent une patte de chat ou une couronne.
+
+**L'emblème.** Un cœur ailé, au trait de 0,9 px
+(`resources/views/components/fleuron.blade.php`). Le cœur est le mot du nom,
+les ailes disent le reste. Il ne doit jamais être rempli : c'est un cœur
+*blanc*, il reste ouvert.
+
+**L'histoire du nom**, sur l'accueil. La chatterie s'appelle Ô Coeur Blanc en
+hommage à Maina, la petite chatte snow par qui tout a commencé, et c'est en
+cherchant une saillie pour sa sœur Olympe que l'éleveuse a rencontré Jag. Tout
+vient de la page « À propos » du site Wix.
+
+**La lignée**, sur la page de l'élevage : trois générations nées sous le même
+toit, Jag en 2014, Saphyr et Shiva en 2021, Ultime en 2023. Les rangs ne sont
+reliés que par un filet vertical, sans branche — voir le commentaire dans
+`config/bengal.php`, clé `lignee`.
+
+Et sur la page du Bengal, **les robes de la maison** (`robes_maison`) : les
+quatre robes travaillées ici, chacune renvoyant à la fiche du chat qui la
+porte. C'est la différence entre un lexique de la race et un élevage.
+
 ## Ce qui est en place
 
 | Domaine | Fichiers |
@@ -119,7 +148,8 @@ Deux règles tiennent ce tri :
 | Réglages et mentions légales | `Setting.php` |
 | Pages publiques | `routes/web.php`, `app/Http/Controllers/`, `resources/views/pages/` |
 | Charte graphique | `resources/css/app.css` (charte « Lumière ») |
-| Emblème (auréole et ailes) | `resources/views/components/fleuron.blade.php` |
+| Emblème (le cœur ailé) | `resources/views/components/fleuron.blade.php` |
+| Sceau (le Ô du nom) | `resources/views/components/sceau.blade.php`, `public/images/sceau.svg` |
 | Contenu éditorial fixe | `config/bengal.php` |
 | Contenu de démarrage | `database/seeders/data/content.php` |
 

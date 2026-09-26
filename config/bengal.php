@@ -128,6 +128,48 @@ return [
     ],
 
     /*
+     * La lignee, sur la page de l'elevage. Un rang par generation, du plus
+     * ancien au plus recent, chaque entree etant un slug de chat.
+     *
+     * Les rangs ne sont relies que par un filet vertical : on sait que Jag est
+     * le grand-pere d'Ultime, on ne sait pas laquelle de ses filles est sa
+     * mere. Le jour ou ce sera confirme, on pourra dessiner les branches.
+     */
+    'lignee' => [
+        ['rang' => '1re génération', 'annee' => '2014', 'chats' => ['jag']],
+        ['rang' => '2e génération',  'annee' => '2021', 'chats' => ['saphyr', 'shiva']],
+        ['rang' => '3e génération',  'annee' => '2023', 'chats' => ['ultime']],
+    ],
+
+    /*
+     * Les robes travaillees par l'elevage, chacune rattachee au chat qui la
+     * porte ici : c'est la difference entre un lexique de la race et un
+     * elevage. Le slug renvoie a la fiche.
+     */
+    'robes_maison' => [
+        [
+            'chat'  => 'shiva',
+            'nom'   => 'Black silver',
+            'texte' => "Fond argent, rosettes noires, pas une trace de roux. La lignée historique de la maison, celle de Shiva et d'Ultime.",
+        ],
+        [
+            'chat'  => 'saphyr',
+            'nom'   => 'Brown',
+            'texte' => "Le fond chaud, du sable au cuivre, et des rosettes larges et bien ouvertes. C'est la robe classique du Bengal.",
+        ],
+        [
+            'chat'  => 'ukaina',
+            'nom'   => 'Snow mink charcoal',
+            'texte' => "Une robe claire aux yeux aqua, doublée d'un masque charcoal. La plus rare des quatre, et la plus demandée.",
+        ],
+        [
+            'chat'  => 'unyk',
+            'nom'   => 'Black charcoal silver',
+            'texte' => "L'argent du silver et le masque sombre du charcoal sur le même chat. C'est la robe de notre étalon.",
+        ],
+    ],
+
+    /*
      * Carte de la page Contact.
      * L'adresse exacte n'est jamais publiee : on affiche une zone autour de
      * Meyrieu-les-Etangs, et les points de repere cites dans les acces.

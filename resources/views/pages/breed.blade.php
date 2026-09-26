@@ -73,7 +73,36 @@
             <div class="cell-b"><span class="n">MOTIF</span><h3>Spotted</h3><p>Des taches pleines, d'un seul ton, réparties horizontalement. C'est le motif le plus courant, et la base de tous les autres.</p></div>
             <div class="cell-b"><span class="n">MOTIF</span><h3>Rosetted</h3><p>Chaque tache est cerclée d'un contour plus foncé. Rosette en flèche, en patte d'ours, en donut : plus le cercle est fermé, plus le travail de sélection est abouti.</p></div>
             <div class="cell-b"><span class="n">MOTIF</span><h3>Marbled</h3><p>De grands aplats horizontaux en marbrures, sans alignement vertical ni motif en cible. Plus rare dans nos portées.</p></div>
-            <div class="cell-b"><span class="n">COULEUR</span><h3>Brown, snow, silver, charcoal</h3><p>Du fond doré classique au snow aux yeux aqua, en passant par le silver et le masque charcoal. Une même portée peut en contenir plusieurs.</p></div>
+            <div class="cell-b"><span class="n">COULEUR</span><h3>Le fond</h3><p>Du fond doré classique au snow aux yeux aqua, en passant par le silver et le masque charcoal. Une même portée peut en contenir plusieurs.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="band">
+    <div class="wrap">
+        <x-section-head
+            eyebrow="Les robes de la maison"
+            titre="Quatre robes, quatre chats"
+            lede="Le standard de la race en admet beaucoup. Voici celles que nous travaillons, et le chat qui la porte chez nous." />
+
+        <div class="robes">
+            @foreach(config('bengal.robes_maison') as $robe)
+                @php($chat = \App\Models\Cat::publies()->where('slug', $robe['chat'])->first())
+                @if($chat)
+                    <a class="robe" href="{{ route('cats.show', $chat) }}">
+                        <span class="cadre" style="--format:4/5">
+                            <i><u>
+                                <img src="{{ asset($chat->photo_principale) }}"
+                                     alt="{{ $chat->nom }}, Bengal {{ \Illuminate\Support\Str::lower($robe['nom']) }}"
+                                     loading="lazy" width="400" height="500">
+                            </u></i>
+                        </span>
+                        <b>{{ $robe['nom'] }}</b>
+                        <small>chez nous&nbsp;: {{ \Illuminate\Support\Str::ucfirst(\Illuminate\Support\Str::lower($chat->nom)) }}</small>
+                        <p>{{ $robe['texte'] }}</p>
+                    </a>
+                @endif
+            @endforeach
         </div>
     </div>
 </section>

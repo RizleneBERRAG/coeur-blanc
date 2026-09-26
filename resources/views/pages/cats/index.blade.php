@@ -49,6 +49,59 @@
     </div>
 </section>
 
+{{--
+    La lignée.
+
+    Trois générations nées sous le même toit, et c'est ce qu'aucun autre site
+    d'élevage ne peut copier : Jag en 2014, ses filles Saphyr et Shiva en 2021,
+    puis Ultime en 2023.
+
+    Les rangs ne sont reliés que par un filet vertical, sans branche : le site
+    Wix de l'élevage dit Jag « grand-père d'Ultime » sans nommer sa mère, et un
+    arbre dessinerait une filiation qu'on ne connaît pas. Le jour où l'éleveuse
+    la confirmera, il suffira de relier les portraits.
+--}}
+<section class="band">
+    <div class="wrap">
+        <x-section-head
+            eyebrow="La lignée"
+            titre="Trois générations sous le même toit"
+            lede="Presque tous nos chats descendent de Jag, arrivé en 2014. Ses filles sont nées ici, sa petite-fille aussi, et la quatrième génération est déjà là." />
+
+        <div class="lignee">
+            @foreach(config('bengal.lignee') as $generation)
+                <div class="lignee-rang">
+                    <span class="lignee-cran">{{ $generation['rang'] }} · {{ $generation['annee'] }}</span>
+                    <div class="lignee-chats">
+                        @foreach($generation['chats'] as $slug)
+                            @php($chat = $chats->firstWhere('slug', $slug))
+                            @if($chat)
+                                <a class="lignee-chat" href="{{ route('cats.show', $chat) }}">
+                                    <span class="cadre" style="--format:1">
+                                        <i><u>
+                                            <img src="{{ asset($chat->photo_principale) }}"
+                                                 alt="{{ $chat->nom }}, {{ \Illuminate\Support\Str::lower($chat->robe) }}"
+                                                 loading="lazy" width="300" height="300">
+                                        </u></i>
+                                    </span>
+                                    <b>{{ $chat->nom }}</b>
+                                    <small>{{ $chat->role->libelle() }}</small>
+                                </a>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            @endforeach
+
+            <p class="lignee-suite">
+                <span class="lignee-trait" aria-hidden="true"></span>
+                Armonie, née en mars 2025 d'Ukaïna et d'Unyk, reste à la chatterie.
+                Elle sera reproductrice en 2026 — quatrième génération.
+            </p>
+        </div>
+    </div>
+</section>
+
 <x-photo-band image="images/cats/bande-enclos.webp"
               legende="Une à deux portées par an, pas davantage"
               hauteur="44vh" />
