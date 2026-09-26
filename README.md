@@ -80,9 +80,14 @@ Deux règles tiennent ce tri :
 
 1. **le ruban défilant ne montre que des chats** — `photo-strip` écarte la
    catégorie « récompenses », parce qu'un document scanné n'est pas une photo ;
-2. **l'arche est réservée aux portraits.** Le ruban, la mosaïque et les bandes
-   pleine largeur utilisent des cadres droits : la courbe mange le sujet dès que
-   la vignette est petite ou que l'image n'est pas un portrait.
+2. **une seule forme de cadre, partout.** L'arche a disparu : la courbe mangeait
+   le sujet dès que la vignette était petite, et allait mal à tout ce qui n'est
+   pas un portrait. À sa place, un rectangle aux quatre angles coupés, qui rime
+   avec les équerres d'or des registres et ne rogne presque rien de la photo.
+   Il est défini une fois, dans `--coupe`, et chaque cadre règle la taille de
+   son angle avec `--coin`. Le filet est dessiné en anneau et non avec un
+   `border` : `clip-path` trancherait le border et laisserait les diagonales
+   nues. Seules les bandes photo pleine largeur gardent des bords francs.
 
 ### Ce qui reste inventé, à remplacer depuis le back-office
 

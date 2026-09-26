@@ -1,7 +1,7 @@
 @props(['chat'])
 
 <a class="repro" href="{{ route('cats.show', $chat) }}">
-    <span class="arche petite">
+    <span class="cadre petite">
         <i><u>
             <img src="{{ asset($chat->photo_principale) }}"
                  alt="{{ $chat->nom }}, Bengal {{ \Illuminate\Support\Str::lower($chat->robe) }}"

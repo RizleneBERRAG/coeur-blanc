@@ -70,7 +70,7 @@
     <div class="frise"><x-fleuron taille="grand" /></div>
 
     <div class="duo">
-        <div class="arche">
+        <div class="cadre">
             <i><u>
                 <img src="{{ asset('images/cats/hero-ultime.webp') }}"
                      alt="Ultime, Bengal black silver tabby de la chatterie, sur une passerelle de l'enclos"

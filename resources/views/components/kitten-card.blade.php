@@ -3,9 +3,9 @@
 <a {{ $attributes->merge(['class' => 'fiche'.($chaton->statut === \App\Enums\KittenStatus::Adopte ? ' gone' : '')]) }}
    data-statut="{{ $chaton->statut->value }}"
    href="{{ route('kittens.show', $chaton) }}">
-    {{-- L'arche : trois filets successifs, comme la gorge d'un portail. La
-         pastille de statut se pose sur la photo, à la clé de l'arche. --}}
-    <span class="arche petite">
+    {{-- Le cadre : un filet d'or, une marie-louise blanche, la photo. La
+         pastille de statut se pose dessus, en haut du cadre. --}}
+    <span class="cadre petite">
         <x-chip :statut="$chaton->statut" />
         <i><u>
             <img src="{{ asset($chaton->photo_principale) }}"
