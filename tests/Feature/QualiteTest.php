@@ -101,8 +101,15 @@ class QualiteTest extends TestCase
         $this->assertStringContainsString("frame-ancestors 'self'", $csp);
         $this->assertStringContainsString("object-src 'none'", $csp);
         $this->assertStringContainsString("form-action 'self'", $csp);
-        // La carte a besoin de ses tuiles.
-        $this->assertStringContainsString('basemaps.cartocdn.com', $csp);
+        // La carte a besoin de ses tuiles : on lit le fournisseur dans le
+        // script lui-meme, pour que le jour ou il change, la CSP suive.
+        preg_match(
+            '#https://([a-z0-9.-]+)/\{z\}/#',
+            file_get_contents(base_path('resources/js/map.js')),
+            $hote,
+        );
+        $this->assertNotEmpty($hote, 'Le script de la carte doit declarer un fournisseur de tuiles.');
+        $this->assertStringContainsString($hote[1], $csp);
 
         // Le back-office repose sur Alpine et Livewire : pas de CSP, plutot
         // qu'une CSP si permissive qu'elle ne protegerait de rien.

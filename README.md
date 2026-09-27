@@ -4,10 +4,18 @@ Site de la Chatterie Ô Coeur Blanc — élevage de Bengal LOOF à Meyrieu-les-�
 (38440), Isère. Laravel 12, Blade, MySQL, back-office Filament.
 
 Le socle technique est celui du site Bengal's Parc (même métier, même règle
-de publication des chatons). La charte graphique, elle, descend de celle du
-Temple des Fées — arches, frises, chapitres numérotés, dorure en dégradé —
-transposée en blanc : c'est la charte « Lumière », décrite en tête de
-`resources/css/app.css`.
+de publication des chatons). La charte graphique est la « Plein cadre »,
+décrite en tête de `resources/css/app.css` : la photographie d'abord, et rien
+autour. Pas de cadre, pas de filet, pas de dorure, pas d'angle coupé — le
+blanc du papier, le graphite, le grain.
+
+Elle a été choisie parmi quatre ébauches montées sur le site lui-même, avec
+ses vrais textes et ses vraies photos. Les trois autres — « Lumière » (blanc
+et champagne, un fil d'or descendant la page), « Porcelaine » (ivoire et rose
+poudré, angles arrondis) et « Nacre et ciel » (fond bleu pâle, cartes
+blanches, argent au lieu d'or) — ont été écartées ; le commit
+`bb729b0 Quatre ebauches, sur le vrai site` les garde si l'envie revient d'y
+retourner.
 
 Laravel 12 et non 13 : le XAMPP de la machine de dev tourne en PHP 8.2, et
 Laravel 13 exige PHP 8.3.
@@ -176,29 +184,33 @@ Et sur la page du Bengal, **les robes de la maison** (`robes_maison`) : les
 quatre robes travaillées ici, chacune renvoyant à la fiche du chat qui la
 porte. C'est la différence entre un lexique de la race et un élevage.
 
-## Les quatre ébauches
+## Ce que la charte retenue change
 
-Quatre directions cohabitent sur le site, sur les mêmes textes et les mêmes
-photos : c'est la seule façon de comparer autre chose que des images de
-présentation. Une barre en bas d'écran permet de passer de l'une à l'autre, et
-le choix suit la page où l'on se trouve.
+Ce qu'il faut savoir avant de toucher à `app.css` :
 
-| | Direction | Ce qui change |
-|---|---|---|
-| 1 | **Lumière** | Blanc et champagne, le fil de lumière, les angles coupés. C'est `app.css` seul, sans classe. |
-| 2 | **Plein cadre** | La photographie d'abord : plus de fil, plus d'ornement, plus de cadre. Graphite au lieu d'or, texte centré, bouton noir. |
-| 3 | **Porcelaine** | Ivoire et rose poudré, angles arrondis, boutons en gélule. La plus douce, la moins « maison de luxe ». |
-| 4 | **Nacre et ciel** | Le ciel porte la page, les cartes blanches se détachent dessus, l'argent des robes silver remplace l'or. |
+- **Les jetons gardent les noms de l'ancienne charte** (`--or`, `--or-mat`,
+  `--dorure`) mais ce sont des ALIAS des gris `--gr-*` définis juste au-dessus.
+  La feuille les emploie partout, et quelques gabarits les posent en style
+  inline ; les renommer n'aurait rien apporté qu'un risque. Une couleur se
+  change à un seul endroit : les six `--gr-*`.
+- **`--coupe` vaut `none`.** Le mécanisme reste en place — il est lu par tout
+  ce qui porte une image, et chaque élément garde son `--coin`. Lui redonner
+  un polygone redéssinerait la silhouette du site entier, chacun retrouvant
+  son rayon.
+- **Deux familles de caractères sur trois font l'appareil.** Cormorant pour
+  les titres, Jost pour le nom, le menu, les boutons et les intitulés de
+  fiche ; Cinzel ne garde que les mentions de registre (rang de chapitre,
+  étiquettes d'encart, boutons de la visionneuse), où sa gravure veut encore
+  dire quelque chose.
+- **Une section s'annonce par son rang et son titre, centrés, et rien
+  d'autre.** Le rang vient d'un compteur CSS : rien à écrire dans les
+  gabarits, et l'ordre reste juste le jour où une section s'ajoute.
+- **Le seul dessin qui subsiste est le cœur du logo**, au pied de page et en
+  marge d'un encart. Il vient de la marque, il ne décore pas.
 
-Tout tient dans `resources/css/ebauches.css` : chaque ébauche ne redéfinit que
-des jetons et quelques formes, jamais un composant. C'est ce qui garantit
-qu'une pièce écrite demain fonctionnera dans les quatre.
-
-**C'est un outil de décision, pas une pièce du site.** La barre et la feuille
-ne sont chargées qu'en environnement local. Une fois la direction choisie, on
-reporte ses valeurs dans `app.css`, puis on supprime `ebauches.css`,
-`partials/ebauches.blade.php`, leurs deux conditions dans le gabarit et leur
-entrée dans `vite.config.js`.
+Le logo, lui, n'a pas été touché : il reste doré, seule couleur d'une page
+autrement neutre. Si l'éleveuse préfère, une version graphite se substitue en
+remplaçant les fichiers de `public/images/`, sans une ligne de CSS.
 
 ## Ce qui est en place
 
@@ -210,7 +222,7 @@ entrée dans `vite.config.js`.
 | Messages de contact (RGPD) | `ContactMessage.php`, `ContactController.php` |
 | Réglages et mentions légales | `Setting.php` |
 | Pages publiques | `routes/web.php`, `app/Http/Controllers/`, `resources/views/pages/` |
-| Charte graphique | `resources/css/app.css` (charte « Lumière ») |
+| Charte graphique | `resources/css/app.css` (charte « Plein cadre ») |
 | Emblème (le cœur ailé) | `resources/views/components/fleuron.blade.php` |
 | Sceau (le Ô du nom) | `resources/views/components/sceau.blade.php`, `public/images/sceau.svg` |
 | Contenu éditorial fixe | `config/bengal.php` |
@@ -244,7 +256,14 @@ Aucun nom d'adoptant n'est jamais affiché côté public. Les statuts
 
 ## Carte de la page Contact
 
-Leaflet + fond clair CartoDB (Positron), sans clé API et sans traceur. Les
+Leaflet sur les tuiles d'OpenStreetMap, sans clé API et sans traceur. Le fond
+clair de CARTO (Positron) servait jusqu'ici ; il exige désormais une clé et ne
+renvoie plus qu'un filigrane « API KEY REQUIRED ». Les tuiles arrivent donc en
+couleurs, et `app.css` les ramène au gris de la page par un filtre sur
+`.leaflet-tile-pane` — c'est un rendu, la tuile reçue n'est pas modifiée et
+l'attribution reste due. Le fournisseur est déclaré dans
+`resources/js/map.js` ; un test vérifie que la CSP de
+`app/Http/Middleware/EntetesSecurite.php` autorise bien son domaine. Les
 coordonnées et les temps de trajet sont dans `config/bengal.php`, clé `carte`.
 L'adresse exacte n'est volontairement jamais publiée : la carte affiche un
 cercle de 2,2 km autour de Meyrieu-les-Étangs, plus les repères d'accès.

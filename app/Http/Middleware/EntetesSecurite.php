@@ -23,8 +23,9 @@ class EntetesSecurite
     /** Ce que le navigateur a le droit de charger sur le site public. */
     private const CSP = [
         "default-src 'self'",
-        // Les tuiles de la carte viennent de CartoDB ; data: sert aux images inlinees.
-        "img-src 'self' data: https://*.basemaps.cartocdn.com",
+        // Les tuiles de la carte viennent d'OpenStreetMap ; data: sert aux
+        // images inlinees.
+        "img-src 'self' data: https://tile.openstreetmap.org",
         // Les vues portent beaucoup d'attributs style= issus de la maquette.
         "style-src 'self' 'unsafe-inline'",
         // Aucun script en ligne cote public, sauf les blocs JSON-LD que le

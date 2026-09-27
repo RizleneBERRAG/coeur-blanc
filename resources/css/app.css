@@ -1,50 +1,59 @@
 /* ═══════════════════════════════════════════════════════════════════
-   Ô Coeur Blanc — charte « Lumière »
+   Ô Coeur Blanc — charte « Plein cadre »
 
-   Le site est écrit comme un livre de lumière : chaque section est un
-   chapitre, annoncé par une frise d'ailes. Trois matières seulement — le
-   blanc de la page, la dorure, et un souffle de ciel.
+   Direction retenue parmi quatre ébauches comparées sur le site lui-même,
+   avec ses vrais textes et ses vraies photos.
 
-   La charte descend de celle du Temple des Fées (« Sanctuaire ») : mêmes
-   frises, mêmes registres, même numérotation des chapitres.
-   Mais la nuit y devient le jour. Ce qui était une nuit d'émeraude est ici
-   une page blanche ; ce qui était une lueur de bougie est une lumière qui
-   tombe d'en haut.
+   Le parti tient en une phrase : la photographie d'abord, et rien autour.
+   Pas de cadre, pas de filet, pas de dorure, pas d'angle coupé — les
+   images touchent la page, et ce sont leurs formats qui donnent son rythme
+   au site. Il ne reste que trois matières : le blanc du papier, le
+   graphite, et le grain.
 
-   Règle de la dorure : l'or n'est JAMAIS un aplat. C'est un dégradé à
-   trois tons (clair en haut, plein au milieu, ombré en bas), appliqué au
-   remplissage d'un texte ou à un filet. Sur du blanc, l'or doit être plus
-   dense que sur du noir : un or pâle s'y efface. Les jetons ci-dessous
-   sont réglés pour tenir sur la page — 4,5:1 pour tout ce qui porte du
-   texte, 3:1 pour un trait.
+   Règle du graphite : il ne brille jamais. Là où la charte précédente
+   posait de l'or, elle pose un gris à peine chaud, du plus clair (un
+   filet) au plus profond (un bouton plein). Les tons qui portent du TEXTE
+   tiennent 4,5:1 sur le blanc ; ceux qui ne tracent qu'un trait se
+   contentent de 3:1.
 
-   Règle du ciel : le bleu ne colore jamais un texte. Il n'existe qu'en
-   halo, en voile au sommet d'une bande, en ombre portée d'un cadre. C'est
-   lui qui fait « ange » sans qu'on ait à le dire.
+   Règle du vide : une section s'annonce par son rang et son titre,
+   centrés, et par rien d'autre. Sur un parti aussi dépouillé, le moindre
+   motif décoratif ferait retomber la page dans le catalogue — et c'est
+   précisément ce que les ébauches précédentes avaient de trop. Le seul
+   dessin qui subsiste dans tout le site est le cœur du logo, au pied de
+   page et en marge d'un encart : il vient de la marque, il ne décore pas.
+
+   Les jetons gardent les noms de l'ancienne charte (--or, --dorure) : ce
+   sont désormais des ALIAS des gris définis plus bas. La feuille les
+   emploie partout et les gabarits en posent quelques-uns en style inline ;
+   les renommer n'aurait rien apporté qu'un risque.
    ═══════════════════════════════════════════════════════════════════ */
 
 :root{
-  /* la page — quatre blancs, du pur au nacré */
-  --blanc:#FFFFFF; --nacre:#FCFAF6; --nacre-2:#F7F3EB; --nacre-3:#EFEADF;
+  /* la page — quatre blancs, du pur au grège */
+  --blanc:#FFFFFF; --nacre:#FAFAF8; --nacre-2:#F4F4F1; --nacre-3:#EAEAE6;
 
-  /* le ciel — jamais en texte, seulement en lumière */
-  --ciel:#F6F9FC; --ciel-2:#EDF2F8; --ciel-3:#E1E9F3;
-  --aile:rgba(176,199,228,.30);
+  /* La lumière — jamais en texte, seulement en atmosphère. C'était un
+     souffle de ciel ; c'est maintenant un gris très clair, pour que rien
+     ne vienne colorer une page qui ne vit que de ses photos. */
+  --ciel:#F7F7F5; --ciel-2:#F1F1EE; --ciel-3:#E8E8E4;
+  --aile:rgba(190,190,186,.22);
 
-  /* La dorure, en champagne et non en laiton.
+  /* Le graphite — l'accent du site, et le seul.
 
-     C'est le réglage le plus important de la feuille. Un or saturé, posé en
-     aplat sur du blanc, vire au jaune et fait cheap ; le même or éclairci,
-     désaturé et réservé aux filets tient de la feuille d'or. Les tons qui
-     portent du TEXTE descendent jusqu'à tenir 4,5:1 sur le blanc ; ceux qui ne
-     font que tracer un trait peuvent rester clairs, un filet n'a besoin que
-     de 3:1. */
-  --or-pale:#F8F1E1; --or-clair:#E9D6AB; --or:#CBAE76; --or-mat:#A98F5E;
-  --or-tendre:#836E40; --or-ombre:#685733;
-  --dorure:linear-gradient(180deg,#D6BA84 0%,#A88B52 48%,#6E5A2E 100%);
-  --dorure-filet:linear-gradient(180deg,rgba(169,143,94,.5),rgba(169,143,94,.12));
-  /* Mat, deux tons seulement : un dégradé à trois arrêts fait bouton biseauté. */
-  --dorure-bouton:linear-gradient(180deg,#F4E9CF 0%,#E7D4A8 100%);
+     Six tons d'un gris à peine chaud. Les trois clairs ne tracent que des
+     traits ; les trois profonds portent du texte et tiennent 4,5:1 sur le
+     blanc. Le dégradé ne sert qu'à deux choses, le nom de la maison et les
+     chiffres : il s'applique au REMPLISSAGE d'un texte, jamais à une
+     surface — un aplat dégradé fait bouton biseauté. */
+  --gr-pale:#EDEDEA; --gr-clair:#C9C9C4; --gr:#9A9A93; --gr-mat:#7C7C75;
+  --gr-tendre:#4E4E48; --gr-ombre:#33332F;
+  --gr-degrade:linear-gradient(180deg,#5A5A54 0%,#3A3A36 48%,#262623 100%);
+
+  /* les noms de l'ancienne charte, gardés comme alias */
+  --or-pale:var(--gr-pale); --or-clair:var(--gr-clair); --or:var(--gr);
+  --or-mat:var(--gr-mat); --or-tendre:var(--gr-tendre); --or-ombre:var(--gr-ombre);
+  --dorure:var(--gr-degrade);
 
   /* l'encre */
   --encre:#211D16; --encre-2:#423B2E; --encre-3:#615948; --encre-dim:#807766;
@@ -52,31 +61,23 @@
   /* les verdicts */
   --sain:#527D48; --attente:#A98F5E; --alerte:#AC5440;
 
-  /* les filets — la dorure la plus visible du site */
-  --filet:rgba(169,143,94,.34); --filet-2:rgba(169,143,94,.17); --filet-3:rgba(33,29,22,.08);
+  /* les filets — tout ce qui sépare, et rien de plus */
+  --filet:rgba(38,38,35,.18); --filet-2:rgba(38,38,35,.10); --filet-3:rgba(38,38,35,.07);
 
   --maxw:clamp(1040px,84vw,1500px); --large:clamp(1180px,92vw,1760px);
   --gout:clamp(20px,4vw,60px);
 
-  /* La forme du site : un rectangle dont les quatre angles sont coupés.
+  /* La forme du site : le rectangle, et rien d'autre.
 
-     Ni l'arche, qui mangeait le sujet dès que la vignette était petite et
-     qui allait mal à tout ce qui n'est pas un portrait ; ni le carré net,
-     qui ne dit rien. L'angle coupé rime avec les équerres d'or des
-     registres, et il ne rogne presque rien de la photo.
+     L'arche mangeait le sujet, le carré à angles coupés faisait bijouterie.
+     Une photo n'a pas à recevoir de forme : elle a un format, celui dans
+     lequel elle a été prise, et c'en est déjà une.
 
-     --coupe lit le --coin de l'élément sur lequel il est employé : une
-     seule définition, et chaque cadre règle la taille de son angle. */
-  /* La colonne de gauche ne porte que les numéros de chapitre ; le retrait
-     est la distance entre le fil et le texte. Tout le reste s'aligne dessus. */
-  --colonne:clamp(0px,11vw,150px);
-  --retrait:clamp(18px,2.6vw,44px);
-
-  --coin:16px;
-  --coupe:polygon(var(--coin) 0,calc(100% - var(--coin)) 0,100% var(--coin),
-                  100% calc(100% - var(--coin)),calc(100% - var(--coin)) 100%,
-                  var(--coin) 100%,0 calc(100% - var(--coin)),0 var(--coin));
-  --or-filet:rgba(169,143,94,.45);
+     Le mécanisme reste en place. --coupe est lu par tout ce qui porte une
+     image, et chaque élément garde son --coin : redonner un polygone à
+     --coupe suffirait à redessiner la silhouette du site entier, chacun
+     retrouvant son rayon. Il vaut « none » aujourd'hui. */
+  --coupe:none;
   --titre:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --pierre:"Cinzel",Georgia,serif;
   --corps:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -108,8 +109,10 @@ button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--or-mat);outline-offset:3px}
 ::selection{background:var(--or-clair);color:var(--encre)}
 h1,h2,h3,h4{margin:0;font-family:var(--titre);font-weight:300;line-height:1.04;text-wrap:balance;color:var(--encre)}
-h1{font-size:clamp(3rem,8vw,6.8rem);letter-spacing:-.015em}
-h2{font-size:clamp(2.2rem,4.8vw,3.8rem);letter-spacing:-.008em}
+/* Le titre est serré : sur une page sans ornement, c'est l'approche des
+   lettres qui fait la tenue. */
+h1{font-size:clamp(3rem,8vw,6.8rem);letter-spacing:-.03em}
+h2{font-size:clamp(2.2rem,4.8vw,3.8rem);letter-spacing:-.03em}
 h3{font-size:clamp(1.5rem,2.6vw,2.1rem)}
 p{margin:0}
 em,em.it{font-style:italic;font-family:var(--titre)}
@@ -117,7 +120,7 @@ em,em.it{font-style:italic;font-family:var(--titre)}
 /* Le titre principal d'une page intérieure est un h1 pour le référencement,
    mais il garde l'échelle d'un h2 : la hiérarchie visuelle ne dépend pas du
    niveau de balise. Le h1 pleine taille reste celui de l'accueil. */
-.chapitre h1,.shead h1{font-size:clamp(2.2rem,4.8vw,3.8rem);letter-spacing:-.008em}
+.chapitre h1,.shead h1{font-size:clamp(2.2rem,4.8vw,3.8rem);letter-spacing:-.03em}
 
 /* ── la dorure ───────────────────────────────────────────────────── */
 .or{background:var(--dorure);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -139,49 +142,29 @@ em,em.it{font-style:italic;font-family:var(--titre)}
 .band.tight{padding-block:clamp(38px,5vw,66px)}
 .band > *{position:relative;z-index:1}
 
-/* La profondeur : la lumière tombe d'en haut. Un halo d'or très faible au
-   sommet de chaque bande, un souffle de ciel au pied. */
+/* La profondeur : la lumière tombe d'en haut. Un voile plus dense au pied
+   de chaque bande, et rien de plus — c'est ce qui empêche une suite de
+   bandes blanches de se lire comme une seule page interminable. */
 .band::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:
-    radial-gradient(90% 50% at 50% 0%,rgba(203,174,118,.055),transparent 64%),
-    radial-gradient(100% 45% at 50% 100%,var(--aile),transparent 70%);
-  opacity:.5}
+  background:radial-gradient(100% 45% at 50% 100%,var(--aile),transparent 70%);
+  opacity:.6}
 
-/* ── le fil ──────────────────────────────────────────────────────── */
-/* Un trait d'or descend la page entière, à gauche du texte. Il est dessiné
-   par les bandes elles-mêmes, qui se touchent : une ligne par bande, et la
-   ligne ne s'interrompt jamais.
-
-   Sa position ne se mesure pas depuis le bord de l'écran mais depuis la
-   colonne de texte, qui est centrée et bornée : d'où le max(), qui bascule
-   d'un calcul à l'autre au moment où la fenêtre passe sous --maxw. */
-.band::after,.livestrip::after{content:"";position:absolute;top:0;bottom:0;width:1px;z-index:0;
-  pointer-events:none;
-  left:calc(max(var(--gout), (100% - var(--maxw)) / 2 + var(--gout)) + var(--colonne));
-  background:rgba(169,143,94,.28)}
-/* Le fil traverse aussi le fil vivant, qui n'est pas une bande : sans cela
-   il s'interromprait juste sous l'ouverture. */
-.livestrip .in{padding-left:calc(var(--colonne) + var(--retrait))}
-
-/* Tout le contenu d'une bande se décale à droite du fil. */
-.band > .wrap{padding-left:calc(var(--gout) + var(--colonne) + var(--retrait))}
+/* Le fil d'or qui descendait la page, la colonne des rangs dans la marge et
+   l'étoile qui accrochait chaque chapitre appartenaient à une page qui se
+   lit comme un livre. Celle-ci se regarde : le contenu occupe toute la
+   largeur utile, et il n'a plus qu'un seul alignement. */
 
 /* La bande nacrée : une page de vélin au milieu du livre. */
-.band.ink2{background:
-    linear-gradient(180deg,rgba(203,174,118,.07),transparent 46%),
-    linear-gradient(180deg,var(--nacre),var(--nacre-2));
-  border-block:1px solid var(--filet)}
-.band.ink2::before{background:
-    radial-gradient(110% 60% at 50% 0%,rgba(255,255,255,.7),transparent 64%),
-    radial-gradient(120% 60% at 50% 110%,rgba(168,129,63,.08),transparent 70%);
+.band.ink2{background:linear-gradient(180deg,var(--nacre),var(--nacre-2));
+  border-block:1px solid var(--filet-2)}
+.band.ink2::before{background:radial-gradient(110% 60% at 50% 0%,rgba(255,255,255,.75),transparent 64%);
   opacity:1}
-/* La bande de ciel : la lumière elle-même. Blanc au sommet, bleu très pâle
-   au pied — le seul endroit du site où le ciel devient une surface. */
-.band.paper{background:radial-gradient(120% 95% at 50% 0%,#FFFFFF 0%,#FBFDFE 42%,var(--ciel-2) 100%);
-  border-block:1px solid rgba(150,178,212,.24)}
-.band.paper::before{background:
-    radial-gradient(75% 45% at 50% 0%,rgba(255,255,255,.95),transparent 72%),
-    radial-gradient(60% 50% at 50% 100%,rgba(176,199,228,.26),transparent 72%);
+/* La bande de lumière : blanche au sommet, grège au pied. Deux bandes
+   voisines ne se distinguent plus par un ornement mais par leur matière —
+   c'est tout ce qui reste pour marquer un changement de chapitre. */
+.band.paper{background:linear-gradient(180deg,#FFFFFF 0%,var(--ciel) 54%,var(--ciel-2) 100%);
+  border-block:1px solid var(--filet-2)}
+.band.paper::before{background:radial-gradient(75% 45% at 50% 0%,rgba(255,255,255,.95),transparent 72%);
   opacity:1}
 
 .rule{height:1px;background:var(--filet);border:0;margin:0}
@@ -194,8 +177,8 @@ em,em.it{font-style:italic;font-family:var(--titre)}
 
 .frise{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,22px);color:var(--or-mat)}
 .frise::before,.frise::after{content:"";height:1px;flex:1;max-width:340px;
-  background:linear-gradient(90deg,transparent,rgba(168,129,63,.7))}
-.frise::after{background:linear-gradient(90deg,rgba(168,129,63,.7),transparent)}
+  background:linear-gradient(90deg,transparent,rgba(124,124,117,.6))}
+.frise::after{background:linear-gradient(90deg,rgba(124,124,117,.6),transparent)}
 .frise svg{flex:none;color:var(--or-mat)}
 
 /* Le numéro en chiffres romains est le fil du récit : il dit au visiteur où
@@ -205,70 +188,65 @@ em,em.it{font-style:italic;font-family:var(--titre)}
    comptent — le titre de page (h1) ouvre le livre, il ne se numérote pas. */
 body{counter-reset:chapitre}
 
-/* Le chapitre est accroché au fil par une étoile, et son rang se tient dans
-   la marge — pas au-dessus du titre, où il ferait sur-titre comme partout
-   ailleurs. Le rang vient d'un compteur : rien à écrire dans les gabarits. */
-.chapitre{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px;
-  text-align:left;margin-bottom:clamp(34px,5vw,54px)}
-.chapitre::before{content:"";position:absolute;left:calc(-1 * var(--retrait));top:.34em;
-  width:13px;height:12px;margin-left:-6.5px;pointer-events:none;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M12 21.4S1.4 14.1 1.4 7.3C1.4 3.9 4 1.3 7.3 1.3c2.1 0 4 1.2 4.7 3 .7-1.8 2.6-3 4.7-3 3.3 0 5.9 2.6 5.9 6 0 6.8-10.6 14.1-10.6 14.1Z' fill='%23A98F5E'/%3E%3C/svg%3E") center/contain no-repeat}
-.chapitre .numero{position:absolute;left:calc(-1 * (var(--retrait) + var(--colonne)));top:.25em;
-  width:var(--colonne);padding-right:calc(var(--retrait) + 16px);text-align:right;line-height:1.7;
-  font-family:var(--pierre);font-size:10.5px;font-weight:500;letter-spacing:.2em;
+/* Le chapitre s'annonce par trois lignes centrées : son rang en chiffres
+   romains, son titre, un trait court dessous. Le rang vient d'un compteur —
+   rien à écrire dans les gabarits, et l'ordre reste juste le jour où une
+   section s'ajoute ou disparaît. */
+.chapitre{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;
+  text-align:center;margin-bottom:clamp(34px,5vw,54px)}
+.chapitre .numero{font-family:var(--pierre);font-size:10.5px;font-weight:500;letter-spacing:.34em;
   text-transform:uppercase;color:var(--or-tendre)}
 .chapitre.compte .numero::before{counter-increment:chapitre;content:counter(chapitre,upper-roman) " · "}
-.chapitre .lede{margin-top:4px}
+.chapitre .lede{margin-top:4px;margin-inline:auto;text-align:center}
+/* Le trait est court et plein : centré, un dégradé qui s'efface d'un seul
+   côté pencherait. */
 .chapitre h1::after,.chapitre h2::after{content:"";display:block;
-  width:clamp(52px,7vw,88px);height:1px;margin:clamp(16px,2vw,22px) 0 0;
-  background:linear-gradient(90deg,rgba(169,143,94,.85),transparent)}
-
-/* Sous 900 px il n'y a plus de marge : le rang repasse au-dessus du titre et
-   le fil se range dans la gouttière, à gauche du texte. */
-@media(max-width:900px){
-  :root{--colonne:0px;--retrait:18px}
-  .chapitre .numero{position:static;width:auto;padding:0;text-align:left}
-  .chapitre::before{top:.1em}
-}
+  width:38px;height:1px;margin:clamp(16px,2vw,22px) auto 0;
+  background:var(--or-mat);
+  /* Deux titres portent une pastille de statut a cote d'eux et sont donc des
+     conteneurs flex : sans cela le trait se rangerait a la suite du texte,
+     comme un tiret oublie. */
+  flex:0 0 100%}
 
 .lede{max-width:62ch;font-size:clamp(15.5px,1.4vw,17.5px);line-height:1.82;color:var(--encre-2)}
 .small,.petit{font-size:14px;color:var(--encre-dim)}
 
 /* ── boutons ─────────────────────────────────────────────────────── */
+/* Un aplat d'encre, aucun reflet, aucune ombre : sur une page qui n'a plus
+   d'ornement, le contraste seul suffit à désigner l'action principale.
+   C'est aussi la règle typographique du site — les petites capitales de
+   l'appareil (le nom, le menu, les boutons, les intitulés de fiche) sont en
+   Jost ; le Cinzel ne garde que les mentions de registre, où sa gravure
+   veut encore dire quelque chose. */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;
-  font-family:var(--pierre);font-size:12px;font-weight:600;letter-spacing:.15em;
+  font-family:var(--corps);font-size:12px;font-weight:400;letter-spacing:.15em;
   text-transform:uppercase;text-decoration:none;cursor:pointer;
-  border:1px solid var(--or);background:var(--dorure-bouton);color:#4A3C1C;
-  /* Une ombre portée très basse et très large : de la lumière posée dessous,
-     pas un relief. Aucune lueur colorée — c'est elle qui faisait clinquant. */
-  box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 14px 30px -18px rgba(120,100,60,.45);
-  transition:transform .35s var(--ease),box-shadow .35s,background .35s,color .35s,border-color .35s}
-.btn:hover{transform:translateY(-2px);background:linear-gradient(180deg,#FBF4E4 0%,#EFDFBA 100%);
-  border-color:var(--or-mat);
-  box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 0 0 4px rgba(203,174,118,.1),0 18px 36px -20px rgba(120,100,60,.5)}
-.btn.ghost{background:transparent;border-color:rgba(33,29,22,.16);
-  color:var(--encre-3);box-shadow:none}
-.btn.ghost:hover{background:rgba(203,174,118,.07);border-color:var(--or-mat);color:var(--or-ombre);box-shadow:none}
+  border:1px solid var(--encre);background:var(--encre);color:#FFFFFF;box-shadow:none;
+  transition:transform .35s var(--ease),background .35s,color .35s,border-color .35s}
+.btn:hover{transform:translateY(-2px);background:#000000;border-color:#000000}
+.btn.ghost{background:transparent;border-color:var(--filet);
+  color:var(--encre-2);box-shadow:none}
+.btn.ghost:hover{background:transparent;border-color:var(--encre);color:var(--encre)}
 .btnrow{display:flex;flex-wrap:wrap;gap:14px}
 /* Les gabarits centraient encore quelques rangées de boutons, du temps où la
    page l'était : la charte n'a plus qu'un alignement. */
 .band .btnrow[style*="center"]{justify-content:flex-start!important}
 
-.tlink,.lien{display:inline-flex;align-items:center;gap:8px;font-family:var(--pierre);
-  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--or-tendre);
-  text-decoration:none;border-bottom:1px solid rgba(168,129,63,.45);padding-bottom:4px;
+.tlink,.lien{display:inline-flex;align-items:center;gap:8px;font-family:var(--corps);
+  font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--or-tendre);
+  text-decoration:none;border-bottom:1px solid var(--filet);padding-bottom:4px;
   transition:color .3s,border-color .3s}
 .tlink:hover,.lien:hover{color:var(--encre);border-bottom-color:var(--or-mat)}
 
 /* ── pastilles de statut ─────────────────────────────────────────── */
 .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;
-  font-family:var(--pierre);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  font-family:var(--corps);font-size:9.5px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;
   border:1px solid currentColor;white-space:nowrap;background:rgba(255,255,255,.88);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .chip .dot{width:5px;height:5px;border-radius:50%;background:currentColor}
 .chip.dispo{color:var(--sain)}
 .chip.reserve{color:var(--or-tendre)}
-.chip.adopte{color:#8C8577}
+.chip.adopte{color:#86867F}
 
 /* ── bandeau ─────────────────────────────────────────────────────── */
 header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;
@@ -285,14 +263,14 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .brand:hover img{opacity:.82}
 /* line-height 1.3 et non 1 : avec background-clip:text, ce qui dépasse de la
    boîte de ligne n'est pas peint — l'accent du Ô disparaissait. */
-.brand b{font-family:var(--pierre);font-size:clamp(15px,1.7vw,20px);font-weight:500;line-height:1.3;
+.brand b{font-family:var(--corps);font-size:clamp(15px,1.7vw,20px);font-weight:400;line-height:1.3;
   letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;
   background:var(--dorure);-webkit-background-clip:text;background-clip:text;color:transparent}
 @supports not ((-webkit-background-clip:text) or (background-clip:text)){.brand b{background:none;color:var(--or-ombre)}}
 .brand small{font-family:var(--corps);font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--encre-dim)}
 
 .menu{display:flex;gap:clamp(14px,1.9vw,26px);align-items:center}
-.menu a{font-family:var(--pierre);font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+.menu a{font-family:var(--corps);font-size:11px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;
   text-decoration:none;color:var(--encre-3);padding-block:6px;position:relative;white-space:nowrap;transition:color .3s}
 .menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--or-mat);transition:right .35s var(--ease)}
 .menu a:hover{color:var(--or-ombre)}
@@ -332,7 +310,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
     padding:calc(76px + env(safe-area-inset-top,0px) + 30px) var(--gout)
             calc(26px + env(safe-area-inset-bottom,0px));
     background:
-      radial-gradient(120% 55% at 50% 0%,rgba(201,164,92,.12),transparent 62%),
+      radial-gradient(120% 55% at 50% 0%,rgba(38,38,35,.05),transparent 62%),
       radial-gradient(100% 40% at 50% 100%,var(--aile),transparent 70%),
       var(--blanc);
     overflow-y:auto;overscroll-behavior:contain;
@@ -393,40 +371,22 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 }
 
 /* ── le cadre ────────────────────────────────────────────────────── */
-/* Le portrait est monté comme une planche : un filet d'or, une marie-louise
-   blanche de huit pixels, puis la photo. Les deux suivent la coupe des
-   angles, et l'ombre portée est bleutée — la lumière vient d'en haut, et ce
-   qu'elle laisse tomber sur une page blanche n'est pas gris, c'est du ciel. */
+/* Il n'y a plus de cadre : le mot reste, la planche a disparu. Plus de
+   marie-louise, plus de filet, plus d'ombre au repos — la photo touche la
+   page. Ce qui subsiste est utile : le format demandé, le fond grège qui
+   tient la place pendant le chargement, et l'ombre qui ne vient qu'au
+   survol, pour dire que la vignette est un lien. */
 .cadre{--coin:18px;--format:7/10;aspect-ratio:var(--format);position:relative;display:block;
-  padding:8px;background:var(--blanc);clip-path:var(--coupe);
-  filter:drop-shadow(0 22px 30px rgba(96,124,162,.2));
+  padding:0;background:none;clip-path:var(--coupe);
   transition:filter .45s var(--ease)}
 .cadre > i{--coin:11px;position:relative;display:block;width:100%;height:100%;
   clip-path:var(--coupe);overflow:hidden;background:var(--nacre-2)}
 .cadre > i > u{display:block;width:100%;height:100%}
 .cadre img{width:100%;height:100%;object-fit:cover}
-.cadre.petite{--coin:15px;padding:6px}
+.cadre.petite{--coin:15px;padding:0}
 .cadre.petite > i{--coin:10px}
 
-/* Le filet ne peut pas être un border : clip-path le trancherait, et les
-   diagonales resteraient nues. Il est donc dessiné en anneau — un
-   pseudo-élément évidé en son centre par deux masques superposés. C'est le
-   même principe partout où un cadre porte un filet. */
-.cadre::after,.cadre > i::after,
-.strip-item::after,.masonry figure::after,.figure::after,
-.photo::after,.coat::after,.mapwrap::after,
-.viewer-scene::after,.viewer-vignette::after{
-  content:"";position:absolute;inset:0;z-index:4;pointer-events:none;
-  clip-path:var(--coupe);background:var(--or-filet);padding:1px;
-  -webkit-mask:linear-gradient(#000,#000) content-box,linear-gradient(#000,#000);
-          mask:linear-gradient(#000,#000) content-box,linear-gradient(#000,#000);
-  -webkit-mask-composite:xor;mask-composite:exclude;
-  transition:background .4s var(--ease)}
-/* Le filet intérieur, contre la photo : un ton plus clair que l'extérieur. */
-.cadre > i::after{--or-filet:rgba(203,174,118,.5)}
-
-.fiche:hover .cadre::after,.repro:hover .cadre::after{background:var(--or-mat)}
-.fiche:hover .cadre,.repro:hover .cadre{filter:drop-shadow(0 26px 38px rgba(96,124,162,.3))}
+.fiche:hover .cadre,.repro:hover .cadre{filter:drop-shadow(0 22px 34px rgba(40,40,36,.22))}
 
 .figure,.photo,.coat,.mapwrap,.viewer-scene{position:relative;clip-path:var(--coupe)}
 
@@ -444,7 +404,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
      elle part du blanc, et la moindre teinte de ciel dessinait une couture
      verticale au milieu de l'ouverture. Le ciel reste, mais loin, sur le
      bord gauche. */
-  background:radial-gradient(64% 86% at 0% 42%,var(--ciel) 0%,#FFFFFF 72%)}
+  background:radial-gradient(64% 86% at 0% 42%,var(--ciel) 0%,#FFFFFF 58%)}
 
 .hero-photo{position:absolute;inset:0 0 0 46%;overflow:hidden}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:58% 45%}
@@ -455,13 +415,12 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
   background:linear-gradient(90deg,#FFFFFF 0%,rgba(255,255,255,.88) 42%,rgba(255,255,255,0) 100%)}
 
 .hero-texte{position:relative;z-index:2;width:100%;max-width:var(--maxw);margin-inline:auto;
-  padding-inline:calc(var(--gout) + var(--colonne) + var(--retrait)) var(--gout);
-  padding-block:clamp(48px,7vw,90px)}
+  padding-inline:var(--gout);padding-block:clamp(48px,7vw,90px)}
 .hero-texte .dedans{display:flex;flex-direction:column;align-items:flex-start;gap:20px;
   max-width:min(30rem,56%)}
-/* Plus petit que le h1 des autres pages : ici il partage la largeur avec la
-   photo, et l'échelle de la page intérieure le cassait en trois lignes. */
-.hero h1{text-align:left;margin:0;font-size:clamp(2.4rem,4.6vw,4.6rem)}
+/* L'ouverture est le seul endroit où le titre porte toute l'échelle : il
+   partage la largeur avec la photo, mais c'est lui qui doit l'emporter. */
+.hero h1{text-align:left;margin:0;font-size:clamp(2.6rem,5.2vw,5.2rem)}
 .hero h1 em{font-style:italic}
 .hero .lede{text-align:left}
 .hero .btnrow{margin-top:8px}
@@ -486,7 +445,10 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 /* Sous 900 px la photo passe au-dessus, pleine largeur : côte à côte, ni le
    texte ni l'image n'auraient la place. */
 @media(max-width:900px){
-  .hero{display:block;min-height:0}
+  /* Le fond du bureau est teinte sur son flanc gauche, pour accompagner une
+     photo posee a droite. Ici la photo est au-dessus : la teinte passerait
+     sous son bord blanc et y dessinerait une ligne. */
+  .hero{display:block;min-height:0;background:var(--blanc)}
   .hero-photo{position:relative;inset:auto;height:min(56vh,420px)}
   .hero-photo::after{inset:auto 0 0 0;width:auto;height:38%;
     background:linear-gradient(180deg,rgba(255,255,255,0),#FFFFFF)}
@@ -515,7 +477,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .figure{--coin:16px;overflow:hidden;margin:0;background:var(--nacre-2);line-height:0}
 .figure img{width:100%;height:auto;transition:transform 1.1s var(--ease)}
 .figure figcaption{position:absolute;left:0;bottom:0;right:0;padding:18px 18px 14px;
-  background:linear-gradient(to top,rgba(30,26,19,.72),rgba(30,26,19,0));
+  background:linear-gradient(to top,rgba(20,20,18,.72),rgba(20,20,18,0));
   font-family:var(--corps);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.9)}
 .stack{display:flex;flex-direction:column;gap:clamp(16px,2.4vw,24px)}
 .quote{font-family:var(--titre);font-style:italic;font-size:clamp(1.6rem,3.2vw,2.5rem);line-height:1.22;
@@ -526,7 +488,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .overlap{position:relative;display:grid;grid-template-columns:repeat(12,1fr);align-items:center}
 .overlap .a{grid-column:1/8;position:relative;z-index:1}
 .overlap .b{grid-column:7/13;margin-top:18%;z-index:2;border:6px solid var(--blanc);
-  box-shadow:0 24px 60px rgba(90,120,160,.2)}
+  box-shadow:0 24px 60px rgba(40,40,36,.16)}
 .overlap img{width:100%;object-fit:cover}
 .overlap .a img{aspect-ratio:7/10}
 .overlap .b img{aspect-ratio:1}
@@ -538,7 +500,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
   padding:10px 18px;font-family:var(--pierre);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
   cursor:pointer;text-decoration:none;transition:.25s}
 .filters a:hover,.filters button:hover{color:var(--or-ombre);border-color:var(--or-mat)}
-.filters a[aria-pressed="true"],.filters button[aria-pressed="true"]{background:var(--dorure-bouton);border-color:var(--or);color:#2A2010}
+.filters a[aria-pressed="true"],.filters button[aria-pressed="true"]{background:var(--encre);border-color:var(--encre);color:#FFFFFF}
 
 /* ── fiches chaton ───────────────────────────────────────────────── */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:clamp(20px,3vw,34px)}
@@ -555,7 +517,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .fiche .bd{display:flex;flex-direction:column;gap:11px;align-items:stretch;flex:1}
 .fiche .nm{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
   padding-bottom:9px;border-bottom:1px solid var(--filet-2)}
-.fiche .nm h3{font-family:var(--pierre);font-size:17px;font-weight:500;letter-spacing:.13em;
+.fiche .nm h3{font-family:var(--corps);font-size:17px;font-weight:400;letter-spacing:.13em;
   text-transform:uppercase;color:var(--or-ombre)}
 .fiche .ref{font-family:var(--corps);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--encre-dim)}
 /* Le relevé d'une fiche se lit comme un index imprimé : l'intitulé à gauche,
@@ -568,7 +530,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
   font-family:var(--corps);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--encre-dim);white-space:nowrap}
 .fiche dt::after{content:"";flex:1;height:0;margin-bottom:.32em;
-  border-bottom:1px dotted rgba(169,143,94,.55)}
+  border-bottom:1px dotted rgba(38,38,35,.28)}
 .fiche dd{flex:none;margin:0;color:var(--encre-2);font-family:var(--titre);font-size:16.5px;font-style:italic}
 .fiche .go{margin-top:auto;padding-top:10px;font-family:var(--pierre);font-size:10px;letter-spacing:.16em;
   text-transform:uppercase;color:var(--or-tendre)}
@@ -584,26 +546,23 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .repro .cap{display:flex;flex-direction:column;gap:5px;align-items:flex-start;
   padding-top:11px;border-top:1px solid var(--filet-2)}
 .repro .cap .mono{color:var(--or-tendre);font-size:10px}
-.repro .cap h3{font-family:var(--pierre);font-size:19px;font-weight:500;letter-spacing:.13em;
+.repro .cap h3{font-family:var(--corps);font-size:19px;font-weight:400;letter-spacing:.13em;
   text-transform:uppercase;color:var(--or-ombre)}
 .repro .cap p{font-family:var(--titre);font-style:italic;font-size:17px;color:var(--encre-3)}
 
 /* ── le registre (fiches, tableaux) ──────────────────────────────── */
-/* Deux équerres d'or en diagonale sur un cadre à filet : un document posé
-   sur la page, pas une carte. */
+/* Un aplat grège cerné d'un filet gris : un document posé sur la page, pas
+   une carte. Les deux équerres d'or qui le signaient sont parties avec le
+   reste de l'ornement — ce qui le distingue est sa matière. */
 .detail{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(28px,4.5vw,64px);align-items:start}
 @media(max-width:900px){.detail{grid-template-columns:1fr}}
 .photo{--coin:16px;overflow:hidden;background:var(--nacre-2)}
 .photo img{width:100%;aspect-ratio:7/10;object-fit:cover}
 
-.record{position:relative;border:1px solid rgba(169,143,94,.38);
-  background:linear-gradient(180deg,rgba(203,174,118,.04),transparent 40%),rgba(255,255,255,.7)}
-.record::before,.record::after{content:"";position:absolute;width:22px;height:22px;pointer-events:none;z-index:2}
-.record::before{left:-1px;top:-1px;border-left:1px solid var(--or-mat);border-top:1px solid var(--or-mat)}
-.record::after{right:-1px;bottom:-1px;border-right:1px solid var(--or-mat);border-bottom:1px solid var(--or-mat)}
+.record{position:relative;border:1px solid var(--filet);background:var(--nacre)}
 .record .hd{padding:16px 24px;border-bottom:1px solid var(--filet-2);display:flex;justify-content:space-between;
   align-items:baseline;gap:12px;flex-wrap:wrap}
-.record .hd .mono{font-family:var(--pierre);font-size:12px;font-weight:500;letter-spacing:.12em;color:var(--or-tendre)}
+.record .hd .mono{font-family:var(--corps);font-size:12px;font-weight:400;letter-spacing:.12em;color:var(--or-tendre)}
 .record table{width:100%;border-collapse:collapse;font-size:15px}
 .record th,.record td{text-align:left;padding:13px 24px;border-bottom:1px solid var(--filet-3);vertical-align:top}
 .record th{font-family:var(--corps);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--encre-dim);font-weight:400;width:44%}
@@ -612,7 +571,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .tests td b{display:block;font-family:var(--titre);font-size:21px;font-weight:400;color:var(--sain)}
 .todo{color:var(--or-tendre)!important;font-family:var(--corps);font-size:14px;letter-spacing:.04em}
 .note{font-size:13.5px;color:var(--encre-dim);padding:15px 24px;border-top:1px solid var(--filet-3);
-  background:rgba(201,164,92,.06);line-height:1.65}
+  background:rgba(38,38,35,.035);line-height:1.65}
 @media(max-width:560px){
   .record table,.record tbody,.record tr,.record th,.record td{display:block;width:auto}
   .record tr{border-bottom:1px solid var(--filet-3)}
@@ -650,14 +609,14 @@ a.cell:hover{border-color:var(--or-mat);background:var(--nacre)}
 .cell-b{position:relative;background:var(--blanc);padding:28px 24px;display:flex;flex-direction:column;gap:11px;
   text-decoration:none;color:inherit;transition:background .4s}
 .cell-b::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .45s;
-  background:radial-gradient(120% 90% at 50% 0%,rgba(201,164,92,.1),transparent 70%)}
+  background:radial-gradient(120% 90% at 50% 0%,rgba(38,38,35,.05),transparent 70%)}
 .cell-b:hover{background:var(--nacre)}
 .cell-b:hover::before{opacity:1}
 .cell-b > *{position:relative}
 .cell-b .n{font-family:var(--pierre);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--or-tendre)}
 .cell-b h3{font-size:1.5rem}
 .cell-b p{font-size:15px;color:var(--encre-3);line-height:1.66}
-.band.paper .cells{background:rgba(140,170,210,.28);border-color:rgba(140,170,210,.28)}
+.band.paper .cells{background:var(--filet-2);border-color:var(--filet-2)}
 .band.paper .cell-b{background:rgba(255,255,255,.72)}
 .band.paper .cell-b:hover{background:rgba(255,255,255,.95)}
 .band.ink2 .cell-b{background:rgba(255,255,255,.55)}
@@ -672,10 +631,7 @@ a.cell:hover{border-color:var(--or-mat);background:var(--nacre)}
 .fact span{font-family:var(--corps);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--encre-dim)}
 
 /* ── le relevé de ce que couvre l'adoption ───────────────────────── */
-.ledger{border:1px solid rgba(169,143,94,.38);background:rgba(255,255,255,.7);position:relative}
-.ledger::before,.ledger::after{content:"";position:absolute;width:22px;height:22px;pointer-events:none;z-index:2}
-.ledger::before{left:-1px;top:-1px;border-left:1px solid var(--or-mat);border-top:1px solid var(--or-mat)}
-.ledger::after{right:-1px;bottom:-1px;border-right:1px solid var(--or-mat);border-bottom:1px solid var(--or-mat)}
+.ledger{border:1px solid var(--filet);background:var(--nacre);position:relative}
 .ledger .row{display:grid;grid-template-columns:auto 1fr auto;gap:14px 18px;align-items:baseline;
   padding:15px 24px;border-bottom:1px solid var(--filet-3)}
 .ledger .row:last-of-type{border-bottom:0}
@@ -695,7 +651,7 @@ a.cell:hover{border-color:var(--or-mat);background:var(--nacre)}
 .hot::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--or-mat);transition:background .3s}
 .hot:hover,.hot[aria-pressed="true"]{background:var(--or-mat);transform:translate(-50%,-50%) scale(1.15)}
 .hot:hover::after,.hot[aria-pressed="true"]::after{background:#FFFFFF}
-.hot .ring{position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(168,129,63,.6);animation:ring 3s ease-out infinite}
+.hot .ring{position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(38,38,35,.3);animation:ring 3s ease-out infinite}
 @keyframes ring{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.5);opacity:0}}
 .coatinfo{border:1px solid var(--filet);border-top:0;background:var(--nacre);padding:24px;min-height:132px;
   display:flex;flex-direction:column;gap:9px}
@@ -703,32 +659,30 @@ a.cell:hover{border-color:var(--or-mat);background:var(--nacre)}
 .coatinfo p{font-size:15.5px;color:var(--encre-2);max-width:60ch}
 
 /* ── mosaïque et vue plein écran ─────────────────────────────────── */
-/* Chaque cliché dans son cadre à filet, sur un passe-partout blanc : une
-   planche d'ouvrage plutôt qu'une grille. */
+/* Les clichés à touche-touche, chacun dans son format : une planche de
+   contact plutôt qu'une grille de cartes. */
 .masonry{columns:3;column-gap:16px}
 @media(max-width:900px){.masonry{columns:2}}
 @media(max-width:520px){.masonry{columns:1}}
 .masonry figure{margin:0 0 16px;break-inside:avoid;overflow:hidden;position:relative;
-  cursor:zoom-in;background:var(--blanc);padding:6px;clip-path:var(--coupe);--coin:14px;
+  cursor:zoom-in;background:var(--nacre-2);padding:0;clip-path:var(--coupe);--coin:14px;
   transition:filter .45s var(--ease)}
-.masonry figure:hover{filter:drop-shadow(0 20px 30px rgba(96,124,162,.28))}
-.masonry figure:hover::after{background:var(--or-mat)}
+.masonry figure:hover{filter:drop-shadow(0 20px 30px rgba(40,40,36,.2))}
 .masonry figure img{--coin:9px;clip-path:var(--coupe)}
 .masonry img{width:100%;transition:transform .9s var(--ease)}
 .masonry figure[data-format="panorama"]{column-span:all;margin-block:6px 22px}
-.masonry figcaption{--coin:9px;clip-path:var(--coupe);position:absolute;inset:auto 6px 6px 6px;padding:26px 14px 12px;
-  background:linear-gradient(to top,rgba(30,26,19,.78),transparent);opacity:0;transition:opacity .35s;
+.masonry figcaption{--coin:9px;clip-path:var(--coupe);position:absolute;inset:auto 0 0 0;padding:26px 14px 12px;
+  background:linear-gradient(to top,rgba(20,20,18,.78),transparent);opacity:0;transition:opacity .35s;
   font-family:var(--corps);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.92)}
 .masonry figure:hover figcaption{opacity:1}
 @media (pointer:coarse){
-  .masonry figcaption{opacity:1;padding-top:20px;background:linear-gradient(to top,rgba(30,26,19,.7),transparent)}
+  .masonry figcaption{opacity:1;padding-top:20px;background:linear-gradient(to top,rgba(20,20,18,.7),transparent)}
 }
 
-#lb{position:fixed;inset:0;z-index:90;background:rgba(251,249,244,.97);display:flex;align-items:center;justify-content:center;
+#lb{position:fixed;inset:0;z-index:90;background:rgba(250,250,248,.97);display:flex;align-items:center;justify-content:center;
   flex-direction:column;gap:16px;padding:28px 20px}
 #lb img{--coin:16px;max-width:min(94vw,1060px);max-height:78vh;object-fit:contain;
-  padding:8px;background:var(--blanc);clip-path:var(--coupe);
-  filter:drop-shadow(0 26px 44px rgba(96,124,162,.3))}
+  clip-path:var(--coupe);filter:drop-shadow(0 26px 44px rgba(40,40,36,.26))}
 #lb .cap{font-family:var(--pierre);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--encre-dim);text-align:center}
 #lb .x{position:absolute;top:calc(18px + env(safe-area-inset-top,0px));right:20px;background:none;border:1px solid var(--filet);
   padding:10px 15px;cursor:pointer;font-family:var(--pierre);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--encre)}
@@ -770,7 +724,7 @@ fieldset{min-width:0}
 .field input,.field select,.field textarea{font:inherit;font-size:16px;padding:14px 16px;border:1px solid var(--filet);
   background:rgba(255,255,255,.85);color:var(--encre);width:100%;border-radius:0;transition:border-color .25s,background .25s}
 .field textarea{min-height:140px;resize:vertical}
-.field input::placeholder,.field textarea::placeholder{color:#A39A88}
+.field input::placeholder,.field textarea::placeholder{color:#9A9A93}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--or-mat);background:var(--blanc);outline:none}
 .field select{appearance:none;-webkit-appearance:none;padding-right:38px;
   background-image:linear-gradient(45deg,transparent 50%,var(--or-mat) 50%),linear-gradient(135deg,var(--or-mat) 50%,transparent 50%);
@@ -791,7 +745,7 @@ fieldset{min-width:0}
 .objets span{display:inline-block;padding:10px 17px;border:1px solid var(--filet);background:rgba(255,255,255,.6);
   font-family:var(--pierre);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--encre-3);transition:.25s}
 .objets label:hover span{color:var(--or-ombre);border-color:var(--or-mat)}
-.objets input:checked + span{background:var(--dorure-bouton);border-color:var(--or);color:#2A2010}
+.objets input:checked + span{background:var(--encre);border-color:var(--encre);color:#FFFFFF}
 .objets input:focus-visible + span{outline:2px solid var(--or-mat);outline-offset:3px}
 
 .depot{margin-top:32px;border-top:1px solid var(--filet);padding-top:22px}
@@ -806,7 +760,7 @@ fieldset{min-width:0}
 
 .flash{border:1px solid var(--filet);border-left:2px solid var(--sain);background:rgba(79,125,66,.07);
   padding:18px 22px;font-size:15px;color:var(--encre);margin-bottom:28px}
-.flash.err{border-left-color:var(--or-mat);background:rgba(201,164,92,.09)}
+.flash.err{border-left-color:var(--alerte);background:rgba(172,84,64,.06)}
 .flash ul{margin:9px 0 0;padding-left:19px;color:var(--encre-dim);font-size:14px}
 .flash a{color:var(--or-ombre)}
 
@@ -835,7 +789,7 @@ footer > *{position:relative}
 .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.25fr;gap:34px}
 @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.fgrid{grid-template-columns:1fr}}
-footer h4{margin:0 0 16px;font-family:var(--pierre);font-size:10px;font-weight:500;
+footer h4{margin:0 0 16px;font-family:var(--corps);font-size:10px;font-weight:400;
   letter-spacing:.2em;text-transform:uppercase;color:var(--or-tendre)}
 footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
 footer a{font-size:14.5px;color:var(--encre-3);text-decoration:none;transition:color .3s}
@@ -886,18 +840,22 @@ footer{view-transition-name:pied}
 #carte{height:clamp(320px,34vw,500px);width:100%;background:var(--ciel);z-index:1}
 .pin{display:flex;align-items:center;gap:8px;transform:translate(-7px,-7px);white-space:nowrap}
 .pin i{width:11px;height:11px;border-radius:50%;background:var(--encre-3);border:2px solid #FFFFFF;
-  box-shadow:0 0 0 1px rgba(30,26,19,.35);flex:none}
+  box-shadow:0 0 0 1px rgba(20,20,18,.35);flex:none}
 .pin b{font-family:var(--corps);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--encre);font-weight:400;text-shadow:0 1px 6px rgba(255,255,255,.95),0 0 2px #fff}
-.pin-main i{width:15px;height:15px;background:var(--or-mat);box-shadow:0 0 0 1px var(--or-ombre),0 0 16px rgba(201,164,92,.7)}
+.pin-main i{width:15px;height:15px;background:var(--encre);box-shadow:0 0 0 1px var(--encre),0 0 14px rgba(38,38,35,.28)}
 .pin-main b{color:var(--or-ombre);font-size:10.5px}
+/* Les tuiles arrivent d'OpenStreetMap en couleurs. Le filtre les ramène au
+   gris de la page — c'est un rendu, la tuile reçue n'est pas modifiée et
+   l'attribution reste due. */
+.leaflet-tile-pane{filter:grayscale(1) contrast(.82) brightness(1.1)}
 .leaflet-container{font-family:var(--corps);background:var(--ciel)}
 .leaflet-bar a{background:#FFFFFF!important;color:var(--encre)!important;border-color:var(--filet)!important}
 .leaflet-bar a:hover{background:var(--nacre)!important;color:var(--or-ombre)!important}
 .leaflet-control-attribution{background:rgba(255,255,255,.8)!important;color:var(--encre-dim)!important;font-size:9px!important}
 .leaflet-control-attribution a{color:var(--or-tendre)!important}
 .leaflet-popup-content-wrapper,.leaflet-popup-tip{
-  background:#FFFFFF;color:var(--encre);border:1px solid var(--filet);border-radius:0;box-shadow:0 18px 40px rgba(90,120,160,.22)}
+  background:#FFFFFF;color:var(--encre);border:1px solid var(--filet);border-radius:0;box-shadow:0 18px 40px rgba(40,40,36,.18)}
 .leaflet-popup-content{margin:13px 16px;font-size:14px;line-height:1.5}
 .leaflet-popup-content strong{font-family:var(--titre);font-size:1.15rem;font-weight:400;color:var(--or-ombre)}
 .leaflet-popup-close-button{color:var(--encre-dim)!important}
@@ -910,10 +868,10 @@ footer{view-transition-name:pied}
 .social-mark{
   --mark-fond:#FFFFFF;
   --mark-anneau:conic-gradient(from 205deg,var(--or-clair),var(--or) 34%,var(--or-ombre) 62%,var(--or-clair));
-  --mark-lueur:201,164,92;
+  --mark-lueur:56,56,52;
   --mark-actif:var(--encre);
   position:relative;width:38px;height:38px;display:grid;place-items:center;
-  border-radius:50%;border:1px solid rgba(168,129,63,.5);background:rgba(255,255,255,.7);color:inherit;
+  border-radius:50%;border:1px solid var(--filet);background:rgba(255,255,255,.7);color:inherit;
   transition:color .35s,border-color .35s,box-shadow .35s}
 .social--instagram .social-mark{
   --mark-anneau:conic-gradient(from 205deg,#F9CE34,#EE2A7B 38%,#6228D7 68%,#F9CE34);
@@ -961,12 +919,11 @@ footer .social-mark{--mark-fond:var(--nacre)}
 .strip-item{--coin:13px;position:relative;flex:none;height:clamp(190px,21vw,258px);width:auto;
   overflow:hidden;background:var(--nacre-2);clip-path:var(--coupe);
   text-decoration:none;transition:transform .45s var(--ease),filter .45s}
-.strip-item:hover{transform:translateY(-3px);filter:drop-shadow(0 18px 26px rgba(96,124,162,.3))}
-.strip-item:hover::after{background:var(--or-mat)}
+.strip-item:hover{transform:translateY(-3px);filter:drop-shadow(0 18px 26px rgba(40,40,36,.24))}
 .strip-item img{display:block;height:100%;width:auto;transition:transform .8s var(--ease)}
 .strip-item:hover img{transform:scale(1.05)}
-.strip-cap{position:absolute;inset:auto 5px 5px 5px;padding:24px 12px 10px;
-  background:linear-gradient(to top,rgba(30,26,19,.78),transparent);
+.strip-cap{position:absolute;inset:auto 0 0 0;padding:24px 12px 10px;
+  background:linear-gradient(to top,rgba(20,20,18,.78),transparent);
   font-family:var(--corps);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
   color:rgba(255,255,255,.92);opacity:0;transition:opacity .35s}
 .strip-item:hover .strip-cap{opacity:1}
@@ -975,8 +932,8 @@ footer .social-mark{--mark-fond:var(--nacre)}
 /* Les deux bandes larges sont recadrées à 2,13 pour cette place précise :
    une hauteur en vh les recoupait d'autant plus que l'écran était large. On
    fixe donc le rapport, et l'image n'est plus jamais rognée deux fois. */
-.photoband{position:relative;aspect-ratio:2.2/1;max-height:62vh;overflow:hidden;
-  background:var(--nacre-2);z-index:2;display:block;border-block:1px solid var(--filet-2)}
+.photoband{position:relative;aspect-ratio:2.6/1;max-height:62vh;overflow:hidden;
+  background:var(--nacre-2);z-index:2;display:block}
 @media(max-width:700px){.photoband{aspect-ratio:3/2}}
 .photoband img{width:100%;height:100%;object-fit:cover;object-position:50% 34%;
   animation:bandzoom 34s ease-in-out infinite alternate}
@@ -1046,34 +1003,30 @@ footer .social-mark{--mark-fond:var(--nacre)}
 .lignee-rang:first-child{padding-top:0}
 .lignee-rang + .lignee-rang::before{content:"";position:absolute;left:50%;top:calc(-1 * var(--saut));
   width:1px;height:calc(2 * var(--saut));
-  background:linear-gradient(rgba(169,143,94,.04),rgba(169,143,94,.65),rgba(169,143,94,.04))}
+  background:linear-gradient(rgba(38,38,35,.02),rgba(38,38,35,.3),rgba(38,38,35,.02))}
 .lignee-cran{font-family:var(--corps);font-size:10px;letter-spacing:.3em;text-transform:uppercase;
   color:var(--or-tendre)}
 .lignee-chats{display:flex;gap:clamp(20px,4vw,60px);flex-wrap:wrap;justify-content:center}
 .lignee-chat{display:flex;flex-direction:column;align-items:center;gap:9px;text-decoration:none;
   color:inherit;width:clamp(112px,13vw,150px);transition:transform .45s var(--ease)}
 .lignee-chat:hover{transform:translateY(-4px)}
-.lignee-chat .cadre{--coin:12px;width:100%;padding:5px}
+.lignee-chat .cadre{--coin:12px;width:100%;padding:0}
 .lignee-chat .cadre,.robe .cadre{--format:7/10}
-.lignee-chat b{font-family:var(--pierre);font-size:13px;font-weight:500;letter-spacing:.14em;
+.lignee-chat b{font-family:var(--corps);font-size:13px;font-weight:400;letter-spacing:.14em;
   text-transform:uppercase;color:var(--or-ombre)}
 .lignee-chat small{font-family:var(--titre);font-style:italic;font-size:15px;color:var(--encre-3);
   text-align:center;line-height:1.3}
 .lignee-suite{position:relative;margin-top:var(--saut);padding-top:calc(var(--saut) * 1.4);
   max-width:48ch;text-align:center;font-size:15px;line-height:1.75;color:var(--encre-2)}
 .lignee-suite .lignee-trait{position:absolute;left:50%;top:0;width:1px;height:var(--saut);
-  background:linear-gradient(rgba(169,143,94,.65),rgba(169,143,94,.04))}
+  background:linear-gradient(rgba(38,38,35,.3),rgba(38,38,35,.02))}
 
 /* ── la lettrine ─────────────────────────────────────────────────── */
-/* L'initiale d'un texte d'ouverture, dorée et débordante de trois lignes.
-   Réservée aux deux textes qui racontent la maison : partout ailleurs elle
-   ferait effet de manche. */
+/* L'initiale d'un texte d'ouverture, débordante de trois lignes, en encre
+   pleine. Réservée aux deux textes qui racontent la maison : partout
+   ailleurs elle ferait effet de manche. */
 .lettrine::first-letter{float:left;font-family:var(--titre);font-size:3.9em;line-height:.84;
-  font-weight:400;padding:.04em .1em 0 0;
-  background:var(--dorure);-webkit-background-clip:text;background-clip:text;color:transparent}
-@supports not ((-webkit-background-clip:text) or (background-clip:text)){
-  .lettrine::first-letter{background:none;color:var(--or-ombre)}
-}
+  font-weight:400;padding:.04em .1em 0 0;color:var(--encre)}
 
 /* ── les robes de la maison ──────────────────────────────────────── */
 .robes{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:clamp(20px,3vw,36px)}
@@ -1081,13 +1034,13 @@ footer .social-mark{--mark-fond:var(--nacre)}
   text-decoration:none;color:inherit;transition:transform .45s var(--ease)}
 .robe:hover{transform:translateY(-5px)}
 .robe .cadre{--coin:14px;width:100%}
-.robe b{margin-top:5px;font-family:var(--pierre);font-size:14px;font-weight:500;letter-spacing:.13em;
+.robe b{margin-top:5px;font-family:var(--corps);font-size:14px;font-weight:400;letter-spacing:.13em;
   text-transform:uppercase;color:var(--or-ombre)}
 .robe small{font-family:var(--titre);font-style:italic;font-size:15px;color:var(--encre-dim)}
 .robe p{font-size:14.5px;line-height:1.68;color:var(--encre-3);max-width:34ch}
 
 .robe:hover .cadre::after,.lignee-chat:hover .cadre::after{background:var(--or-mat)}
-.robe:hover .cadre,.lignee-chat:hover .cadre{filter:drop-shadow(0 24px 34px rgba(96,124,162,.28))}
+.robe:hover .cadre,.lignee-chat:hover .cadre{filter:drop-shadow(0 24px 34px rgba(40,40,36,.2))}
 
 /* ── confort tactile ─────────────────────────────────────────────── */
 /* On agrandit la ZONE sensible, pas le dessin. Ciblé sur pointer:coarse :

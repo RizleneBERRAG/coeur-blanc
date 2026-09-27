@@ -304,7 +304,7 @@
         </div>
 
         <p class="small" style="margin-top:16px">
-            Carte &copy; OpenStreetMap et CARTO. Aucun traceur publicitaire n'est chargé sur cette page :
+            Carte &copy; OpenStreetMap. Aucun traceur publicitaire n'est chargé sur cette page :
             les liens d'itinéraire ouvrent Google Maps ou Waze dans un nouvel onglet, rien n'est chargé depuis eux ici.
         </p>
     </div>

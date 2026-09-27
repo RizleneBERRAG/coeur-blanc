@@ -1,4 +1,4 @@
-/* Carte de la page Contact — Leaflet + fond clair CartoDB, aux couleurs du site.
+/* Carte de la page Contact — Leaflet sur les tuiles d'OpenStreetMap.
    On n'affiche jamais l'adresse exacte : une zone, et les repères d'accès. */
 
 import L from 'leaflet';
@@ -8,7 +8,7 @@ const conteneur = document.getElementById('carte');
 
 if (conteneur) {
     const data = JSON.parse(conteneur.dataset.carte);
-    const or = '#A8813F';
+    const encre = '#3A3A36';
 
     const carte = L.map(conteneur, {
         scrollWheelZoom: false,       // on ne vole pas le défilement de la page
@@ -16,21 +16,22 @@ if (conteneur) {
         attributionControl: true,
     });
 
-    // Positron : le fond le plus clair de CARTO, presque blanc — la page continue.
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap &middot; &copy; CARTO',
-        subdomains: 'abcd',
+    // Les tuiles d'OpenStreetMap, sans clé ni compte : le fond clair de CARTO
+    // demande désormais une clé d'API et ne renvoie plus qu'un filigrane.
+    // Elles arrivent en couleurs ; app.css les ramène au gris de la page.
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap',
         maxZoom: 18,
     }).addTo(carte);
 
     // La zone de l'élevage.
     const zone = L.circle([data.zone.lat, data.zone.lng], {
         radius: data.zone.rayon,
-        color: or,
+        color: encre,
         weight: 1.5,
         opacity: 0.9,
-        fillColor: or,
-        fillOpacity: 0.14,
+        fillColor: encre,
+        fillOpacity: 0.12,
     }).addTo(carte);
 
     zone.bindPopup(`<strong>${data.zone.titre}</strong><br>${data.zone.detail}`);
