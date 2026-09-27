@@ -464,6 +464,10 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
      pour tenir le rapport, et laisserait du blanc sur le cote. */
   .hero-photo{position:relative;inset:auto;width:100%;height:auto;
     aspect-ratio:4/5;max-height:64vh}
+  /* La derive lente de l'image ne vaut pas sur un telephone : l'effet s'y voit
+     a peine, et une image plein ecran qui bouge sans fin tient le processeur
+     graphique occupe tout le temps que la page reste ouverte. */
+  .hero-photo img{animation:none}
 
   /* Le voile monte du bas jusqu'au blanc plein : c'est lui qui porte le
      titre, et c'est lui qui fait mourir la photo dans la page. */
