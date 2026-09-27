@@ -48,6 +48,16 @@ class ExporterSite extends Command
             return self::FAILURE;
         }
 
+        /*
+         * Une fiche chaton ne se publie qu'avec ses numeros ICAD et LOOF. Un
+         * `migrate:fresh --seed` les efface, et la copie statique part alors
+         * sans aucune fiche, sans que rien ne le dise. On le dit.
+         */
+        if (Kitten::publies()->count() === 0) {
+            $this->warn('Aucune fiche chaton publiee : la copie n\'en contiendra aucune.');
+            $this->line('  Sur la base de demonstration, `php artisan demo:numeros` remet les numeros.');
+        }
+
         File::deleteDirectory($vers);
         File::ensureDirectoryExists($vers);
 

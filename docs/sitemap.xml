@@ -93,4 +93,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://rizleneberrag.github.io/coeur-blanc/chatons/bciel</loc>
+    <lastmod>2026-09-27T20:18:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rizleneberrag.github.io/coeur-blanc/chatons/bnuage</loc>
+    <lastmod>2026-09-27T20:18:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rizleneberrag.github.io/coeur-blanc/chatons/bange</loc>
+    <lastmod>2026-09-27T20:18:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

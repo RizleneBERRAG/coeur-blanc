@@ -291,6 +291,12 @@ php artisan demo:numeros           # remplit les numéros, publie les fiches
 php artisan demo:numeros --reset   # vide les numéros, tout repasse en brouillon
 ```
 
+⚠️ **À relancer après chaque `migrate:fresh --seed`**, et avant
+`site:exporter` : sans numéros, aucune fiche chaton n'est publiable, et la
+copie statique part sans une seule. L'export prévient désormais quand c'est
+le cas, mais il ne s'arrête pas — un élevage peut légitimement n'avoir aucun
+chaton à montrer entre deux portées.
+
 Aucun nom d'adoptant n'est jamais affiché côté public. Les statuts
 « réservé » et « adopté » portent sur le chaton, pas sur la famille.
 
