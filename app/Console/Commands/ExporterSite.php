@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\File;
 class ExporterSite extends Command
 {
     protected $signature = 'site:exporter
-        {--base= : Adresse publique finale, ex. https://rizleneberrag.github.io/bengals-parc}
-        {--source=http://localhost:8081 : Adresse locale a parcourir}
+        {--base= : Adresse publique finale, ex. https://rizleneberrag.github.io/coeur-blanc}
+        {--source=http://localhost/coeur-blanc/public : Adresse locale a parcourir}
         {--vers=docs : Dossier de destination, relatif a la racine du projet}';
 
     protected $description = 'Exporte une copie statique du site public';
@@ -73,7 +73,12 @@ class ExporterSite extends Command
 
             $fichier = $vers.'/'.$destination;
             File::ensureDirectoryExists(dirname($fichier));
-            File::put($fichier, $this->preparer($html, $source, $base));
+
+            // Le sitemap et le robots.txt ne sont pas du HTML : ils n'ont
+            // besoin que de la réécriture des adresses.
+            File::put($fichier, str_ends_with($destination, '.html')
+                ? $this->preparer($html, $source, $base)
+                : str_replace($source, $base, $html));
 
             $barre->advance();
         }
@@ -90,6 +95,21 @@ class ExporterSite extends Command
         // tout dossier commençant par un souligné et peut casser des chemins.
         File::put($vers.'/.nojekyll', '');
         $this->line('  .nojekyll écrit');
+
+        /*
+         * L'aperçu ne doit jamais être indexé. Deux raisons, et la seconde
+         * suffirait : il ferait doublon avec le vrai site, et les deux y
+         * perdraient ; surtout, la portée qu'il affiche est une portée de
+         * démonstration, avec des chatons qui n'existent pas.
+         *
+         * Le robots.txt ferme la porte, la balise de chaque page la verrouille
+         * — un moteur qui arrive par un lien partagé ne lit pas le robots.txt
+         * du site, mais il lit la balise.
+         */
+        File::put($vers.'/robots.txt', "User-agent: *
+Disallow: /
+");
+        $this->line('  robots.txt de l’aperçu : indexation refusée');
 
         $this->newLine();
         $this->info('Copie prête dans '.$this->option('vers').'/');
@@ -149,6 +169,15 @@ class ExporterSite extends Command
     private function preparer(string $html, string $source, string $base): string
     {
         $html = str_replace($source, $base, $html);
+
+        // Voir le robots.txt écrit plus haut : cet aperçu ne s'indexe pas.
+        $html = preg_replace(
+            '/<head>/i',
+            "<head>
+    <meta name=\"robots\" content=\"noindex, nofollow\">",
+            $html,
+            1
+        );
 
         // Les trois formulaires enregistrent en base : sans serveur, ils ne
         // peuvent rien faire. Mieux vaut les désactiver visiblement que les
