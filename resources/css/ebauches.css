@@ -1,0 +1,169 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Les ébauches
+
+   Quatre directions sur le même site, les mêmes textes et les mêmes
+   photos : c'est la seule façon de comparer autre chose que des images
+   de présentation. On passe de l'une à l'autre par ?ebauche=1..4, et la
+   barre en bas d'écran ne s'affiche qu'en local.
+
+   Chaque ébauche ne redéfinit que des JETONS et quelques formes. Aucune
+   ne réécrit un composant : c'est ce qui garantit qu'une pièce écrite
+   demain fonctionnera dans les quatre.
+
+   Ce fichier est un outil de décision. Une fois la direction choisie,
+   on reporte ses valeurs dans app.css et on le supprime.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ══ 2 · PLEIN CADRE ═════════════════════════════════════════════════
+   La photographie d'abord, et rien autour. Plus de fil, plus d'étoile,
+   plus d'angle coupé, plus de dorure : des images franches, un texte
+   centré, une échelle typographique plus haute. L'or descend au graphite
+   — sur ce parti, la moindre dorure ferait retomber dans le décoratif. */
+
+body.ebauche-2{
+  --or-pale:#EDEDEA; --or-clair:#C9C9C4; --or:#9A9A93; --or-mat:#7C7C75;
+  --or-tendre:#4E4E48; --or-ombre:#33332F;
+  --dorure:linear-gradient(180deg,#5A5A54 0%,#3A3A36 48%,#26262300 100%);
+  --dorure-bouton:linear-gradient(180deg,#26262300,#26262300);
+  --filet:rgba(38,38,35,.18); --filet-2:rgba(38,38,35,.1); --filet-3:rgba(38,38,35,.07);
+  --aile:rgba(190,190,186,.22);
+  --ciel:#F7F7F5; --ciel-2:#F1F1EE;
+  --nacre:#FAFAF8; --nacre-2:#F4F4F1;
+  --coupe:none;
+  --colonne:0px;
+}
+/* Le fil et son étoile n'ont pas leur place ici : ils appartiennent à une
+   page qui se lit comme un livre, celle-ci se regarde. */
+.ebauche-2 .band::after,.ebauche-2 .livestrip::after,.ebauche-2 .chapitre::before{display:none}
+.ebauche-2 .band > .wrap{padding-left:var(--gout)}
+.ebauche-2 .chapitre{align-items:center;text-align:center}
+.ebauche-2 .chapitre .numero{position:static;width:auto;padding:0;text-align:center;letter-spacing:.34em}
+.ebauche-2 .chapitre h1::after,.ebauche-2 .chapitre h2::after{margin-inline:auto;width:38px}
+.ebauche-2 .chapitre .lede{text-align:center;margin-inline:auto}
+.ebauche-2 h1,.ebauche-2 h2{letter-spacing:-.03em;font-weight:300}
+.ebauche-2 .hero h1{font-size:clamp(2.6rem,5.4vw,5.4rem)}
+/* Les cadres disparaissent : la photo touche directement la page. */
+.ebauche-2 .cadre{padding:0;background:none;filter:none}
+.ebauche-2 .cadre::after,.ebauche-2 .cadre > i::after,
+.ebauche-2 .strip-item::after,.ebauche-2 .masonry figure::after,
+.ebauche-2 .figure::after,.ebauche-2 .photo::after,.ebauche-2 .coat::after,
+.ebauche-2 .mapwrap::after,.ebauche-2 .viewer-scene::after,
+.ebauche-2 .viewer-vignette::after{display:none}
+.ebauche-2 .masonry figure,.ebauche-2 .strip-item{padding:0;background:none}
+.ebauche-2 .record::before,.ebauche-2 .record::after,
+.ebauche-2 .ledger::before,.ebauche-2 .ledger::after{display:none}
+.ebauche-2 .record,.ebauche-2 .ledger{background:var(--nacre)}
+/* Une seule famille de caractères pour tout ce qui n'est pas un titre. */
+.ebauche-2 .brand b,.ebauche-2 .menu a,.ebauche-2 .btn,.ebauche-2 .tlink,
+.ebauche-2 .lien,.ebauche-2 .chip,.ebauche-2 .fiche .nm h3,
+.ebauche-2 .repro .cap h3,.ebauche-2 .robe b,.ebauche-2 .lignee-chat b,
+.ebauche-2 footer h4,.ebauche-2 .record .hd .mono{font-family:var(--corps);font-weight:400}
+.ebauche-2 .btn{border-color:var(--encre);background:var(--encre);color:#FFF;box-shadow:none}
+.ebauche-2 .btn:hover{background:#000;border-color:#000;box-shadow:none}
+.ebauche-2 .btn.ghost{background:none;border-color:var(--filet);color:var(--encre-2)}
+.ebauche-2 .btn.ghost:hover{border-color:var(--encre);color:var(--encre);background:none}
+.ebauche-2 .lettrine::first-letter{background:none;color:var(--encre)}
+.ebauche-2 .photoband{aspect-ratio:2.6/1}
+
+/* ══ 3 · PORCELAINE ══════════════════════════════════════════════════
+   Le même site, en tendresse. L'ivoire remplace le blanc, le rose poudré
+   remplace l'or, et les angles coupés s'arrondissent. C'est la direction
+   la plus douce des quatre, et la moins « maison de luxe ». */
+
+body.ebauche-3{
+  --blanc:#FFFFFF; --nacre:#FBF6F2; --nacre-2:#F6EEE9; --nacre-3:#EFE3DC;
+  --ciel:#FBF4F2; --ciel-2:#F6E9E6; --ciel-3:#EFDCD8;
+  --aile:rgba(216,176,172,.26);
+  --or-pale:#FBEEEC; --or-clair:#E6BDB8; --or:#CE9A95; --or-mat:#B5817C;
+  --or-tendre:#8E5B57; --or-ombre:#6F4542;
+  --dorure:linear-gradient(180deg,#D9A9A4 0%,#B5817C 48%,#7A4B47 100%);
+  --dorure-bouton:linear-gradient(180deg,#FCF0EE 0%,#F4DFDC 100%);
+  --filet:rgba(181,129,124,.32); --filet-2:rgba(181,129,124,.16); --filet-3:rgba(45,32,30,.08);
+  --encre:#2C211F; --encre-2:#4C3B38; --encre-3:#6B5652; --encre-dim:#8C7672;
+  --coupe:none;
+  --rond:22px;
+}
+.ebauche-3 .band{background:#FDFAF8}
+.ebauche-3 .band.ink2{background:linear-gradient(180deg,var(--nacre),var(--nacre-2))}
+.ebauche-3 .band.paper{background:radial-gradient(120% 95% at 50% 0%,#FFFFFF,var(--ciel-2))}
+/* Les angles s'arrondissent au lieu d'être coupés. Le filet suit : il est
+   dessiné en anneau, il lui faut donc le même rayon. */
+.ebauche-3 .cadre,.ebauche-3 .strip-item,.ebauche-3 .masonry figure,
+.ebauche-3 .figure,.ebauche-3 .photo,.ebauche-3 .coat,.ebauche-3 .mapwrap,
+.ebauche-3 .viewer-scene,.ebauche-3 #lb img{border-radius:var(--rond)}
+.ebauche-3 .cadre > i{border-radius:calc(var(--rond) - 8px)}
+.ebauche-3 .viewer-vignette{border-radius:9px}
+.ebauche-3 .cadre::after,.ebauche-3 .strip-item::after,.ebauche-3 .masonry figure::after,
+.ebauche-3 .figure::after,.ebauche-3 .photo::after,.ebauche-3 .coat::after,
+.ebauche-3 .mapwrap::after,.ebauche-3 .viewer-scene::after{border-radius:var(--rond)}
+.ebauche-3 .cadre > i::after{border-radius:calc(var(--rond) - 8px)}
+.ebauche-3 .viewer-vignette::after{border-radius:9px}
+.ebauche-3 .btn{border-radius:999px;padding-inline:34px}
+.ebauche-3 .btn.ghost{border-radius:999px}
+.ebauche-3 .chip{border-radius:999px}
+.ebauche-3 .filters a,.ebauche-3 .filters button,.ebauche-3 .objets span{border-radius:999px}
+.ebauche-3 .record,.ebauche-3 .ledger{border-radius:18px}
+.ebauche-3 .record::before,.ebauche-3 .record::after,
+.ebauche-3 .ledger::before,.ebauche-3 .ledger::after{display:none}
+.ebauche-3 .field input,.ebauche-3 .field select,.ebauche-3 .field textarea{border-radius:14px}
+/* Le nœud du fil passe au rose, comme le reste. */
+.ebauche-3 .chapitre::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M12 21.4S1.4 14.1 1.4 7.3C1.4 3.9 4 1.3 7.3 1.3c2.1 0 4 1.2 4.7 3 .7-1.8 2.6-3 4.7-3 3.3 0 5.9 2.6 5.9 6 0 6.8-10.6 14.1-10.6 14.1Z' fill='%23B5817C'/%3E%3C/svg%3E")}
+.ebauche-3 .band::after,.ebauche-3 .livestrip::after{background:rgba(181,129,124,.26)}
+
+/* ══ 4 · NACRE ET CIEL ═══════════════════════════════════════════════
+   La couleur porte le site au lieu du blanc : un ciel très pâle en fond,
+   des cartes blanches posées dessus, et l'argent des robes silver à la
+   place de l'or. C'est la plus froide et la plus contemporaine. */
+
+body.ebauche-4{
+  --blanc:#FFFFFF; --nacre:#F1F6FB; --nacre-2:#E7EFF8; --nacre-3:#DCE7F3;
+  --ciel:#EDF4FB; --ciel-2:#E2ECF7; --ciel-3:#D2E0F0;
+  --aile:rgba(130,168,208,.3);
+  --or-pale:#EEF4FA; --or-clair:#B7CADC; --or:#95AFC7; --or-mat:#7693AE;
+  --or-tendre:#4C6885; --or-ombre:#3A5270;
+  --dorure:linear-gradient(180deg,#A9C0D6 0%,#6E8CAA 48%,#41597A 100%);
+  --dorure-bouton:linear-gradient(180deg,#FFFFFF 0%,#DFEAF6 100%);
+  --filet:rgba(118,147,174,.34); --filet-2:rgba(118,147,174,.17); --filet-3:rgba(26,37,50,.08);
+  --encre:#18222E; --encre-2:#374557; --encre-3:#566577; --encre-dim:#7A8897;
+  --coin:5px;
+}
+/* Le papier du site est bleu ; ce qui porte du texte se détache en blanc. */
+.ebauche-4 .band{background:linear-gradient(180deg,#F6FAFD,#EDF4FB)}
+.ebauche-4 .band.ink2{background:linear-gradient(180deg,var(--nacre),var(--nacre-2))}
+.ebauche-4 .band.paper{background:linear-gradient(180deg,#FFFFFF,#F4F9FD)}
+.ebauche-4 .hero{background:linear-gradient(160deg,#EAF2FA 0%,#FFFFFF 62%)}
+.ebauche-4 .hero-photo::after{background:linear-gradient(90deg,#F4F9FD 0%,rgba(244,249,253,.86) 42%,rgba(244,249,253,0) 100%)}
+.ebauche-4 .cadre{background:#FFFFFF;filter:drop-shadow(0 20px 28px rgba(60,90,125,.16))}
+.ebauche-4 .record,.ebauche-4 .ledger,.ebauche-4 .aside,
+.ebauche-4 .legalcell,.ebauche-4 .fact{background:#FFFFFF}
+.ebauche-4 .cell-b{background:#FFFFFF}
+.ebauche-4 .cell-b:hover{background:#F7FBFE}
+.ebauche-4 .masonry figure,.ebauche-4 .strip-item{background:#FFFFFF}
+.ebauche-4 .btn{color:#22364B}
+.ebauche-4 .chapitre::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M12 21.4S1.4 14.1 1.4 7.3C1.4 3.9 4 1.3 7.3 1.3c2.1 0 4 1.2 4.7 3 .7-1.8 2.6-3 4.7-3 3.3 0 5.9 2.6 5.9 6 0 6.8-10.6 14.1-10.6 14.1Z' fill='%237693AE'/%3E%3C/svg%3E")}
+.ebauche-4 .band::after,.ebauche-4 .livestrip::after{background:rgba(118,147,174,.3)}
+.ebauche-4 header.nav{background:rgba(246,250,253,.86)}
+.ebauche-4 header.nav.stuck{background:rgba(246,250,253,.95)}
+.ebauche-4 footer{background:linear-gradient(180deg,var(--nacre),var(--nacre-2))}
+/* Le logo est doré : sur un fond bleu il jure, on le passe en argent. */
+.ebauche-4 .brand img,.ebauche-4 .logo-pied{filter:grayscale(1) brightness(.92) sepia(.25) hue-rotate(170deg) saturate(1.6)}
+
+/* ══ la barre de choix ═══════════════════════════════════════════════
+   Elle n'existe qu'en local, et disparaît à l'impression. */
+.ebauches{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:95;
+  display:flex;align-items:center;gap:4px;padding:6px;
+  background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border:1px solid rgba(40,40,38,.14);border-radius:999px;
+  box-shadow:0 18px 40px -22px rgba(40,50,70,.6);
+  font-family:"Jost",system-ui,sans-serif}
+.ebauches b{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:#8A8A85;font-weight:400;padding:0 10px 0 12px}
+.ebauches a{display:block;padding:7px 14px;border-radius:999px;text-decoration:none;
+  font-size:12px;letter-spacing:.04em;color:#3A3A36;white-space:nowrap;transition:.2s}
+.ebauches a:hover{background:rgba(40,40,38,.07)}
+.ebauches a[aria-current="page"]{background:#2B2B28;color:#FFF}
+@media print{.ebauches{display:none}}
+@media(max-width:700px){
+  .ebauches{left:10px;right:10px;transform:none;justify-content:center;flex-wrap:wrap}
+  .ebauches b{width:100%;text-align:center;padding:2px 0}
+}

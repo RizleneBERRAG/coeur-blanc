@@ -38,10 +38,21 @@
     <link rel="stylesheet" href="{{ asset('fonts/fonts.css') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{-- Les ébauches : quatre directions sur le même site, pour comparer
+         autrement que sur des images de présentation. Uniquement en local —
+         voir resources/css/ebauches.css. --}}
+    @if(app()->environment('local'))
+        @vite('resources/css/ebauches.css')
+    @endif
     @stack('head')
     @stack('schema')
 </head>
-<body>
+@php
+    // 1 est la direction actuelle : elle n'a pas de classe, c'est app.css seul.
+    $ebauche = app()->environment('local') ? (int) request('ebauche') : 0;
+@endphp
+<body @class(['ebauche-'.$ebauche => $ebauche > 1])>
     {{-- Le grain de la page : une tuile de bruit fixe, posee au-dessus du fond
          et sous tout le reste. C'est elle qui fait du blanc un papier. --}}
     <div id="grain" aria-hidden="true"></div>
@@ -53,6 +64,10 @@
     </main>
 
     @include('partials.footer')
+
+    @if(app()->environment('local'))
+        @include('partials.ebauches')
+    @endif
 
     @stack('scripts')
 </body>

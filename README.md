@@ -176,6 +176,30 @@ Et sur la page du Bengal, **les robes de la maison** (`robes_maison`) : les
 quatre robes travaillées ici, chacune renvoyant à la fiche du chat qui la
 porte. C'est la différence entre un lexique de la race et un élevage.
 
+## Les quatre ébauches
+
+Quatre directions cohabitent sur le site, sur les mêmes textes et les mêmes
+photos : c'est la seule façon de comparer autre chose que des images de
+présentation. Une barre en bas d'écran permet de passer de l'une à l'autre, et
+le choix suit la page où l'on se trouve.
+
+| | Direction | Ce qui change |
+|---|---|---|
+| 1 | **Lumière** | Blanc et champagne, le fil de lumière, les angles coupés. C'est `app.css` seul, sans classe. |
+| 2 | **Plein cadre** | La photographie d'abord : plus de fil, plus d'ornement, plus de cadre. Graphite au lieu d'or, texte centré, bouton noir. |
+| 3 | **Porcelaine** | Ivoire et rose poudré, angles arrondis, boutons en gélule. La plus douce, la moins « maison de luxe ». |
+| 4 | **Nacre et ciel** | Le ciel porte la page, les cartes blanches se détachent dessus, l'argent des robes silver remplace l'or. |
+
+Tout tient dans `resources/css/ebauches.css` : chaque ébauche ne redéfinit que
+des jetons et quelques formes, jamais un composant. C'est ce qui garantit
+qu'une pièce écrite demain fonctionnera dans les quatre.
+
+**C'est un outil de décision, pas une pièce du site.** La barre et la feuille
+ne sont chargées qu'en environnement local. Une fois la direction choisie, on
+reporte ses valeurs dans `app.css`, puis on supprime `ebauches.css`,
+`partials/ebauches.blade.php`, leurs deux conditions dans le gabarit et leur
+entrée dans `vite.config.js`.
+
 ## Ce qui est en place
 
 | Domaine | Fichiers |
