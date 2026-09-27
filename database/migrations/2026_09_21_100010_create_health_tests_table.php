@@ -12,7 +12,7 @@ return new class extends Migration
         Schema::create('health_tests', function (Blueprint $table) {
             $table->id();
             $table->foreignId('cat_id')->constrained()->cascadeOnDelete();
-            $table->string('type');                          // hcm | pk_def | pra_b | fiv_felv
+            $table->string('type');                          // hcm | pkd | pk_def | pra_b | fiv_felv
             $table->string('resultat')->nullable();          // N/N, Normal, Negatif, A programmer...
             $table->date('date_examen')->nullable();
             $table->string('laboratoire')->nullable();

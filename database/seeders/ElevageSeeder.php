@@ -45,6 +45,7 @@ class ElevageSeeder extends Seeder
     /** Correspondance libelle de test -> enum. */
     private const TESTS = [
         'HCM'     => HealthTestType::Hcm,
+        'PKD'     => HealthTestType::Pkd,
         'PK-Def'  => HealthTestType::PkDef,
         'PRA-b'   => HealthTestType::PraB,
         'FIV'     => HealthTestType::FivFelv,

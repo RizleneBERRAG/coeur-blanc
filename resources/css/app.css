@@ -712,7 +712,7 @@ a.cell:hover{border-color:var(--or-mat);background:var(--nacre)}
    contact plutôt qu'une grille de cartes. */
 .masonry{columns:3;column-gap:16px}
 @media(max-width:900px){.masonry{columns:2}}
-@media(max-width:520px){.masonry{columns:1}}
+@media(max-width:380px){.masonry{columns:1}}
 .masonry figure{margin:0 0 16px;break-inside:avoid;overflow:hidden;position:relative;
   cursor:zoom-in;background:var(--nacre-2);padding:0;clip-path:var(--coupe);--coin:14px;
   transition:filter .45s var(--ease)}
@@ -1091,6 +1091,22 @@ footer .social-mark{--mark-fond:var(--nacre)}
 
 .robe:hover .cadre::after,.lignee-chat:hover .cadre::after{background:var(--or-mat)}
 .robe:hover .cadre,.lignee-chat:hover .cadre{filter:drop-shadow(0 24px 34px rgba(40,40,36,.2))}
+
+/* ── deux colonnes sur telephone ────────────────────────── */
+/* Huit portraits en pleine largeur font huit ecrans a descendre, un chat a la
+   fois. A deux colonnes on en voit quatre d'un coup, et la vignette reste
+   assez grande pour qu'on lise la robe. Les fiches chaton, elles, restent en
+   pleine largeur : leur releve a conduite de points a besoin de sa largeur. */
+@media(max-width:560px){
+  .repros,.robes{grid-template-columns:1fr 1fr;gap:16px 14px}
+  .repro .cap{padding-top:9px;gap:3px}
+  .repro .cap .mono{font-size:9px}
+  .repro .cap h3{font-size:15px;letter-spacing:.11em}
+  .repro .cap p{font-size:13.5px;line-height:1.45}
+  .robe b{font-size:12.5px;letter-spacing:.1em}
+  .robe small{font-size:13.5px}
+  .robe p{font-size:13.5px;line-height:1.5}
+}
 
 /* ── confort tactile ─────────────────────────────────────────────── */
 /* On agrandit la ZONE sensible, pas le dessin. Ciblé sur pointer:coarse :

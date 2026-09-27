@@ -49,7 +49,7 @@
             </a>
             <a class="cell-b" href="{{ route('contact') }}" style="text-decoration:none">
                 <span class="n">Nous joindre</span>
-                <p>Par téléphone, par email, ou en venant nous voir sur rendez-vous.</p>
+                <p>Par téléphone, par email, ou en visio sur rendez-vous.</p>
             </a>
         </div>
 

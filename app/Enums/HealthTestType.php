@@ -5,6 +5,7 @@ namespace App\Enums;
 enum HealthTestType: string
 {
     case Hcm     = 'hcm';
+    case Pkd     = 'pkd';
     case PkDef   = 'pk_def';
     case PraB    = 'pra_b';
     case FivFelv = 'fiv_felv';
@@ -13,6 +14,7 @@ enum HealthTestType: string
     {
         return match ($this) {
             self::Hcm     => 'HCM — échographie cardiaque',
+            self::Pkd     => 'PKD — échographie rénale',
             self::PkDef   => 'PK-Def — déficit en pyruvate kinase',
             self::PraB    => 'PRA-b — atrophie rétinienne',
             self::FivFelv => 'FIV / FeLV',
@@ -22,7 +24,8 @@ enum HealthTestType: string
     public function methode(): string
     {
         return match ($this) {
-            self::Hcm     => 'Contrôle annuel',
+            self::Hcm,
+            self::Pkd     => 'Contrôle annuel',
             self::PkDef,
             self::PraB    => 'Test ADN',
             self::FivFelv => 'Dépistage sanguin',
@@ -32,7 +35,7 @@ enum HealthTestType: string
     /** Les depistages exiges avant toute mise a la reproduction. */
     public static function requisReproduction(): array
     {
-        return [self::Hcm, self::PkDef, self::PraB, self::FivFelv];
+        return [self::Hcm, self::Pkd, self::PkDef, self::PraB, self::FivFelv];
     }
 
     public static function options(): array
