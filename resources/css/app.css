@@ -411,8 +411,13 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 /* Le voile court sur presque la moitié de la photo : le titre le traverse, et
    c'est voulu — une typographie qui entre dans l'image tient la page bien
    mieux qu'une colonne sagement rangée à côté. */
-.hero-photo::after{content:"";position:absolute;inset:0 auto 0 0;width:46%;
-  background:linear-gradient(90deg,#FFFFFF 0%,rgba(255,255,255,.88) 42%,rgba(255,255,255,0) 100%)}
+/* Le voile couvre les trois cinquiemes de la photo, et il ne s'ouvre pas d'un
+   coup : ses arrets partent lentement. Sur 46 % et avec un degre droit, le mur
+   du fond apparaissait encore trop pres du bord et y dessinait une couture. */
+.hero-photo::after{content:"";position:absolute;inset:0 auto 0 0;width:60%;
+  background:linear-gradient(90deg,#FFFFFF 0%,rgba(255,255,255,.995) 16%,
+    rgba(255,255,255,.95) 33%,rgba(255,255,255,.8) 52%,
+    rgba(255,255,255,.44) 74%,rgba(255,255,255,0) 100%)}
 
 .hero-texte{position:relative;z-index:2;width:100%;max-width:var(--maxw);margin-inline:auto;
   padding-inline:var(--gout);padding-block:clamp(48px,7vw,90px)}
