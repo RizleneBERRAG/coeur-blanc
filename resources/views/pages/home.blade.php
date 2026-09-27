@@ -67,7 +67,8 @@
     <div class="halo" aria-hidden="true"></div>
     <div class="rayons" aria-hidden="true"></div>
 
-    <div class="frise"><x-fleuron taille="grand" /></div>
+    {{-- L'emblème ouvre la page, aligné sur le fil qui descend plus bas. --}}
+    <div class="hero-tete"><x-fleuron taille="moyen" /></div>
 
     <div class="duo">
         <div class="cadre">
@@ -155,7 +156,7 @@
             <div class="stack">
                 <span class="eyebrow">D'où vient le nom</span>
                 <p class="quote">« Ô Coeur Blanc, pour Maina&nbsp;— ma petite étoile. »</p>
-                <p class="lede">
+                <p class="lede lettrine">
                     Tout a commencé par une minette snow au regard plein d'amour. Maina nous a fait
                     tomber amoureux de la race, et c'est en hommage à elle que la chatterie porte ce
                     nom. Quand elle est partie rejoindre les étoiles, nous avons accueilli sa sœur,

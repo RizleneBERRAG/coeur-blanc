@@ -20,7 +20,7 @@
             </figure>
             <div class="stack">
                 <h3>Une famille de Bengals, depuis 2019</h3>
-                <p class="lede">
+                <p class="lede lettrine">
                     Nous exerçons depuis 2019, dans le but de faciliter la transition de votre animal
                     entre notre foyer et le vôtre. Les chatons sont manipulés dès leur plus jeune âge
                     et vivent en contact permanent avec nous — adultes, enfants — et les bruits du

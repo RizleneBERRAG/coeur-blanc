@@ -9,7 +9,6 @@
 <section class="band">
     <div class="wrap">
         <div class="chapitre gauche" style="margin-bottom:30px">
-            <div class="frise"><x-fleuron taille="moyen" /></div>
             <span class="numero">
                 <a href="{{ route('cats.index') }}" style="text-decoration:none">← L'élevage</a> · {{ $chat->role->libelle() }}
             </span>

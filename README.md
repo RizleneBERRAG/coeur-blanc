@@ -113,6 +113,24 @@ Deux règles tiennent ce tri :
 Une charte peut être soignée et ressembler à trente autres sites d'élevage.
 Quatre choses tiennent celui-ci à part, et aucune n'est décorative.
 
+**Le fil.** Un trait d'or descend la page entière, à gauche du texte, et
+chaque chapitre s'y accroche par une étoile à quatre branches — un clin d'œil
+à Maina, « ma petite étoile ». Le rang du chapitre se tient dans la marge, pas
+au-dessus du titre. C'est ce qui sort le site du gabarit habituel : une pile de
+blocs centrés, si soignée soit-elle, ressemble à tous les sites élégants.
+
+Le fil est dessiné par les bandes elles-mêmes, qui se touchent — une ligne par
+bande, et elle ne s'interrompt jamais. Sa position se mesure depuis la colonne
+de texte, qui est centrée et bornée, d'où le `max()` dans `.band::after`. Trois
+variables tiennent toute la mise en page : `--colonne` (la marge des numéros),
+`--retrait` (la distance du fil au texte) et `--gout` (la gouttière). Sous
+900 px la colonne tombe à zéro et le rang repasse au-dessus du titre.
+
+**Le relevé en index.** Sur les fiches, l'intitulé et la valeur sont reliés par
+une conduite de points, comme dans un index imprimé. Le pointillé est un
+pseudo-élément qui s'étire à l'intérieur de l'intitulé, et non un fond à
+masquer : un fond trahirait la couleur de la bande dès qu'elle change.
+
 **Le sceau.** Le Ô du nom, réduit à sa géométrie : un anneau et son accent. Il
 est dans le bandeau, au pied de page et dans l'onglet du navigateur
 (`public/images/sceau.svg`, et le PNG que réclame Safari). La plupart des

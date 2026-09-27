@@ -15,10 +15,13 @@
     </span>
     <span class="bd">
         <span class="nm"><h3>{{ $chaton->nom }}</h3><span class="ref">{{ $chaton->reference }}</span></span>
+        {{-- Chaque couple est enveloppé dans un div — c'est valide dans une
+             liste de définitions, et c'est ce qui permet la conduite de
+             points entre l'intitulé et la valeur. --}}
         <dl>
-            <dt>Sexe</dt><dd>{{ \Illuminate\Support\Str::ucfirst($chaton->sexe) }}</dd>
-            <dt>Robe</dt><dd>{{ $chaton->robe }}</dd>
-            <dt>Né le</dt><dd>{{ $chaton->litter->date_naissance->translatedFormat('j F Y') }}</dd>
+            <div><dt>Sexe</dt><dd>{{ \Illuminate\Support\Str::ucfirst($chaton->sexe) }}</dd></div>
+            <div><dt>Robe</dt><dd>{{ $chaton->robe }}</dd></div>
+            <div><dt>Né le</dt><dd>{{ $chaton->litter->date_naissance->translatedFormat('j F Y') }}</dd></div>
         </dl>
         <span class="go">Voir la fiche complète</span>
     </span>

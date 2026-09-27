@@ -5,7 +5,7 @@
     'centre'  => true,
     'gauche'  => false,
     'niveau'  => 2,
-    'frise'   => true,
+    'frise'   => false,
 ])
 
 {{--
@@ -17,20 +17,18 @@
     d'un h2, parce que la hiérarchie de la charte ne doit pas dépendre du
     niveau de balise.
 
-    Le rang du chapitre (« II · La lignée ») est posé par un compteur CSS
-    sur les seuls chapitres de niveau 2 : rien à écrire ici, et l'ordre reste
+    Le chapitre s'accroche au fil par une étoile, et son rang (« II · La
+    lignée ») se tient dans la marge de gauche. Les deux sont posés par
+    app.css, à partir d'un compteur : rien à écrire ici, et l'ordre reste
     juste le jour où une section s'ajoute. Le titre de page ouvre le livre,
     il ne se numérote pas.
 
-    « centre » est gardé pour les gabarits hérités : la charte centre par
-    défaut, « gauche » aligne à gauche là où le texte le réclame.
+    « centre », « gauche » et « frise » ne servent plus à rien : la charte
+    n'a plus qu'un seul alignement. Ils restent acceptés pour que les
+    gabarits écrits avant ne cassent pas.
 --}}
 
-<div {{ $attributes->class(['chapitre', 'gauche' => $gauche, 'compte' => (int) $niveau === 2]) }}>
-    @if($frise)
-        <div class="frise"><x-fleuron :taille="(int) $niveau === 1 ? 'grand' : 'moyen'" /></div>
-    @endif
-
+<div {{ $attributes->class(['chapitre', 'compte' => (int) $niveau === 2]) }}>
     @if($eyebrow)
         <span class="numero">{{ $eyebrow }}</span>
     @endif
