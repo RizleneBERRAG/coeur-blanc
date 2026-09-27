@@ -89,6 +89,23 @@ Deux règles tiennent ce tri :
    `border` : `clip-path` trancherait le border et laisserait les diagonales
    nues. Seules les bandes photo pleine largeur gardent des bords francs.
 
+### Deux règles sur les images
+
+**Aucun cadre n'impose son format à une photo.** Les images au fil du texte
+gardent les proportions dans lesquelles elles ont été prises, et le ruban
+défilant donne à ses vignettes une hauteur commune mais des largeurs libres.
+Un 4/3 imposé coupait la tête de tous les portraits — et chez cet élevage,
+toutes les photos de chats sont des portraits. Les seuls recadrages sont faits
+en amont, à l'import, pour les places qui l'exigent : les portraits de fiche en
+7/10 et les deux bandes pleine largeur en 2,13.
+
+**Aucun document dans une galerie de photos.** Les certificats LOOF et les
+diplômes d'exposition sont dans `public/images/documents`, hors de portée de
+`photos:sync`. Les distinctions sont citées en toutes lettres sur la page de
+l'élevage (`config/bengal.php`, clé `distinctions`) : un diplôme photographié
+de biais sur une table est un mauvais visuel, et la ligne de texte dit la même
+chose mieux.
+
 ### Ce qui reste inventé, à remplacer depuis le back-office
 
 - **la portée en cours** (« Portée B », B'Ciel, B'Nuage, B'Ange) : ses noms, ses
@@ -131,15 +148,19 @@ une conduite de points, comme dans un index imprimé. Le pointillé est un
 pseudo-élément qui s'étire à l'intérieur de l'intitulé, et non un fond à
 masquer : un fond trahirait la couleur de la bande dès qu'elle change.
 
-**Le sceau.** Le Ô du nom, réduit à sa géométrie : un anneau et son accent. Il
-est dans le bandeau, au pied de page et dans l'onglet du navigateur
-(`public/images/sceau.svg`, et le PNG que réclame Safari). La plupart des
-élevages posent une patte de chat ou une couronne.
+**Le logo de la maison.** Celui fourni par la cliente : un ovale surmonté de
+son accent — le Ô — avec un cœur au creux. Le fichier d'origine est un tracé
+blanc sur transparence, fait pour du sombre ; il a été recoloré à partir de son
+seul canal alpha, la forme comptant et non la teinte. Il en sort la marque
+seule (`logo-marque.png`) pour le bandeau et l'onglet, le logo entier
+(`logo.png`) pour le pied de page, et la version blanche rognée
+(`logo-blanc.png`) pour tout fond sombre à venir. Le mot du bandeau ne répète
+pas le Ô, la marque le porte déjà.
 
-**L'emblème.** Un cœur ailé, au trait de 0,9 px
-(`resources/views/components/fleuron.blade.php`). Le cœur est le mot du nom,
-les ailes disent le reste. Il ne doit jamais être rempli : c'est un cœur
-*blanc*, il reste ouvert.
+**Le cœur.** Celui du logo, isolé en SVG
+(`resources/views/components/coeur.blade.php`). Il sert de nœud au fil, à
+chaque chapitre. Plein, jamais en contour : c'est ainsi qu'il est dessiné dans
+la marque.
 
 **L'histoire du nom**, sur l'accueil. La chatterie s'appelle Ô Coeur Blanc en
 hommage à Maina, la petite chatte snow par qui tout a commencé, et c'est en

@@ -234,7 +234,7 @@ return [
                 'nb' => 3,
                 'description' => "Deux mâles et une femelle, nés le 6 mars 2025. Tous ont trouvé une famille ; la femelle reste à la chatterie et sera reproductrice en 2026.",
                 'robe' => 'Black silver tabby',
-                'photo' => 'portee-2025-1',
+                'photo' => 'portee-1',
             ],
             [
                 'slug' => 'portee-a-unyk-ukaina-2025',
@@ -245,7 +245,7 @@ return [
                 'nb' => 2,
                 'description' => "Un mâle et une femelle, nés le 20 mars 2025. Atlas, A'Zazou, A'Nala et A'Pumba ont trouvé de super familles ; Armonie, la femelle mink, reste avec nous comme future reproductrice.",
                 'robe' => 'Snow mink charcoal',
-                'photo' => 'portee-4',
+                'photo' => 'portee-2',
             ],
         ],
 
@@ -268,11 +268,12 @@ return [
         /*
          * La galerie. Categories : adultes, chatons, maison, recompenses.
          *
-         * N'y figurent que des photos et des documents officiels. Les montages
-         * du site Wix — prenoms ecrits en script rose, coeurs, ciel etoile — en
-         * ont ete ecartes : ils ne sont pas de la meme famille que le reste du
-         * site, et c'est ce qui le faisait basculer du cote enfantin. Ils sont
-         * toujours sur le site Wix si l'eleveuse veut les recuperer.
+         * N'y figurent QUE des photos de chats. Deux familles d'images en ont
+         * ete ecartees : les montages du site Wix — prenoms en script rose,
+         * coeurs, ciel etoile —, et les certificats, qui sont des documents
+         * scannes et n'ont rien a faire dans une mosaique de photos. Les
+         * distinctions sont desormais citees en toutes lettres sur la page de
+         * l'elevage, ce qui se lit mieux qu'un diplome photographie de biais.
          *
          * Les legendes detaillees et les textes alternatifs vivent dans
          * SyncPhotos::LEGENDES — une seule liste pour toute l'application.
@@ -281,25 +282,20 @@ return [
             ['f' => 'unyk-1',          'c' => 'Unyk',                      'cat' => 'adultes'],
             ['f' => 'portee-1',        'c' => 'Une portée au complet',     'cat' => 'chatons'],
             ['f' => 'saphyr-2',        'c' => 'Saphyr',                    'cat' => 'adultes'],
-            ['f' => 'portee-2025-1',   'c' => 'Les premiers jours',        'cat' => 'chatons'],
-            ['f' => 'shiva-2',         'c' => 'Shiva',                     'cat' => 'adultes'],
             ['f' => 'chaton-2',        'c' => 'Premiers pas en hauteur',   'cat' => 'chatons'],
+            ['f' => 'shiva-2',         'c' => 'Shiva',                     'cat' => 'adultes'],
+            ['f' => 'ultime-3',        'c' => 'Ultime en surveillance',    'cat' => 'maison'],
             ['f' => 'ukaina-1',        'c' => 'Ukaïna',                    'cat' => 'adultes'],
             ['f' => 'portee-2',        'c' => 'La fratrie sur le plaid',   'cat' => 'chatons'],
             ['f' => 'hero-ultime',     'c' => 'Ultime, sur la passerelle', 'cat' => 'adultes'],
             ['f' => 'chaton-1',        'c' => 'Le jeu du soir',            'cat' => 'chatons'],
             ['f' => 'jag-1',           'c' => 'Jag',                       'cat' => 'adultes'],
-            ['f' => 'portee-3',        'c' => 'Deux chatons au jeu',       'cat' => 'chatons'],
-            ['f' => 'salambo-1',       'c' => 'Salambo',                   'cat' => 'adultes'],
-            ['f' => 'portee-2025-2',   'c' => 'Deux jours',                'cat' => 'chatons'],
             ['f' => 'olympe-1',        'c' => 'Olympe',                    'cat' => 'maison'],
-            ['f' => 'unyk-3',          'c' => "Unyk dans l'enclos",        'cat' => 'adultes'],
-            ['f' => 'chaton-3',        'c' => 'Le plumeau',                'cat' => 'chatons'],
-            ['f' => 'ultime-3',        'c' => 'Ultime en surveillance',    'cat' => 'maison'],
+            ['f' => 'salambo-1',       'c' => 'Salambo',                   'cat' => 'adultes'],
+            ['f' => 'unyk-3',          'c' => "Unyk à la grimpe",          'cat' => 'adultes'],
             ['f' => 'shiva-5',         'c' => 'Shiva au studio',           'cat' => 'adultes'],
-            ['f' => 'portee-4',        'c' => 'Le jour de la naissance',   'cat' => 'chatons'],
+            ['f' => 'chaton-3',        'c' => 'Le plumeau',                'cat' => 'chatons'],
             ['f' => 'saphyr-4',        'c' => "Saphyr à l'automne",        'cat' => 'adultes'],
-            ['f' => 'portee-2025-3',   'c' => 'Le mâle brown',             'cat' => 'chatons'],
             ['f' => 'ukaina-3',        'c' => 'Ukaïna de profil',          'cat' => 'adultes'],
             ['f' => 'salambo-2',       'c' => "Salambo à l'arbre à chat",  'cat' => 'maison'],
             ['f' => 'unyk-2',          'c' => 'Unyk sur la poutre',        'cat' => 'adultes'],
@@ -316,16 +312,6 @@ return [
             ['f' => 'shiva-4',         'c' => 'Shiva allongée',            'cat' => 'adultes'],
             ['f' => 'saphyr-3',        'c' => 'Saphyr au jeu',             'cat' => 'adultes'],
             ['f' => 'ukaina-2',        'c' => 'Ukaïna, la patte levée',    'cat' => 'adultes'],
-
-            // Les documents : la preuve, pas la photo.
-            ['f' => 'cert-saphyr',            'c' => 'Saphyr — certificat de conformité LOOF',  'cat' => 'récompenses'],
-            ['f' => 'cert-shiva',             'c' => 'Shiva — certificat de conformité LOOF',   'cat' => 'récompenses'],
-            ['f' => 'expo-unyk-tarare',       'c' => 'Unyk — prix spécial, Tarare 2024',        'cat' => 'récompenses'],
-            ['f' => 'expo-ukaina-tarare',     'c' => 'Ukaïna — prix spécial, Tarare 2024',      'cat' => 'récompenses'],
-            ['f' => 'expo-ukaina-autun',      'c' => 'Ukaïna — prix spécial, Autun 2023',       'cat' => 'récompenses'],
-            ['f' => 'expo-ukaina-autun-2023', 'c' => 'Ukaïna — prix spécial, Autun 2023',       'cat' => 'récompenses'],
-            ['f' => 'expo-salambo-autun',     'c' => 'Salambo — best variété, Autun 2023',      'cat' => 'récompenses'],
-            ['f' => 'expo-coupe',             'c' => 'Les récompenses de Tarare',               'cat' => 'récompenses'],
         ],
 
         'FAQ' => [
@@ -343,7 +329,7 @@ return [
             ],
             [
                 'Vos chats sont-ils présentés en exposition ?',
-                '<p>Oui, et les certificats sont publiés dans la <a href="/galerie?categorie=r%C3%A9compenses">galerie</a>. Ukaïna a obtenu un prix spécial à Autun en 2023 puis à Tarare en 2024, Unyk un prix spécial à Tarare en 2024, Salambo le best variété à Autun en 2023.</p><p>Saphyr et Shiva ont par ailleurs passé l\'examen de conformité à la race du LOOF, et leurs certificats sont également en ligne.</p>',
+                '<p>Oui. Ukaïna a obtenu un prix spécial à Autun en 2023 puis à Tarare en 2024, Unyk un prix spécial à Tarare en 2024, Salambo le best variété à Autun en 2023. Le relevé complet est sur la page <a href="/elevage">L\'élevage</a>.</p><p>Saphyr et Shiva ont par ailleurs passé l\'examen de conformité à la race du LOOF. Les certificats sont conservés et montrés aux familles qui le souhaitent.</p>',
             ],
             [
                 'Le Bengal s\'entend-il avec les enfants et les autres animaux ?',

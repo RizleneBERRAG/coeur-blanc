@@ -8,10 +8,9 @@
     <meta name="description" content="@yield('description', "Chatterie Ô Coeur Blanc, élevage familial de chats Bengal LOOF à Meyrieu-les-Étangs (38), entre Lyon et Grenoble. Parents dépistés HCM, PK-Def, PRA-b et FIV/FeLV, chatons élevés à la maison.")">
     <link rel="canonical" href="{{ url()->current() }}">
 
-    {{-- Le sceau de la maison : le Ô du nom, un anneau et son accent. Le SVG
-         suffit aux navigateurs de bureau, Safari réclame un PNG. --}}
-    <link rel="icon" type="image/svg+xml" href="{{ asset('images/sceau.svg') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/sceau-180.png') }}">
+    {{-- La marque du logo, sur le papier du site. --}}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/favicon-180.png') }}">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Chatterie Ô Coeur Blanc">

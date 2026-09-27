@@ -128,6 +128,23 @@ return [
     ],
 
     /*
+     * Les distinctions, relevees sur les certificats publies par l'elevage.
+     *
+     * Elles sont ecrites, pas montrees : un diplome photographie de biais sur
+     * une table est un mauvais visuel, et la ligne de texte dit la meme chose
+     * mieux. Les scans restent dans public/images/documents si l'eleveuse veut
+     * un jour les mettre en ligne.
+     */
+    'distinctions' => [
+        ['chat' => 'ukaina',  'prix' => 'Prix spécial',      'ou' => 'Exposition de Tarare (69)', 'quand' => 'Février 2024'],
+        ['chat' => 'unyk',    'prix' => 'Prix spécial',      'ou' => 'Exposition de Tarare (69)', 'quand' => 'Février 2024'],
+        ['chat' => 'ukaina',  'prix' => 'Deux prix spéciaux', 'ou' => 'Exposition d’Autun (71)',  'quand' => 'Septembre 2023'],
+        ['chat' => 'salambo', 'prix' => 'Best variété',      'ou' => 'Exposition d’Autun (71)',   'quand' => 'Septembre 2023'],
+        ['chat' => 'shiva',   'prix' => 'Conforme à la race', 'ou' => 'Examen LOOF, Autun',       'quand' => 'Septembre 2023'],
+        ['chat' => 'saphyr',  'prix' => 'Conforme à la race', 'ou' => 'Examen LOOF, Péronnas',    'quand' => 'Avril 2022'],
+    ],
+
+    /*
      * La lignee, sur la page de l'elevage. Un rang par generation, du plus
      * ancien au plus recent, chaque entree etant un slug de chat.
      *

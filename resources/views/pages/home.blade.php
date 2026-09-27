@@ -67,8 +67,6 @@
     <div class="halo" aria-hidden="true"></div>
     <div class="rayons" aria-hidden="true"></div>
 
-    {{-- L'emblème ouvre la page, aligné sur le fil qui descend plus bas. --}}
-    <div class="hero-tete"><x-fleuron taille="moyen" /></div>
 
     <div class="duo">
         <div class="cadre">
@@ -217,8 +215,8 @@
     <div class="wrap">
         <div class="two rev">
             <figure class="figure">
-                <img src="{{ asset('images/cats/jag-2.webp') }}" alt="Jag, Bengal brown tabby rosetted, allongé dans l'herbe" loading="lazy">
-                <figcaption>Jag, fin d'après-midi au jardin</figcaption>
+                <img src="{{ asset('images/cats/unyk-3.webp') }}" alt="Unyk, Bengal black charcoal silver, dressé contre un tronc dans l'enclos" loading="lazy">
+                <figcaption>Unyk, dans l'enclos de la maison</figcaption>
             </figure>
             <div class="stack">
                 <span class="eyebrow">La race</span>

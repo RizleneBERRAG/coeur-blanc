@@ -6,10 +6,12 @@
 
 <header class="nav" id="nav">
     <div class="wrap navin">
+        {{-- La marque du logo tient lieu de Ô : le mot ne le répète pas. --}}
         <a class="brand" href="{{ route('home') }}">
-            <x-sceau :taille="34" :cercle="false" />
+            <img src="{{ asset('images/logo-marque.png') }}" alt=""
+                 width="520" height="613" fetchpriority="high">
             <span>
-                <b>Ô Coeur Blanc</b>
+                <b>Cœur Blanc</b>
                 <small>Chatterie de Bengal · Isère</small>
             </span>
         </a>

@@ -102,6 +102,39 @@
     </div>
 </section>
 
+<section class="band ink2">
+    <div class="wrap">
+        <x-section-head
+            eyebrow="Les juges"
+            titre="Ce qu'en disent les rings"
+            lede="Nos chats sont présentés en exposition, et deux d'entre eux ont passé l'examen de conformité à la race du LOOF. Les certificats sont conservés et remis sur demande." />
+
+        <div style="max-width:820px">
+            <x-record titre="Distinctions" meta="{{ count(config('bengal.distinctions')) }} titres"
+                      note="Les diplômes eux-mêmes ne sont pas publiés : un document scanné n'est pas une photographie, et la ligne ci-dessus en dit autant. Ils sont montrés aux familles qui le souhaitent.">
+                <table>
+                    @foreach(config('bengal.distinctions') as $d)
+                        @php($chat = \App\Models\Cat::publies()->where('slug', $d['chat'])->first())
+                        <tr>
+                            <th>
+                                @if($chat)
+                                    <a href="{{ route('cats.show', $chat) }}">{{ $chat->nom }}</a>
+                                @else
+                                    {{ \Illuminate\Support\Str::upper($d['chat']) }}
+                                @endif
+                            </th>
+                            <td>
+                                <b>{{ $d['prix'] }}</b>
+                                <span class="small" style="display:block">{{ $d['ou'] }} · {{ $d['quand'] }}</span>
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
+            </x-record>
+        </div>
+    </div>
+</section>
+
 <x-photo-band image="images/cats/bande-enclos.webp"
               legende="Une à deux portées par an, pas davantage"
               hauteur="44vh" />

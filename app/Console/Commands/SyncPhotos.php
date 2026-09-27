@@ -31,8 +31,9 @@ class SyncPhotos extends Command
      */
     public const LEGENDES = [
         /*
-         * Les photos de l'elevage, reprises du site Wix et recadrees au format
-         * des arches. Chaque entree : [legende editoriale, categorie, texte
+         * Les photos de l'elevage, reprises du site Wix et recadrees.
+         * Uniquement des chats : les certificats et les diplomes vivent dans
+         * public/images/documents, hors de portee de photos:sync. Chaque entree : [legende editoriale, categorie, texte
          * alternatif]. Le texte alternatif decrit ce qu'on voit, la legende
          * raconte — ce ne sont pas les memes mots.
          */
@@ -75,11 +76,6 @@ class SyncPhotos extends Command
         'chaton-3'      => ["B'Ange", 'chatons', 'Chaton Bengal brown tabby jouant avec un plumeau coloré'],
         'portee-1'      => ['Une portée au complet', 'chatons', 'Quatre chatons Bengal alignés sur un arbre à chat'],
         'portee-2'      => ['La fratrie sur le plaid', 'chatons', 'Quatre chatons Bengal serrés les uns contre les autres sur un plaid'],
-        'portee-3'      => ['Deux chatons au jeu', 'chatons', 'Deux chatons Bengal jouant sur un tapis de jeu'],
-        'portee-4'      => ['Le jour de la naissance', 'chatons', 'Chatons Bengal nouveau-nés tenus dans une main'],
-        'portee-2025-1' => ['Les premiers jours', 'chatons', 'Chatons Bengal nouveau-nés de la portée de mars 2025, mâle et femelle black silver'],
-        'portee-2025-2' => ['Deux jours', 'chatons', 'Chatonne Bengal black silver nouveau-née, endormie sur un plaid'],
-        'portee-2025-3' => ['Le mâle brown', 'chatons', 'Chaton Bengal brown nouveau-né de la portée de mars 2025'],
         'portee-2025-4' => ['Chatons de mars 2025', 'chatons', 'Chatons Bengal de la portée Shiva et Salambo, assis parmi des peluches'],
         'portee-2025-5' => ['Armonie, femelle mink', 'chatons', 'Chatonne Bengal mink de la portée de mars 2025, assise près de peluches'],
         'portee-2025-6' => ['Les quatre de mars', 'chatons', 'Quatre chatons Bengal de la portée de mars 2025 en montage photo'],
@@ -97,15 +93,6 @@ class SyncPhotos extends Command
         'montage-ultime' => ['Ultime, trois regards', 'adultes', 'Montage de trois photos d’Ultime, Bengal black silver'],
         'banniere'       => ["L'élevage", 'maison', 'Bandeau de la chatterie Ô Coeur Blanc : les Bengals de la maison sur un ciel étoilé'],
 
-        // ── les documents ──
-        'cert-saphyr'            => ['Saphyr — certificat de conformité LOOF', 'récompenses', 'Certificat de conformité à la race délivré par le LOOF pour Saphyr Ô Coeur Blanc'],
-        'cert-shiva'             => ['Shiva — certificat de conformité LOOF', 'récompenses', 'Certificat de conformité à la race délivré par le LOOF pour Shiva Ô Coeur Blanc'],
-        'expo-unyk-tarare'       => ['Unyk — prix spécial, Tarare 2024', 'récompenses', 'Diplôme de prix spécial décerné à Unyk de FashionBengal à l’exposition de Tarare, février 2024'],
-        'expo-ukaina-tarare'     => ['Ukaïna — prix spécial, Tarare 2024', 'récompenses', 'Diplôme de prix spécial décerné à Ukaïna de FashionBengal à l’exposition de Tarare, février 2024'],
-        'expo-ukaina-autun'      => ['Ukaïna — prix spécial, Autun 2023', 'récompenses', 'Diplôme de prix spécial décerné à Ukaïna de FashionBengal à l’exposition d’Autun, septembre 2023'],
-        'expo-ukaina-autun-2023' => ['Ukaïna — prix spécial, Autun 2023', 'récompenses', 'Second diplôme de prix spécial décerné à Ukaïna de FashionBengal à l’exposition d’Autun, septembre 2023'],
-        'expo-salambo-autun'     => ['Salambo — best variété, Autun 2023', 'récompenses', 'Diplôme de best variété décerné à Ambersands Salambo à l’exposition d’Autun, septembre 2023'],
-        'expo-coupe'             => ['Les récompenses de Tarare', 'récompenses', 'Coupe, rosettes et diplômes rapportés de l’exposition de Tarare'],
     ];
 
     public function handle(): int

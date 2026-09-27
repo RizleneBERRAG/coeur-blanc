@@ -17,7 +17,8 @@
                     Élevage familial de chats Bengal LOOF à {{ $ville }} ({{ $cp }}), en Isère,
                     entre Lyon et Grenoble. Parents dépistés, chatons élevés à la maison depuis 2019.
                 </p>
-                <x-sceau class="sceau-pied" :taille="72" />
+                <img class="logo-pied" src="{{ asset('images/logo.png') }}"
+                     alt="Chatterie Cœur Blanc" width="760" height="642" loading="lazy">
             </div>
             <div>
                 <h4>L'élevage</h4>
