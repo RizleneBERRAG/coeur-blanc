@@ -241,9 +241,16 @@ Ce qu'il faut savoir avant de toucher à `app.css` :
 - **Le seul dessin qui subsiste est le cœur du logo**, au pied de page et en
   marge d'un encart. Il vient de la marque, il ne décore pas.
 
-Le logo, lui, n'a pas été touché : il reste doré, seule couleur d'une page
-autrement neutre. Si l'éleveuse préfère, une version graphite se substitue en
-remplaçant les fichiers de `public/images/`, sans une ligne de CSS.
+Le logo suit la charte : il était doré (#A98F5E), il est en graphite
+(#3A3A36), le ton médian du dégradé qui peint le nom dans le bandeau — la
+marque et le mot se lisent ainsi comme un seul objet. Seule la couleur a
+changé : le tracé est porté par le canal alpha, la forme et ses bords
+adoucis sont intacts.
+
+**Les fichiers dorés sont conservés** sous `logo-or.png`,
+`logo-marque-or.png`, `favicon-32-or.png` et `favicon-180-or.png` dans
+`public/images/`. Revenir à l'or, c'est les recopier par-dessus les quatre
+fichiers sans suffixe : aucune ligne de CSS ni de gabarit à toucher.
 
 ## Ce qui est en place
 
