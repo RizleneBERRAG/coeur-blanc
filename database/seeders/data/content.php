@@ -53,8 +53,8 @@ return [
                 'robe' => 'Brown tabby, motif spotted et rosettes',
                 'loof' => 'LOOF 2021.14021',
                 'icad' => '250 269 608 849 050',
-                'photo' => 'saphyr-2',
-                'photo2' => 'saphyr-1',
+                'photo' => 'saphyr-5',
+                'photo2' => 'saphyr-2',
                 'texte' => "Saphyr Ô Coeur Blanc, née le 17 janvier 2021 à la chatterie, fille de Jag. Fond chaud, rosettes larges et bien ouvertes, glitter franchement visible en pleine lumière. Déclarée conforme à la race par le LOOF en juin 2022. Mère très présente, qui élève ses portées au milieu de la maison.",
                 'tests' => [
                     ['HCM — échographie cardiaque', 'Normal', 'Contrôle annuel'],
@@ -148,8 +148,8 @@ return [
                 'robe' => 'Black silver tabby, motif spotted et rosettes',
                 'loof' => 'TICA SBT 040421 084',
                 'icad' => '616 093 901 665 388',
-                'photo' => 'salambo-1',
-                'photo2' => 'salambo-2',
+                'photo' => 'salambo-2',
+                'photo2' => 'salambo-1',
                 'texte' => "Ambersands Salambo, né le 4 avril 2021, importé à l'été 2021 pour apporter du sang étranger à la lignée. Best variété à l'exposition d'Autun en septembre 2023. Mâle très affectueux, proche de l'homme et des autres chats, bavard et joueur. Entièrement testé et sain. Placé en retraite en février 2025 — nous avons gardé l'une de ses filles.",
                 'tests' => [
                     ['HCM — échographie cardiaque', 'Normal', 'Contrôle annuel'],
@@ -278,40 +278,37 @@ return [
          * Les legendes detaillees et les textes alternatifs vivent dans
          * SyncPhotos::LEGENDES — une seule liste pour toute l'application.
          */
+        /*
+         * La galerie : dix-sept photos, toutes prises a la maison ou dans
+         * l'enclos, en lumiere du jour.
+         *
+         * Les portraits de studio sur fond noir en sont absents : sur une
+         * page blanche, un aplat noir tranche et la mosaique se met a
+         * clignoter. Ils restent sur les fiches des chats, ou un fond sombre
+         * fait justement un portrait.
+         *
+         * Shiva et Ukaina n'apparaissent donc pas ici : l'elevage n'a publie
+         * d'elles que des photos de studio. Le jour ou l'eleveuse en aura
+         * prises a la maison, leur place est dans cette liste.
+         */
         'GALERIE' => [
-            ['f' => 'unyk-1',          'c' => 'Unyk',                      'cat' => 'adultes'],
-            ['f' => 'portee-1',        'c' => 'Une portée au complet',     'cat' => 'chatons'],
-            ['f' => 'saphyr-2',        'c' => 'Saphyr',                    'cat' => 'adultes'],
-            ['f' => 'chaton-2',        'c' => 'Premiers pas en hauteur',   'cat' => 'chatons'],
-            ['f' => 'shiva-2',         'c' => 'Shiva',                     'cat' => 'adultes'],
-            ['f' => 'ultime-3',        'c' => 'Ultime en surveillance',    'cat' => 'maison'],
-            ['f' => 'ukaina-1',        'c' => 'Ukaïna',                    'cat' => 'adultes'],
-            ['f' => 'portee-2',        'c' => 'La fratrie sur le plaid',   'cat' => 'chatons'],
-            ['f' => 'hero-ultime',     'c' => 'Ultime, sur la passerelle', 'cat' => 'adultes'],
-            ['f' => 'chaton-1',        'c' => 'Le jeu du soir',            'cat' => 'chatons'],
-            ['f' => 'jag-1',           'c' => 'Jag',                       'cat' => 'adultes'],
-            ['f' => 'olympe-1',        'c' => 'Olympe',                    'cat' => 'maison'],
-            ['f' => 'salambo-1',       'c' => 'Salambo',                   'cat' => 'adultes'],
-            ['f' => 'unyk-3',          'c' => "Unyk à la grimpe",          'cat' => 'adultes'],
-            ['f' => 'shiva-5',         'c' => 'Shiva au studio',           'cat' => 'adultes'],
-            ['f' => 'chaton-3',        'c' => 'Le plumeau',                'cat' => 'chatons'],
-            ['f' => 'saphyr-4',        'c' => "Saphyr à l'automne",        'cat' => 'adultes'],
-            ['f' => 'ukaina-3',        'c' => 'Ukaïna de profil',          'cat' => 'adultes'],
-            ['f' => 'salambo-2',       'c' => "Salambo à l'arbre à chat",  'cat' => 'maison'],
-            ['f' => 'unyk-2',          'c' => 'Unyk sur la poutre',        'cat' => 'adultes'],
-            ['f' => 'jag-2',           'c' => 'Jag au jardin',             'cat' => 'maison'],
-            ['f' => 'shiva-3',         'c' => 'Shiva au repos',            'cat' => 'adultes'],
-            ['f' => 'ultime-2',        'c' => 'Ultime en promenade',       'cat' => 'adultes'],
-            ['f' => 'saphyr-1',        'c' => 'Saphyr, portrait de studio', 'cat' => 'adultes'],
-            ['f' => 'ukaina-5',        'c' => 'Ukaïna au studio',          'cat' => 'adultes'],
-            ['f' => 'unyk-4',          'c' => 'Unyk au repos',             'cat' => 'maison'],
-            ['f' => 'shiva-1',         'c' => 'Shiva assise',              'cat' => 'adultes'],
-            ['f' => 'saphyr-5',        'c' => 'Saphyr à la maison',        'cat' => 'maison'],
-            ['f' => 'ukaina-4',        'c' => 'Ukaïna allongée',           'cat' => 'adultes'],
-            ['f' => 'ultime-1',        'c' => 'Ultime sur la passerelle',  'cat' => 'adultes'],
-            ['f' => 'shiva-4',         'c' => 'Shiva allongée',            'cat' => 'adultes'],
-            ['f' => 'saphyr-3',        'c' => 'Saphyr au jeu',             'cat' => 'adultes'],
-            ['f' => 'ukaina-2',        'c' => 'Ukaïna, la patte levée',    'cat' => 'adultes'],
+            ['f' => 'unyk-1',    'c' => 'Unyk',                     'cat' => 'adultes'],
+            ['f' => 'portee-1',  'c' => 'Une portée au complet',    'cat' => 'chatons'],
+            ['f' => 'ultime-3',  'c' => 'Ultime en surveillance',   'cat' => 'adultes'],
+            ['f' => 'chaton-2',  'c' => 'Premiers pas en hauteur',  'cat' => 'chatons'],
+            ['f' => 'jag-1',     'c' => 'Jag',                      'cat' => 'adultes'],
+            ['f' => 'olympe-1',  'c' => 'Olympe',                   'cat' => 'maison'],
+            ['f' => 'unyk-3',    'c' => "Unyk à la grimpe",         'cat' => 'adultes'],
+            ['f' => 'portee-2',  'c' => 'La fratrie sur le plaid',  'cat' => 'chatons'],
+            ['f' => 'saphyr-4',  'c' => "Saphyr à l'automne",       'cat' => 'adultes'],
+            ['f' => 'chaton-1',  'c' => 'Le jeu du soir',           'cat' => 'chatons'],
+            ['f' => 'ultime-4',  'c' => 'Ultime, le nez en l’air',  'cat' => 'adultes'],
+            ['f' => 'salambo-2', 'c' => "Salambo à l'arbre à chat", 'cat' => 'maison'],
+            ['f' => 'unyk-2',    'c' => 'Unyk sur la poutre',       'cat' => 'adultes'],
+            ['f' => 'chaton-3',  'c' => 'Le plumeau',               'cat' => 'chatons'],
+            ['f' => 'saphyr-5',  'c' => 'Saphyr à la maison',       'cat' => 'adultes'],
+            ['f' => 'jag-2',     'c' => 'Jag au jardin',            'cat' => 'maison'],
+            ['f' => 'ultime-1',  'c' => 'Ultime sur la passerelle', 'cat' => 'adultes'],
         ],
 
         'FAQ' => [

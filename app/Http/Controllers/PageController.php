@@ -22,7 +22,9 @@ class PageController extends Controller
             'chatons'  => $portee?->kittens ?? collect(),
             'chats'    => Cat::publies()->get(),
             'nbDispo'  => Kitten::publies()->disponibles()->count(),
-            'photos'   => Photo::publiees()->inRandomOrder()->limit(12)->get(),
+            // Neuf suffisent sur l'accueil : la page en montre deja beaucoup,
+            // et la galerie est a un clic.
+            'photos'   => Photo::publiees()->inRandomOrder()->limit(9)->get(),
         ]);
     }
 
