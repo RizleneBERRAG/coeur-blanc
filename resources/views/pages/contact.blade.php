@@ -262,33 +262,43 @@
             titre="Entre Lyon et Grenoble"
             lede="L'élevage est à Meyrieu-les-Étangs, en Isère, entre Lyon et Grenoble, proche des grands axes. L'adresse exacte vous est communiquée lors de la prise de rendez-vous — la carte situe la zone et les principaux accès." />
 
-        <div class="mapwrap">
-            <div id="carte" data-carte='@json($points)' role="application"
-                 aria-label="Carte de situation de l'élevage à Meyrieu-les-Étangs"></div>
-            <div class="mapcard">
-                <h4>Temps de trajet</h4>
-                <dl>
-                    @foreach($points['reperes'] as $repere)
-                        <dt>{{ $repere['titre'] }}</dt>
-                        <dd>{{ $repere['detail'] }}</dd>
-                    @endforeach
-                </dl>
-                {{-- Taille laissee au CSS : ecrite ici, elle ne peut plus s'adapter au telephone. --}}
-                <p class="small mapnote">
+        {{--
+            La carte et les temps de trajet côte à côte, et non l'un posé sur
+            l'autre : l'encart faisait 491 px dans un cadre de 380, il
+            débordait par le bas et les angles coupés du cadre le tranchaient.
+            En deux colonnes, chacun prend la hauteur qu'il lui faut.
+        --}}
+        <div class="carte-bloc">
+            <div class="mapwrap">
+                <div id="carte" data-carte='@json($points)' role="application"
+                     aria-label="Carte de situation de l'élevage à Meyrieu-les-Étangs"></div>
+            </div>
+
+            <div class="carte-infos">
+                <x-record titre="Temps de trajet" meta="en voiture">
+                    <table>
+                        @foreach($points['reperes'] as $repere)
+                            <tr><th>{{ $repere['titre'] }}</th><td>{{ $repere['detail'] }}</td></tr>
+                        @endforeach
+                    </table>
+                </x-record>
+
+                <p class="small">
                     Nous pouvons venir vous chercher à la gare de Bourgoin-Jallieu.
                 </p>
-                {{-- Visent la commune, pas l'adresse exacte : celle-ci n'est donnée
-                     qu'au rendez-vous, un itinéraire porte-à-porte la publierait. --}}
-                <h4 style="margin-top:24px">Itinéraire</h4>
-                <div class="btnrow" style="margin-top:10px">
+
+                {{-- Les itinéraires visent la commune, pas l'adresse exacte :
+                     celle-ci n'est donnée qu'au rendez-vous, et un trajet
+                     porte-à-porte la publierait. --}}
+                <div class="btnrow">
                     <a class="btn ghost" href="{{ $itineraire['google'] }}"
                        target="_blank" rel="noopener noreferrer"
                        aria-label="Itinéraire vers {{ $itineraire['commune'] }} sur Google Maps (nouvelle fenêtre)"
-                       style="flex:1;justify-content:center;padding:11px 12px;font-size:.8rem">Google Maps</a>
+                       style="flex:1;justify-content:center">Google Maps</a>
                     <a class="btn ghost" href="{{ $itineraire['waze'] }}"
                        target="_blank" rel="noopener noreferrer"
                        aria-label="Itinéraire vers {{ $itineraire['commune'] }} sur Waze (nouvelle fenêtre)"
-                       style="flex:1;justify-content:center;padding:11px 12px;font-size:.8rem">Waze</a>
+                       style="flex:1;justify-content:center">Waze</a>
                 </div>
             </div>
         </div>

@@ -64,29 +64,29 @@
 
 {{-- ═══ ouverture ═══ --}}
 <section class="hero">
-    <div class="halo" aria-hidden="true"></div>
-    <div class="rayons" aria-hidden="true"></div>
+    {{--
+        La photo prend la moitié droite de l'écran, du haut du bandeau au bas
+        de l'ouverture, et sort par le bord. Elle était auparavant encadrée au
+        milieu du blanc : une chatterie se présente par ses chats, pas par sa
+        marge. Le voile blanc sur son flanc gauche la fait naître de la page
+        plutôt que d'y être collée.
+    --}}
+    <div class="hero-photo">
+        <img src="{{ asset('images/cats/hero.webp') }}"
+             alt="Ultime, Bengal black silver tabby de la chatterie, sur une passerelle de l'enclos"
+             width="1500" height="1875" fetchpriority="high">
+    </div>
 
-
-    <div class="duo">
-        <div class="cadre">
-            <i><u>
-                <img src="{{ asset('images/cats/hero-ultime.webp') }}"
-                     alt="Ultime, Bengal black silver tabby de la chatterie, sur une passerelle de l'enclos"
-                     width="1300" height="1857" fetchpriority="high">
-            </u></i>
-        </div>
-
-        <div class="texte">
-            <span class="eyebrow">Chatterie Ô Coeur Blanc · Meyrieu-les-Étangs (38) · Bengal LOOF</span>
+    <div class="hero-texte">
+        <div class="dedans">
+            <span class="eyebrow">Chatterie Ô Coeur Blanc · Meyrieu-les-Étangs (38)</span>
             {{-- Chaque ligne est enfermee dans son propre masque : le span
                  interieur monte derriere, la ligne se decouvre. --}}
             <h1 class="or"><span class="ln"><span>Un léopard</span></span><span class="ln"><span><em>au cœur blanc.</em></span></span></h1>
             <p class="lede">
-                Élevage familial de chats Bengal LOOF en Isère, entre Lyon et Grenoble, depuis 2019.
-                Les chatons naissent et grandissent au milieu de la maison, manipulés dès leurs
-                premiers jours. Parents dépistés HCM, PK-Def, PRA-b et FIV/FeLV, chatons cédés
-                identifiés, vaccinés et sous contrat.
+                Élevage familial de chats Bengal LOOF en Isère, entre Lyon et Grenoble,
+                depuis 2019. Les chatons naissent et grandissent au milieu de la maison.
+                Parents dépistés, chatons cédés identifiés, vaccinés et sous contrat.
             </p>
             <div class="btnrow">
                 <a class="btn" href="{{ route('kittens.index') }}">
@@ -96,8 +96,6 @@
             </div>
         </div>
     </div>
-
-    <p class="signature">À la maison · Meyrieu-les-Étangs, Isère</p>
 </section>
 
 {{-- ═══ le fil vivant ═══ --}}
