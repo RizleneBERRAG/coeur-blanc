@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\KittenStatus;
+use App\Models\Concerns\ASonSexe;
 use App\Models\Concerns\AUneGalerie;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -28,6 +29,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  */
 class Kitten extends Model
 {
+    use ASonSexe;
     use AUneGalerie;
     use HasFactory;
 

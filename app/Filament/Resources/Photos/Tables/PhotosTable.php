@@ -35,17 +35,20 @@ class PhotosTable
 
                 TextColumn::make('categorie')
                     ->label('Catégorie')
+                    ->visibleFrom('md')
                     ->badge()
                     ->placeholder('—'),
 
                 TextColumn::make('chemin')
                     ->label('Fichier')
+                    ->visibleFrom('md')
                     ->formatStateUsing(fn (string $state) => basename($state))
                     ->fontFamily('mono')
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('ordre')
                     ->label('Ordre')
+                    ->visibleFrom('md')
                     ->sortable(),
 
                 TextColumn::make('est_publiee')

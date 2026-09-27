@@ -32,16 +32,19 @@ class LittersTable
 
                 TextColumn::make('date_disponibilite')
                     ->label('Départs dès le')
+                    ->visibleFrom('md')
                     ->date('d/m/Y')
                     ->placeholder('—')
                     ->sortable(),
 
                 TextColumn::make('kittens_count')
                     ->label('Chatons')
+                    ->visibleFrom('md')
                     ->badge(),
 
                 TextColumn::make('loof_portee_numero')
                     ->label('N° de portée LOOF')
+                    ->visibleFrom('md')
                     ->placeholder('à renseigner')
                     ->fontFamily('mono')
                     ->searchable()

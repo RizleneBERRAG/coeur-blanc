@@ -11,6 +11,6 @@
     <span class="cap">
         <span class="mono">{{ $chat->role->libelle() }}</span>
         <h3>{{ $chat->nom }}</h3>
-        <p>{{ $chat->robe }} · {{ \Illuminate\Support\Str::ucfirst($chat->sexe) }} · {{ $chat->annee_naissance }}</p>
+        <p>{{ $chat->robe }} · {{ $chat->sexe_libelle }} · {{ $chat->annee_naissance }}</p>
     </span>
 </a>

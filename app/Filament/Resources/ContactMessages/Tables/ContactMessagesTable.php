@@ -40,12 +40,14 @@ class ContactMessagesTable
 
                 TextColumn::make('email')
                     ->label('Pour répondre')
+                    ->visibleFrom('md')
                     ->description(fn (ContactMessage $m) => $m->telephone)
                     ->searchable()
                     ->copyable(),
 
                 TextColumn::make('message')
                     ->label('Message')
+                    ->visibleFrom('md')
                     ->limit(60)
                     ->wrap()
                     ->searchable(),

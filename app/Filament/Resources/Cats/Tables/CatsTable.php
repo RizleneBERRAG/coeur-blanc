@@ -34,20 +34,23 @@ class CatsTable
 
                 TextColumn::make('role')
                     ->label('Rôle')
+                    ->visibleFrom('md')
                     ->badge()
                     ->sortable(),
 
-                TextColumn::make('sexe')
+                TextColumn::make('sexe_libelle')
                     ->label('Sexe')
-                    ->formatStateUsing(fn (string $state) => $state === 'male' ? 'Mâle' : 'Femelle'),
+                    ->visibleFrom('md'),
 
                 TextColumn::make('annee_naissance')
                     ->label('Née en')
+                    ->visibleFrom('md')
                     ->placeholder('—')
                     ->sortable(),
 
                 TextColumn::make('loof_numero')
                     ->label('LOOF')
+                    ->visibleFrom('md')
                     ->placeholder('à renseigner')
                     ->fontFamily('mono')
                     ->searchable()

@@ -32,12 +32,14 @@ class ReviewsTable
 
                 TextColumn::make('texte')
                     ->label('Avis')
+                    ->visibleFrom('md')
                     ->limit(70)
                     ->wrap()
                     ->searchable(),
 
                 TextColumn::make('publie_le')
                     ->label('Date')
+                    ->visibleFrom('md')
                     ->date('d/m/Y')
                     ->placeholder('—')
                     ->sortable(),

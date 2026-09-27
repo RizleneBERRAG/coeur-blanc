@@ -30,11 +30,12 @@ class KittensTable
 
                 TextColumn::make('litter.code')
                     ->label('Portée')
+                    ->visibleFrom('md')
                     ->sortable(),
 
-                TextColumn::make('sexe')
+                TextColumn::make('sexe_libelle')
                     ->label('Sexe')
-                    ->formatStateUsing(fn (string $state) => $state === 'male' ? 'Mâle' : 'Femelle'),
+                    ->visibleFrom('md'),
 
                 TextColumn::make('statut')
                     ->label('Statut')
@@ -43,6 +44,7 @@ class KittensTable
 
                 TextColumn::make('icad_numero')
                     ->label('ICAD')
+                    ->visibleFrom('md')
                     ->placeholder('à renseigner')
                     ->searchable()
                     ->fontFamily('mono'),

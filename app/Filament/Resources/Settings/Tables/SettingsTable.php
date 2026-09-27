@@ -45,6 +45,7 @@ class SettingsTable
 
                 TextColumn::make('groupe')
                     ->label('Rubrique')
+                    ->visibleFrom('md')
                     ->badge()
                     ->formatStateUsing(fn (string $state) => self::GROUPES[$state] ?? $state),
 

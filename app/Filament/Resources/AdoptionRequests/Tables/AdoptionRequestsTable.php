@@ -36,6 +36,7 @@ class AdoptionRequestsTable
 
                 TextColumn::make('email')
                     ->label('Contact')
+                    ->visibleFrom('md')
                     ->description(fn (AdoptionRequest $d) => $d->telephone)
                     ->searchable()
                     ->copyable(),
@@ -61,6 +62,7 @@ class AdoptionRequestsTable
                 // legales : elle doit etre visible, pas seulement respectee.
                 TextColumn::make('a_purger_le')
                     ->label('Purge')
+                    ->visibleFrom('md')
                     ->date('d/m/Y')
                     ->placeholder('—')
                     ->toggleable(isToggledHiddenByDefault: true),

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\CatRole;
 use App\Enums\HealthTestType;
+use App\Models\Concerns\ASonSexe;
 use App\Models\Concerns\AUneGalerie;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Cat extends Model
 {
+    use ASonSexe;
     use AUneGalerie;
     use HasFactory;
 

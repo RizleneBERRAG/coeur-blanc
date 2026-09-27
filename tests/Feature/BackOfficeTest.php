@@ -82,6 +82,38 @@ class BackOfficeTest extends TestCase
         }
     }
 
+    /**
+     * Le sexe est une CLE en base, pas un libelle.
+     *
+     * Le semoir rangeait « mâle » avec son accent : en SQL cela passait — la
+     * collation de MySQL ignore les accents — mais la liste deroulante du
+     * back-office, qui compare en PHP, s'ouvrait vide sur chaque fiche, et la
+     * colonne « Sexe » annoncait « Femelle » pour tous les males. Une erreur
+     * qui ne leve rien et ne se voit qu'a l'ecran : d'ou ce test.
+     */
+    public function test_le_sexe_est_range_en_cle_sans_accent(): void
+    {
+        $this->seed();
+
+        foreach ([Cat::all(), Kitten::all()] as $fiches) {
+            $this->assertNotEmpty($fiches);
+
+            foreach ($fiches as $fiche) {
+                $this->assertContains($fiche->sexe, ['male', 'femelle'],
+                    $fiche->nom.' porte un sexe hors cle : '.$fiche->sexe);
+            }
+        }
+
+        // Et l'accent revient a l'affichage, la ou il doit etre.
+        $male = Cat::where('sexe', 'male')->firstOrFail();
+        $this->assertSame('Mâle', $male->sexe_libelle);
+
+        // Meme un libelle accentue donne la cle : c'est le mutateur qui tient
+        // la regle, pas l'appelant.
+        $male->sexe = 'Mâle';
+        $this->assertSame('male', $male->sexe);
+    }
+
     public function test_le_lien_de_retour_vers_le_site_est_present(): void
     {
         $this->actingAs($this->eleveuse())
