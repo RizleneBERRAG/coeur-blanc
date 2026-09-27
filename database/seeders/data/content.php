@@ -39,6 +39,7 @@ return [
                 'texte' => "Unyk de FashionBengal, né le 19 octobre 2023. Fond argenté, masque et ligne dorsale charcoal, contraste net : c'est lui qui signe les portées de la maison depuis 2025. Prix spécial à l'exposition de Tarare en février 2024. Entièrement testé et sain, identification génétique faite chez Genindex.",
                 'tests' => [
                     ['HCM — échographie cardiaque', 'Normal', 'Contrôle annuel'],
+                    ['PKD — échographie rénale', 'Normal', 'Contrôle annuel'],
                     ['PK-Def — déficit en pyruvate kinase', 'N/N', 'Test ADN'],
                     ['PRA-b — atrophie rétinienne', 'N/N', 'Test ADN'],
                     ['FIV / FeLV', 'Négatif', 'Dépistage sanguin'],
@@ -58,6 +59,7 @@ return [
                 'texte' => "Saphyr Ô Coeur Blanc, née le 17 janvier 2021 à la chatterie, fille de Jag. Fond chaud, rosettes larges et bien ouvertes, glitter franchement visible en pleine lumière. Déclarée conforme à la race par le LOOF en juin 2022. Mère très présente, qui élève ses portées au milieu de la maison.",
                 'tests' => [
                     ['HCM — échographie cardiaque', 'Normal', 'Contrôle annuel'],
+                    ['PKD — échographie rénale', 'Normal', 'Contrôle annuel'],
                     ['PK-Def — déficit en pyruvate kinase', 'N/N', 'Test ADN'],
                     ['PRA-b — atrophie rétinienne', 'N/N', 'Test ADN'],
                     ['FIV / FeLV', 'Négatif', 'Dépistage sanguin'],
@@ -77,6 +79,7 @@ return [
                 'texte' => "Shiva Ô Coeur Blanc, née le 20 avril 2021 à la chatterie, fille de Jag. Fond argent, rosettes noires, pas une trace de roux. Déclarée conforme à la race par le LOOF en octobre 2023. Mère des chatons de mars 2025 avec Salambo — tous partis en famille, la femelle restant à la maison comme future reproductrice.",
                 'tests' => [
                     ['HCM — échographie cardiaque', 'Normal', 'Contrôle annuel'],
+                    ['PKD — échographie rénale', 'Normal', 'Contrôle annuel'],
                     ['PK-Def — déficit en pyruvate kinase', 'N/N', 'Test ADN'],
                     ['PRA-b — atrophie rétinienne', 'N/N', 'Test ADN'],
                     ['FIV / FeLV', 'Négatif', 'Dépistage sanguin'],
@@ -96,6 +99,7 @@ return [
                 'texte' => "Ukaïna de FashionBengal, née le 19 mai 2023. Robe mink aux yeux aqua, masque charcoal, motif très dessiné. La plus titrée de la maison : prix spécial à Autun en septembre 2023, puis à Tarare en février 2024. Mère des chatons de mars 2025 avec Unyk.",
                 'tests' => [
                     ['HCM — échographie cardiaque', 'Normal', 'Contrôle annuel'],
+                    ['PKD — échographie rénale', 'Normal', 'Contrôle annuel'],
                     ['PK-Def — déficit en pyruvate kinase', 'N/N', 'Test ADN'],
                     ['PRA-b — atrophie rétinienne', 'N/N', 'Test ADN'],
                     ['FIV / FeLV', 'Négatif', 'Dépistage sanguin'],
@@ -115,6 +119,7 @@ return [
                 'texte' => "Ultime Ô Coeur Blanc, née le 31 août 2023 à la chatterie, petite-fille de Jag et fille de la lignée silver de Shiva. Reproductrice depuis 2025, mariée à Unyk. Elle passe ses journées sur les passerelles de l'enclos, à surveiller ce qui se passe dehors.",
                 'tests' => [
                     ['HCM — échographie cardiaque', 'Normal', 'Contrôle annuel'],
+                    ['PKD — échographie rénale', 'Normal', 'Contrôle annuel'],
                     ['PK-Def — déficit en pyruvate kinase', 'N/N', 'Test ADN'],
                     ['PRA-b — atrophie rétinienne', 'N/N', 'Test ADN'],
                     ['FIV / FeLV', 'Négatif', 'Dépistage sanguin'],
@@ -126,14 +131,15 @@ return [
                 'sexe' => 'Mâle',
                 'role' => 'Retraité',
                 'naissance' => '2014',
-                'robe' => 'Brown tabby, motif rosettes',
+                'robe' => 'Black silver tabby, motif rosettes',
                 'loof' => null,
                 'icad' => null,
                 'photo' => 'jag-1',
-                'photo2' => 'jag-2',
+                'photo2' => null,
                 'texte' => "Jag Jocelot des Bengalexception, né en 2014. Notre premier coup de cœur pour un mâle reproducteur, et l'un des plus beaux chats de la maison : père de Saphyr et de Shiva, grand-père d'Ultime. Testé et sain des maladies génétiques et de la HCM. Mâle doux et attachant, très respectueux de l'homme et de ses congénères. Aujourd'hui retraité, il vit paisiblement à la chatterie en profitant de l'extérieur.",
                 'tests' => [
                     ['HCM — échographie cardiaque', 'Normal', 'Contrôle annuel'],
+                    ['PKD — échographie rénale', 'Normal', 'Contrôle annuel'],
                     ['PK-Def — déficit en pyruvate kinase', 'N/N', 'Test ADN'],
                     ['PRA-b — atrophie rétinienne', 'N/N', 'Test ADN'],
                     ['FIV / FeLV', 'Négatif', 'Dépistage sanguin'],
@@ -153,6 +159,7 @@ return [
                 'texte' => "Ambersands Salambo, né le 4 avril 2021, importé à l'été 2021 pour apporter du sang étranger à la lignée. Best variété à l'exposition d'Autun en septembre 2023. Mâle très affectueux, proche de l'homme et des autres chats, bavard et joueur. Entièrement testé et sain. Placé en retraite en février 2025 — nous avons gardé l'une de ses filles.",
                 'tests' => [
                     ['HCM — échographie cardiaque', 'Normal', 'Contrôle annuel'],
+                    ['PKD — échographie rénale', 'Normal', 'Contrôle annuel'],
                     ['PK-Def — déficit en pyruvate kinase', 'N/N', 'Test ADN'],
                     ['PRA-b — atrophie rétinienne', 'N/N', 'Test ADN'],
                     ['FIV / FeLV', 'Négatif', 'Dépistage sanguin'],
@@ -164,7 +171,7 @@ return [
                 'sexe' => 'Femelle',
                 'role' => 'Retraité',
                 'naissance' => '2019',
-                'robe' => 'Snow',
+                'robe' => 'Brown tabby',
                 'loof' => null,
                 'icad' => null,
                 'photo' => 'olympe-1',
@@ -307,7 +314,7 @@ return [
             ['f' => 'unyk-2',    'c' => 'Unyk sur la poutre',       'cat' => 'adultes'],
             ['f' => 'chaton-3',  'c' => 'Le plumeau',               'cat' => 'chatons'],
             ['f' => 'saphyr-5',  'c' => 'Saphyr à la maison',       'cat' => 'adultes'],
-            ['f' => 'jag-2',     'c' => 'Jag au jardin',            'cat' => 'maison'],
+            ['f' => 'jardin-longe', 'c' => 'Une sortie en longe',    'cat' => 'maison'],
             ['f' => 'ultime-1',  'c' => 'Ultime sur la passerelle', 'cat' => 'adultes'],
         ],
 
@@ -322,7 +329,7 @@ return [
             ],
             [
                 'Les parents sont-ils testés ?',
-                '<p>Tous nos reproducteurs, mâles et femelles, sont testés FIV/FeLV, HCM, PK-Def ainsi que PRA-b, et ont leur identification génétique ADN faite chez Genindex. Les résultats sont affichés sur la fiche de chaque chat, et tous les tests vous sont fournis par mail lors de la réservation de votre chaton.</p><p>Nous effectuons aussi régulièrement une coprologie de selles sur nos reproducteurs.</p>',
+                '<p>Tous nos reproducteurs, mâles et femelles, sont testés FIV/FeLV, HCM et PKD par échographie, PK-Def ainsi que PRA-b, et ont leur identification génétique ADN faite chez Genindex. Les résultats sont affichés sur la fiche de chaque chat, et tous les tests vous sont fournis par mail lors de la réservation de votre chaton.</p><p>Nous effectuons aussi régulièrement une coprologie de selles sur nos reproducteurs.</p>',
             ],
             [
                 'Vos chats sont-ils présentés en exposition ?',
@@ -350,19 +357,19 @@ return [
             ],
             [
                 'Livrez-vous les chatons ?',
-                '<p>Non. Vous venez le chercher, et vous êtes déjà venu le voir au moins une fois avant. Un chaton n\'est pas un colis, et nous tenons à savoir dans quelles mains il part.</p><p>Nous ne faisons pas non plus de réservation sans rencontre préalable.</p>',
+                "<p>Non. Vous venez le chercher. Un chaton n'est pas un colis, et nous tenons à savoir dans quelles mains il part.</p><p>Nous ne réservons pas non plus sans nous être parlé : au minimum un long échange en visio, où vous voyez les chatons et où nous faisons connaissance.</p>",
             ],
             [
                 'Perd-il ses poils ? Est-il hypoallergénique ?',
-                '<p>Il perd peu, son poil est court et ras, et il demande très peu d\'entretien — un brossage par semaine suffit largement.</p><p>En revanche, aucun chat n\'est hypoallergénique. Le Bengal produit lui aussi la protéine Fel d 1 responsable des allergies. Si vous êtes allergique, venez passer du temps à l\'élevage avant de vous engager.</p>',
+                "<p>Il perd peu, son poil est court et ras, et il demande très peu d'entretien — un brossage par semaine suffit largement.</p><p>En revanche, aucun chat n'est hypoallergénique. Le Bengal produit lui aussi la protéine Fel d 1 responsable des allergies. Si vous êtes allergique, faites-vous tester et passez du temps auprès d'un Bengal avant de vous engager.</p>",
             ],
             [
                 'F1, F4, qu\'est-ce que ça veut dire ?',
                 '<p>C\'est le nombre de générations qui séparent le chat de son ancêtre sauvage, le chat léopard du Bengale. Les F1 à F3 sont des hybrides soumis à une réglementation particulière et ne sont pas des chats de compagnie.</p><p>Tous les chatons vendus en élevage, les nôtres compris, sont au minimum F4 : ce sont des chats domestiques à part entière, sans aucune restriction.</p>',
             ],
             [
-                'Comment se passe une visite ?',
-                '<p>Sur rendez-vous, chez nous à Meyrieu-les-Étangs, en Isère, entre Lyon et Grenoble, proche des grands axes. Vous rencontrez la mère, la fratrie complète, et vous voyez l\'endroit où ils grandissent — pas une pièce préparée pour la visite.</p><p>Comptez une bonne heure. Venez avec vos questions, et avec les enfants si vous en avez.</p>',
+                'Peut-on venir voir les chatons ?',
+                "<p>Pas tant qu'ils ne sont pas vaccinés. Une portée qui n'a pas reçu sa primo-vaccination n'a aucune défense contre ce qui entre dans la maison sous une semelle : nous ne recevons donc personne avant. Ce n'est pas de la méfiance, c'est la règle sanitaire que nous nous imposons.</p><p>En attendant, nous travaillons beaucoup en visio, et c'est souvent plus long qu'une visite : vous voyez les chatons en direct, leur mère, la pièce où ils vivent, et vous posez toutes vos questions. Une fois la vaccination faite, la rencontre sur place devient possible, sur rendez-vous, chez nous à Châtonnay, en Isère, entre Lyon et Grenoble.</p>",
             ],
         ],
     ];

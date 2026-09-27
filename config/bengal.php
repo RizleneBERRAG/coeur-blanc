@@ -91,36 +91,42 @@ return [
         ],
         [
             'numero' => '07',
+            'titre' => 'Stérilisation avant le départ',
+            'detail' => "Chaque chaton est stérilisé avant de quitter l'élevage. Aucun ne part entier : c'est la garantie qu'il ne sera pas reproduit, et vous n'avez pas l'opération à prévoir.",
+            'quand' => 'Avant le départ',
+        ],
+        [
+            'numero' => '08',
             'titre' => 'Certificat vétérinaire de bonne santé',
             'detail' => 'Établi moins de huit jours avant la cession, obligatoire et remis en main propre.',
             'quand' => 'Avant le départ',
         ],
         [
-            'numero' => '08',
+            'numero' => '09',
             'titre' => 'Inscription LOOF et pedigree',
             'detail' => 'Déclaration de saillie, déclaration de portée, édition du pedigree officiel.',
             'quand' => 'Semaines 1 à 12',
         ],
         [
-            'numero' => '09',
+            'numero' => '10',
             'titre' => 'Tests des parents',
-            'detail' => 'Échographie cardiaque HCM, tests ADN PK-Def et PRA-b, dépistage FIV/FeLV, identification génétique chez Genindex — les résultats vous sont transmis à la réservation.',
+            'detail' => 'Échographies cardiaque HCM et rénale PKD, tests ADN PK-Def et PRA-b, dépistage FIV/FeLV, identification génétique chez Genindex — les résultats vous sont transmis à la réservation.',
             'quand' => 'Toute l\'année',
         ],
         [
-            'numero' => '10',
+            'numero' => '11',
             'titre' => 'Socialisation quotidienne',
             'detail' => 'Manipulation dès la naissance, habituation aux bruits de la maison, aux adultes et aux enfants, au transport.',
             'quand' => 'Chaque jour',
         ],
         [
-            'numero' => '11',
+            'numero' => '12',
             'titre' => 'Contrat et document d\'information',
             'detail' => 'Contrat de cession écrit, document d\'information sur les besoins de l\'espèce, conseils d\'arrivée.',
             'quand' => 'Au départ',
         ],
         [
-            'numero' => '12',
+            'numero' => '13',
             'titre' => 'Suivi après le départ',
             'detail' => 'Disponibilité pour toutes vos questions, aussi longtemps qu\'il le faudra.',
             'quand' => 'Sans limite',
@@ -189,21 +195,21 @@ return [
     /*
      * Carte de la page Contact.
      * L'adresse exacte n'est jamais publiee : on affiche une zone autour de
-     * Meyrieu-les-Etangs, et les points de repere cites dans les acces.
+     * Chatonnay, et les points de repere cites dans les acces.
      */
     'carte' => [
         'zone' => [
-            'lat'    => 45.5340,
-            'lng'    => 5.2010,
+            'lat'    => 45.4859,
+            'lng'    => 5.2064,
             'rayon'  => 2200,          // metres
-            'titre'  => 'Meyrieu-les-Étangs',
+            'titre'  => 'Châtonnay',
             'detail' => "L'élevage — adresse exacte communiquée au rendez-vous",
         ],
         'reperes' => [
-            ['lat' => 45.7640, 'lng' => 4.8357, 'titre' => 'Lyon',                     'detail' => "50 min par l'A43"],
-            ['lat' => 45.5847, 'lng' => 5.2761, 'titre' => 'Gare de Bourgoin-Jallieu', 'detail' => '15 min en voiture'],
-            ['lat' => 45.1885, 'lng' => 5.7245, 'titre' => 'Grenoble',                 'detail' => "55 min par l'A48"],
-            ['lat' => 45.5254, 'lng' => 4.8744, 'titre' => 'Vienne',                   'detail' => '35 min'],
+            ['lat' => 45.7640, 'lng' => 4.8357, 'titre' => 'Lyon',                     'detail' => "55 min par l'A43"],
+            ['lat' => 45.5847, 'lng' => 5.2761, 'titre' => 'Gare de Bourgoin-Jallieu', 'detail' => '20 min en voiture'],
+            ['lat' => 45.1885, 'lng' => 5.7245, 'titre' => 'Grenoble',                 'detail' => "1 h par l'A48"],
+            ['lat' => 45.5254, 'lng' => 4.8744, 'titre' => 'Vienne',                   'detail' => '30 min'],
         ],
     ],
 

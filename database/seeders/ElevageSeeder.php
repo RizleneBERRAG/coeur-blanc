@@ -68,7 +68,7 @@ class ElevageSeeder extends Seeder
     {
         $reglages = [
             ['cle' => 'elevage.nom',          'libelle' => "Nom de l'élevage",        'valeur' => 'Chatterie Ô Coeur Blanc',  'groupe' => 'general'],
-            ['cle' => 'elevage.ville',        'libelle' => 'Ville',                    'valeur' => 'Meyrieu-les-Étangs',       'groupe' => 'general'],
+            ['cle' => 'elevage.ville',        'libelle' => 'Ville',                    'valeur' => 'Châtonnay',       'groupe' => 'general'],
             ['cle' => 'elevage.code_postal',  'libelle' => 'Code postal',              'valeur' => '38440',                    'groupe' => 'general'],
             ['cle' => 'elevage.departement',  'libelle' => 'Département',              'valeur' => 'Isère',                    'groupe' => 'general'],
             ['cle' => 'contact.telephone',    'libelle' => 'Téléphone',                'valeur' => '06 16 24 45 49',           'groupe' => 'contact'],

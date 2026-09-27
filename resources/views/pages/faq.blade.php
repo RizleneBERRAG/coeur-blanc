@@ -62,7 +62,7 @@
                 <h4>Votre question n'y est pas ?</h4>
                 <p>Appelez-nous. On répond plus volontiers au téléphone qu'en trois lignes, surtout quand il s'agit de savoir si un Bengal est fait pour vous.</p>
                 <a class="btn" href="{{ \App\Models\Setting::telephoneLien() }}" style="justify-content:center">{{ \App\Models\Setting::get('contact.telephone') }}</a>
-                <a class="tlink" href="{{ route('adoption.create') }}">Demander une visite</a>
+                <a class="tlink" href="{{ route('adoption.create') }}">Demander un rendez-vous</a>
             </aside>
         </div>
     </div>

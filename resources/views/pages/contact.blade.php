@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', "Contact — venir voir les chatons")
-@section('description', "Écrivez-nous ou appelez l'élevage Chatterie Ô Coeur Blanc à Meyrieu-les-Étangs (38), entre Lyon et Grenoble. Visites sur rendez-vous, réponse sous 48 heures.")
+@section('title', "Contact — nous joindre")
+@section('description', "Écrivez-nous ou appelez l'élevage Chatterie Ô Coeur Blanc à Châtonnay (38), entre Lyon et Grenoble. Rendez-vous en visio, réponse sous 48 heures.")
 
 @push('scripts')
     @vite('resources/js/map.js')
@@ -112,7 +112,7 @@
                     <table>
                         <tr><th>Téléphone</th><td><a href="{{ \App\Models\Setting::telephoneLien() }}" style="color:var(--or-ombre);text-decoration:none">{{ $tel }}</a></td></tr>
                         <tr><th>Email</th><td><a href="mailto:{{ $mail }}" style="color:var(--or-ombre);text-decoration:none">{{ $mail }}</a></td></tr>
-                        <tr><th>Visites</th><td>Sur rendez-vous, week-end et fin de journée</td></tr>
+                        <tr><th>Visites</th><td>En visio tant que les chatons ne sont pas vaccinés, sur place ensuite</td></tr>
                         <tr><th>Réponse</th><td>Sous 48 heures maximum</td></tr>
                     </table>
                 </x-record>
@@ -130,7 +130,7 @@
 
                 <div class="btnrow">
                     <a class="btn" href="{{ \App\Models\Setting::telephoneLien() }}">Appeler l'élevage</a>
-                    <a class="btn ghost" href="{{ route('adoption.create') }}">Demander une visite</a>
+                    <a class="btn ghost" href="{{ route('adoption.create') }}">Demander un rendez-vous</a>
                 </div>
 
                 <figure class="figure" style="margin:0">
@@ -260,7 +260,7 @@
         <x-section-head
             eyebrow="Venir jusqu'à nous"
             titre="Entre Lyon et Grenoble"
-            lede="L'élevage est à Meyrieu-les-Étangs, en Isère, entre Lyon et Grenoble, proche des grands axes. L'adresse exacte vous est communiquée lors de la prise de rendez-vous — la carte situe la zone et les principaux accès." />
+            lede="L'élevage est à Châtonnay, en Isère, entre Lyon et Grenoble, proche des grands axes. L'adresse exacte vous est communiquée lors de la prise de rendez-vous — la carte situe la zone et les principaux accès." />
 
         {{--
             La carte et les temps de trajet côte à côte, et non l'un posé sur
@@ -271,7 +271,7 @@
         <div class="carte-bloc">
             <div class="mapwrap">
                 <div id="carte" data-carte='@json($points)' role="application"
-                     aria-label="Carte de situation de l'élevage à Meyrieu-les-Étangs"></div>
+                     aria-label="Carte de situation de l'élevage à Châtonnay"></div>
             </div>
 
             <div class="carte-infos">

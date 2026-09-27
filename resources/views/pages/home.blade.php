@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', "Élevage de chats Bengal LOOF en Isère")
-@section('description', "Chatterie Ô Coeur Blanc : chatons Bengal inscrits au LOOF à Meyrieu-les-Étangs (38), entre Lyon et Grenoble. Parents testés HCM, PK-Def, PRA-b et FIV/FeLV, chatons élevés à la maison depuis 2019.")
+@section('description', "Chatterie Ô Coeur Blanc : chatons Bengal inscrits au LOOF à Châtonnay (38), entre Lyon et Grenoble. Parents testés HCM, PKD, PK-Def, PRA-b et FIV/FeLV, chatons stérilisés avant le départ.")
 
 @push('schema')
 {{--
@@ -25,7 +25,7 @@
     '@type'    => 'LocalBusiness',
     '@id'      => route('home').'#elevage',
     'name'     => \App\Models\Setting::get('elevage.nom', 'Chatterie Ô Coeur Blanc'),
-    'description' => "Élevage familial de chats Bengal LOOF à Meyrieu-les-Étangs, en Isère, entre Lyon et Grenoble.",
+    'description' => "Élevage familial de chats Bengal LOOF à Châtonnay, en Isère, entre Lyon et Grenoble.",
     'url'      => route('home'),
     'image'    => asset('images/cats/hero-ultime.webp'),
     'telephone' => \App\Models\Setting::get('contact.telephone'),
@@ -79,14 +79,14 @@
 
     <div class="hero-texte">
         <div class="dedans">
-            <span class="eyebrow">Chatterie Ô Coeur Blanc · Meyrieu-les-Étangs (38)</span>
+            <span class="eyebrow">Chatterie Ô Coeur Blanc · Châtonnay (38)</span>
             {{-- Chaque ligne est enfermee dans son propre masque : le span
                  interieur monte derriere, la ligne se decouvre. --}}
             <h1 class="or"><span class="ln"><span>Un léopard</span></span><span class="ln"><span><em>au cœur blanc.</em></span></span></h1>
             <p class="lede">
                 Élevage familial de chats Bengal LOOF en Isère, entre Lyon et Grenoble,
                 depuis 2019. Les chatons naissent et grandissent au milieu de la maison.
-                Parents dépistés, chatons cédés identifiés, vaccinés et sous contrat.
+                Parents dépistés, chatons cédés identifiés, vaccinés, stérilisés et sous contrat.
             </p>
             <div class="btnrow">
                 <a class="btn" href="{{ route('kittens.index') }}">
@@ -180,7 +180,7 @@
         <div class="cells">
             <div class="cell-b"><span class="n">ENGAGEMENT 01</span><h3>Parents testés</h3><p>Tous nos reproducteurs, mâles et femelles, sont testés FIV/FeLV, HCM, PK-Def et PRA-b, et identifiés génétiquement par ADN chez Genindex. Les résultats vous sont fournis à la réservation de votre chaton.</p></div>
             <div class="cell-b"><span class="n">ENGAGEMENT 02</span><h3>Élevés au milieu de la maison</h3><p>Aucune cage, aucune pièce à part. Les chatons grandissent avec nous, les enfants et les bruits du quotidien, manipulés chaque jour dès la naissance.</p></div>
-            <div class="cell-b"><span class="n">ENGAGEMENT 03</span><h3>Jamais avant douze semaines</h3><p>Départ à partir de trois mois, identifiés, primo-vaccinés et rappelés, avec un certificat vétérinaire de bonne santé de moins de huit jours.</p></div>
+            <div class="cell-b"><span class="n">ENGAGEMENT 03</span><h3>Jamais avant douze semaines</h3><p>Départ à partir de trois mois, identifiés, primo-vaccinés, rappelés et stérilisés, avec un certificat vétérinaire de bonne santé de moins de huit jours.</p></div>
             <div class="cell-b"><span class="n">ENGAGEMENT 04</span><h3>Soignés et bien nourris</h3><p>Coprologies régulières sur les reproducteurs, et pour tous — adultes comme chatons — des croquettes sans céréales de très bonne qualité, à volonté.</p></div>
         </div>
     </div>
@@ -293,11 +293,11 @@
 <section class="band paper">
     <div class="wrap">
         <x-section-head
-            eyebrow="Prendre rendez-vous"
-            titre="Venez les rencontrer avant de décider"
-            lede="Aucun chaton ne part sans que sa famille soit venue le voir. Les visites se font sur rendez-vous, à Meyrieu-les-Étangs, entre Lyon et Grenoble, proche des grands axes." />
+            eyebrow="Faire connaissance"
+            titre="On se rencontre d'abord en visio"
+            lede="Tant que les chatons ne sont pas vaccinés, l'élevage ne reçoit personne : c'est ce qui les protège. En attendant on se parle en vidéo — vous les voyez en direct, avec leur mère, dans la pièce où ils vivent. La rencontre sur place vient ensuite, à Châtonnay, entre Lyon et Grenoble." />
         <div class="btnrow" style="justify-content:center">
-            <a class="btn" href="{{ route('adoption.create') }}">Demander une visite</a>
+            <a class="btn" href="{{ route('adoption.create') }}">Demander un rendez-vous</a>
             <a class="btn ghost" href="{{ \App\Models\Setting::telephoneLien() }}">{{ \App\Models\Setting::get('contact.telephone') }}</a>
         </div>
     </div>

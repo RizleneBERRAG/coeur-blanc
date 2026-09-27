@@ -4,7 +4,7 @@
     $fb    = \App\Models\Setting::get('contact.facebook');
     $insta = \App\Models\Setting::get('contact.instagram');
     $siren = \App\Models\Setting::get('legal.siren');
-    $ville = \App\Models\Setting::get('elevage.ville', 'Meyrieu-les-Étangs');
+    $ville = \App\Models\Setting::get('elevage.ville', 'Châtonnay');
     $cp    = \App\Models\Setting::get('elevage.code_postal', '38440');
 @endphp
 
@@ -51,7 +51,7 @@
                     </a>
                 </div>
                 <ul>
-                    <li><a href="{{ route('contact') }}">Venir nous voir</a></li>
+                    <li><a href="{{ route('contact') }}">Nous joindre</a></li>
                 </ul>
                 <div class="socials" style="margin-top:20px">
                     @if($fb)

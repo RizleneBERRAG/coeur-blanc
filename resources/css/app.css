@@ -228,9 +228,6 @@ body{counter-reset:chapitre}
   color:var(--encre-2);box-shadow:none}
 .btn.ghost:hover{background:transparent;border-color:var(--encre);color:var(--encre)}
 .btnrow{display:flex;flex-wrap:wrap;gap:14px}
-/* Les gabarits centraient encore quelques rangées de boutons, du temps où la
-   page l'était : la charte n'a plus qu'un alignement. */
-.band .btnrow[style*="center"]{justify-content:flex-start!important}
 
 .tlink,.lien{display:inline-flex;align-items:center;gap:8px;font-family:var(--corps);
   font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--or-tendre);
@@ -269,7 +266,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 @supports not ((-webkit-background-clip:text) or (background-clip:text)){.brand b{background:none;color:var(--or-ombre)}}
 .brand small{font-family:var(--corps);font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--encre-dim)}
 
-.menu{display:flex;gap:clamp(14px,1.9vw,26px);align-items:center}
+.menu{display:flex;gap:clamp(14px,1.4vw,26px);align-items:center}
 .menu a{font-family:var(--corps);font-size:11px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;
   text-decoration:none;color:var(--encre-3);padding-block:6px;position:relative;white-space:nowrap;transition:color .3s}
 .menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--or-mat);transition:right .35s var(--ease)}
@@ -292,11 +289,11 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 
 .menu-pied{display:none}
 
-/* ── le menu déplié, sous 1100px ─────────────────────────────────── */
+/* ── le menu déplié, sous 1240px ─────────────────────────────────── */
 /* Il s'écrit comme un sommaire : le rang de la rubrique en chiffres romains,
    son nom en Cormorant, un filet d'or sous chacune. Le bandeau reste
    au-dessus : on voit toujours où on est, et par quoi refermer. */
-@media(max-width:1100px){
+@media(max-width:1240px){
   .navin{position:relative;z-index:2}
   .navin > .brand,.navin > .navcta{position:relative;z-index:2}
 
@@ -337,9 +334,14 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
     text-transform:uppercase;color:var(--encre-dim);padding-block:10px;text-decoration:none}
 
   .burger{display:inline-flex;position:relative;z-index:2}
-  .navcta .tel{display:none}
 }
-@media(max-width:1100px) and (prefers-reduced-motion:no-preference){
+/* Le numero dans la barre est ce qui deborde en premier : la colonne de
+   texte est bornee a 1040px, et le nom, les sept rubriques et le numero y
+   demandent une quarantaine de pixels de plus. Il ne reparait donc qu'a
+   partir de 1400px — avant, on le joint par le panneau, le pied de page ou
+   la page Contact. */
+@media(max-width:1400px){.navcta .tel{display:none}}
+@media(max-width:1240px) and (prefers-reduced-motion:no-preference){
   .menu:not([hidden]) > a,
   .menu:not([hidden]) > .menu-pied{animation:menuDeplie .45s var(--ease) both}
   .menu:not([hidden]) > a:nth-of-type(1){animation-delay:.03s}
@@ -352,7 +354,7 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
   .menu:not([hidden]) > .menu-pied{animation-delay:.24s}
 }
 @keyframes menuDeplie{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
-@media(min-width:620px) and (max-width:1100px){
+@media(min-width:620px) and (max-width:1240px){
   .menu{padding-inline:max(22px,calc((100% - 520px) / 2))}
 }
 @media(max-width:360px){.brand small{font-size:8px;letter-spacing:.17em}}
@@ -508,7 +510,11 @@ header.nav.stuck{border-bottom-color:var(--filet);background:rgba(255,255,255,.9
 .filters a[aria-pressed="true"],.filters button[aria-pressed="true"]{background:var(--encre);border-color:var(--encre);color:#FFFFFF}
 
 /* ── fiches chaton ───────────────────────────────────────────────── */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:clamp(20px,3vw,34px)}
+/* auto-fit et non auto-fill : avec trois chatons dans une colonne qui tient
+   quatre vignettes, auto-fill garde la quatrieme piste, vide, et la rangee
+   se range a gauche d'un grand blanc. auto-fit l'efface et les trois fiches
+   occupent toute la largeur. */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(20px,3vw,34px)}
 .fiche{display:flex;flex-direction:column;gap:14px;text-decoration:none;color:inherit;
   text-align:left;padding:0;background:none;border:0;cursor:pointer;
   transition:transform .45s var(--ease)}
@@ -900,9 +906,9 @@ footer .social-mark{--mark-fond:var(--nacre)}
   .social-mark::before{transition:opacity .2s}
   .social:hover .social-mark::before,.social:focus-visible .social-mark::before{transform:none}
 }
-@media(max-width:1100px){.navcta .social{display:none}}
+@media(max-width:1240px){.navcta .social{display:none}}
 .menu-reseaux{display:none}
-@media(max-width:1100px){.menu-reseaux{display:flex}}
+@media(max-width:1240px){.menu-reseaux{display:flex}}
 
 /* ── ruban de photos ─────────────────────────────────────────────── */
 /* Une file de cadres qui défile : la galerie qui passe. Elle ne montre
@@ -934,10 +940,11 @@ footer .social-mark{--mark-fond:var(--nacre)}
 .strip-item:hover .strip-cap{opacity:1}
 
 /* ── bande photo pleine largeur ──────────────────────────────────── */
-/* Les deux bandes larges sont recadrées à 2,13 pour cette place précise :
-   une hauteur en vh les recoupait d'autant plus que l'écran était large. On
-   fixe donc le rapport, et l'image n'est plus jamais rognée deux fois. */
-.photoband{position:relative;aspect-ratio:2.6/1;max-height:62vh;overflow:hidden;
+/* La bande large tient un rapport, mais sa largeur est FIXEE a 100 % avant
+   tout : avec une largeur automatique et une hauteur plafonnee, le navigateur
+   retrecit la largeur pour respecter le rapport, et la bande laissait une
+   bonne main de blanc sur la droite des grands ecrans. */
+.photoband{position:relative;width:100%;aspect-ratio:2.6/1;max-height:62vh;overflow:hidden;
   background:var(--nacre-2);z-index:2;display:block}
 @media(max-width:700px){.photoband{aspect-ratio:3/2}}
 .photoband img{width:100%;height:100%;object-fit:cover;object-position:50% 34%;

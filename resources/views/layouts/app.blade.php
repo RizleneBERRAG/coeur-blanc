@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
     <title>@yield('title', "Chatterie Ô Coeur Blanc") — Élevage de Bengal LOOF en Isère, entre Lyon et Grenoble</title>
-    <meta name="description" content="@yield('description', "Chatterie Ô Coeur Blanc, élevage familial de chats Bengal LOOF à Meyrieu-les-Étangs (38), entre Lyon et Grenoble. Parents dépistés HCM, PK-Def, PRA-b et FIV/FeLV, chatons élevés à la maison.")">
+    <meta name="description" content="@yield('description', "Chatterie Ô Coeur Blanc, élevage familial de chats Bengal LOOF à Châtonnay (38), entre Lyon et Grenoble. Parents dépistés HCM, PKD, PK-Def, PRA-b et FIV/FeLV, chatons stérilisés avant le départ.")">
     <link rel="canonical" href="{{ url()->current() }}">
 
     {{-- La marque du logo, sur le papier du site. --}}

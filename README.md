@@ -1,6 +1,6 @@
 # Chatterie Ô Coeur Blanc
 
-Site de la Chatterie Ô Coeur Blanc — élevage de Bengal LOOF à Meyrieu-les-Étangs
+Site de la Chatterie Ô Coeur Blanc — élevage de Bengal LOOF à Châtonnay
 (38440), Isère. Laravel 12, Blade, MySQL, back-office Filament.
 
 Le socle technique est celui du site Bengal's Parc (même métier, même règle
@@ -122,8 +122,41 @@ chose mieux.
 - les numéros ICAD et le numéro de portée LOOF de cette portée, posés par
   `php artisan demo:numeros`.
 
+### Ce que l'éleveuse a corrigé le 27 septembre 2026
+
+Premier retour de l'éleveuse sur l'aperçu, par messages. Tout est appliqué :
+
+- **L'adresse a changé.** L'élevage est à **Châtonnay (38440)**, plus à
+  Meyrieu-les-Étangs. La commune vient du réglage `elevage.ville` (back-office,
+  onglet Général) ; la carte, elle, a ses coordonnées dans `config/bengal.php`,
+  clé `carte` — les deux sont à changer ensemble le jour d'un déménagement.
+- **Les chatons sont stérilisés avant le départ.** C'est devenu la ligne 07 du
+  relevé « Ce que couvre l'adoption », et cela apparaît dans les engagements,
+  dans les chiffres de la page Élevage et dans les descriptions de référencement.
+- **Le dépistage PKD** (échographie rénale) manquait : il est ajouté à la fiche
+  de chaque reproducteur, au relevé et à la réponse sur les tests.
+- **Il n'y a pas de visite avant la vaccination**, pour des raisons sanitaires,
+  et l'éleveuse travaille beaucoup en visio. Toutes les pages qui promettaient
+  une visite avant réservation ont été réécrites : l'accueil, l'étape 02 du
+  parcours d'adoption, la ligne « Visites » de la page Contact, deux réponses de
+  la FAQ et l'objet du formulaire de contact.
+- **Jag est le silver, Olympe la brown** : leurs deux portraits étaient
+  intervertis, et leurs robes fausses. Les fichiers `jag-1.webp` et
+  `olympe-1.webp` ont été échangés sur le disque, de sorte que toutes les
+  références du site restent valables.
+
 ### À confirmer auprès de l'éleveuse
 
+- **La photo `jardin-longe.webp`** (ancien `jag-2.webp`) montre un Bengal brown
+  en longe dans l'herbe. Ce n'est pas Jag, qui est argent. Faute de savoir de
+  qui il s'agit, elle reste dans la galerie sans nom : à identifier, ou à
+  retirer.
+- **Les temps de trajet** de la page Contact ont été réestimés depuis Châtonnay
+  (Lyon 55 min, gare de Bourgoin-Jallieu 20 min, Grenoble 1 h, Vienne 30 min).
+  Ce sont des ordres de grandeur, à confirmer par quelqu'un qui fait la route.
+- **Les autres photos de chats** n'ont pas été revérifiées une par une. Deux
+  étaient interverties ; il peut en rester. Le plus sûr est de lui faire
+  parcourir la page Élevage fiche par fiche.
 - **Ukaïna** : le site Wix la dit née le 19 mai 2022, son certificat LOOF le
   19 mai 2023. C'est la date du certificat qui est retenue.
 - **Armonie**, la femelle mink de mars 2025 gardée comme future reproductrice,
@@ -266,4 +299,4 @@ l'attribution reste due. Le fournisseur est déclaré dans
 `app/Http/Middleware/EntetesSecurite.php` autorise bien son domaine. Les
 coordonnées et les temps de trajet sont dans `config/bengal.php`, clé `carte`.
 L'adresse exacte n'est volontairement jamais publiée : la carte affiche un
-cercle de 2,2 km autour de Meyrieu-les-Étangs, plus les repères d'accès.
+cercle de 2,2 km autour de Châtonnay, plus les repères d'accès.

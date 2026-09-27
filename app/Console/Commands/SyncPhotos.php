@@ -63,11 +63,11 @@ class SyncPhotos extends Command
         'ultime-2'    => ['Ultime en promenade', 'adultes', 'Ultime Ô Coeur Blanc, Bengal black silver tabby, marchant sur une plateforme en bois'],
         'ultime-3'    => ['Ultime en surveillance', 'maison', 'Ultime Ô Coeur Blanc, Bengal black silver tabby, couchée sur une planche, le regard vers l’objectif'],
         'ultime-4'    => ['Ultime, le nez en l’air', 'adultes', 'Ultime Ô Coeur Blanc, Bengal black silver tabby, la tête levée vers le soleil'],
-        'jag-1'       => ['Jag', 'adultes', 'Jag Jocelot des Bengalexception, Bengal brown tabby rosetted, couché sur un plaid rose'],
-        'jag-2'       => ['Jag au jardin', 'maison', 'Jag Jocelot des Bengalexception, Bengal brown tabby rosetted, allongé dans l’herbe en longe'],
+        'jag-1'       => ['Jag', 'adultes', 'Jag Jocelot des Bengalexception, Bengal black silver tabby, couché sur un lit'],
+        'jardin-longe' => ['Une sortie en longe', 'maison', 'Bengal brown tabby rosetted allongé dans l’herbe, en longe'],
         'salambo-1'   => ['Salambo', 'adultes', 'Ambersands Salambo, Bengal black silver tabby, debout de profil sur fond sombre'],
         'salambo-2'   => ["Salambo à l'arbre à chat", 'maison', 'Ambersands Salambo, Bengal black silver tabby, installé sur un arbre à chat'],
-        'olympe-1'    => ['Olympe', 'maison', 'Olympe de Laf, Bengal snow de la maison, couchée sur un lit'],
+        'olympe-1'    => ['Olympe', 'maison', 'Olympe de Laf, Bengal brown tabby de la maison, couchée sur un plaid rose'],
         'robe'        => ['Lire une robe de Bengal', 'adultes', 'Bengal brown tabby rosetted de profil, rosettes, ligne dorsale et masque bien visibles'],
 
         // ── les chatons ──

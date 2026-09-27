@@ -16,7 +16,7 @@ class ContactMessage extends Model
     /** Les objets proposes dans le formulaire. */
     public const OBJETS = [
         'adoption' => 'Adopter un chaton',
-        'visite'   => "Visiter l'élevage",
+        'visite'   => 'Voir les chatons en visio',
         'race'     => 'Une question sur la race',
         'autre'    => 'Autre demande',
     ];

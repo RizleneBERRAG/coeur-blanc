@@ -15,7 +15,7 @@
 
         <div class="cells">
             <div class="cell-b"><span class="n">ÉTAPE 01</span><h3>Vous nous écrivez</h3><p>Le formulaire plus bas, ou un appel. Parlez-nous de votre foyer, de vos autres animaux, de votre rythme de vie. Réponse sous 48 heures.</p></div>
-            <div class="cell-b"><span class="n">ÉTAPE 02</span><h3>Vous venez les voir</h3><p>Visite sur rendez-vous à Meyrieu-les-Étangs. Vous rencontrez la mère, la fratrie complète, et vous voyez l'endroit où ils grandissent.</p></div>
+            <div class="cell-b"><span class="n">ÉTAPE 02</span><h3>Vous les voyez en visio</h3><p>Tant qu'ils ne sont pas vaccinés, l'élevage ne reçoit pas : c'est ce qui protège la portée. On prend donc rendez-vous en vidéo — la mère, la fratrie, la pièce où ils grandissent, en direct.</p></div>
             <div class="cell-b"><span class="n">ÉTAPE 03</span><h3>Réservation et contrat</h3><p>Contrat de cession signé, acompte, puis des nouvelles régulières en photo et en vidéo jusqu'au départ.</p></div>
             <div class="cell-b"><span class="n">ÉTAPE 04</span><h3>Le grand jour</h3><p>À {{ \App\Models\Litter::SEMAINES_AVANT_CESSION }} semaines minimum : pedigree LOOF, carnet de santé, certificat vétérinaire, puce ICAD, contrat et kit d'alimentation.</p></div>
         </div>

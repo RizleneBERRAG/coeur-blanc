@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', "L'élevage et nos reproducteurs")
-@section('description', "Chatterie Ô Coeur Blanc, élevage familial déclaré à la chambre d'agriculture à Meyrieu-les-Étangs. Nos reproducteurs, leur robe, leur pedigree et leurs dépistages.")
+@section('description', "Chatterie Ô Coeur Blanc, élevage familial déclaré à la chambre d'agriculture à Châtonnay. Nos reproducteurs, leur robe, leur pedigree et leurs dépistages.")
 
 @section('content')
 
@@ -11,7 +11,7 @@
             niveau="1"
             eyebrow="L'élevage"
             titre="Ô Coeur Blanc"
-            lede="Un élevage familial et professionnel de Bengal LOOF, titulaire du certificat de capacité, installé à Meyrieu-les-Étangs, en Isère, entre Lyon et Grenoble, proche des grands axes." />
+            lede="Un élevage familial et professionnel de Bengal LOOF, titulaire du certificat de capacité, installé à Châtonnay, en Isère, entre Lyon et Grenoble, proche des grands axes." />
 
         <div class="two off">
             <figure class="figure">
@@ -145,12 +145,12 @@
         <div class="facts">
             <div class="fact"><b data-count="2">0</b><span>Portées par an maximum</span></div>
             <div class="fact"><b data-count="{{ \App\Models\Litter::SEMAINES_AVANT_CESSION }}">0</b><span>Semaines minimum avant départ</span></div>
-            <div class="fact"><b data-count="2">0</b><span>Visites avant réservation</span></div>
-            <div class="fact"><b data-count="4">0</b><span>Dépistages par reproducteur</span></div>
+            <div class="fact"><b data-count="100">0</b><span>% des chatons stérilisés avant le départ</span></div>
+            <div class="fact"><b data-count="5">0</b><span>Dépistages par reproducteur</span></div>
         </div>
         <div class="btnrow" style="margin-top:36px">
             <a class="btn" href="{{ route('kittens.index') }}">Voir les chatons</a>
-            <a class="btn ghost" href="{{ route('contact') }}">Venir nous voir</a>
+            <a class="btn ghost" href="{{ route('contact') }}">Nous joindre</a>
         </div>
     </div>
 </section>

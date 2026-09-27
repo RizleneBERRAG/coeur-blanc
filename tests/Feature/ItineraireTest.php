@@ -33,7 +33,7 @@ class ItineraireTest extends TestCase
         $this->get('/contact')
             ->assertOk()
             ->assertSee($domaine, escape: false)
-            ->assertSee(urlencode("Meyrieu-les-Étangs"), escape: false);
+            ->assertSee(urlencode("Châtonnay"), escape: false);
     }
 
     #[\PHPUnit\Framework\Attributes\DataProvider('fournisseurs')]

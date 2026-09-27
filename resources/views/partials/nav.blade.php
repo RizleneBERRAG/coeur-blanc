@@ -26,7 +26,7 @@
             <a href="{{ route('contact') }}"       @if(request()->routeIs('contact'))   aria-current="page" @endif>Contact</a>
 
             {{-- Pied du panneau, affiche seulement quand le menu EST un panneau.
-                 Sous 1100px le bandeau masque le numero et les icones sociales :
+                 Sous 1240px le bandeau masque le numero et les icones sociales :
                  sans ce bloc, le telephone — la facon dont on joint un elevage —
                  disparait de toute la navigation. --}}
             <div class="menu-pied">
